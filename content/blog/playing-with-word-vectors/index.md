@@ -1,8 +1,7 @@
 ---
-title: Playing with word vectors
+title: Playing with Word Vectors
 description: >-
-  In the last few years the field of AI has advanced so quickly and so much has
-  been written about it, chances are you‘ve heard about some…
+  Experiments with natural language processing using a few lines of plain Python.
 date: "2018-01-24T09:54:48.119Z"
 categories: []
 keywords: []

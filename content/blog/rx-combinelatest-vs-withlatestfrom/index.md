@@ -1,8 +1,8 @@
 ---
 title: "Rx: combineLatest vs withLatestFrom"
 description: >-
-  The combineLatest and withLatestFrom operators in Rx have very similar names.
-  What’s the difference between them?
+  The difference between the operators combineLatest and withLatestFrom,
+  often used in Android development.
 date: "2018-01-17T22:04:18.054Z"
 categories: []
 keywords: []
@@ -15,9 +15,11 @@ The `combineLatest` and `withLatestFrom` operators in Rx have very similar names
 
 combineLatest simply combines multiple sources and emits any time there’s a new value from any of them.
 
-Here’s a good example use case:
+Here is a good example use case:
 
-```
+```kotlin
+// All examples below are in Kotlin
+
 disposables += Observable.combineLatest(
   view.onNameChanged(), view.onEmailChanged(), ::AccountInfo)
   .subscribe { accountInfo ->
@@ -25,7 +27,7 @@ disposables += Observable.combineLatest(
   }
 ```
 
-Here’s the marble diagram for combineLatest:
+Here is the marble diagram for combineLatest:
 
 ![](https://cdn-images-1.medium.com/max/800/1*iU7OCStGQF2evWT38T2eRg.png)
 
@@ -35,7 +37,7 @@ As we can see, any time there’s a new event from any of the sources we get the
 
 Let’s say we want to build a simple screen where a person can enter their name and we want to validate the name. We can use withLatestFrom to achieve this:
 
-```
+```kotlin
 disposables += view.onNameFocusChanged() // When focus changes
   .withLatestFrom(view.onNameChanged()) // Grab the name
   .subscribe { (focus, name) ->
