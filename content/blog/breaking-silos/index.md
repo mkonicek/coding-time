@@ -7,7 +7,7 @@ keywords: []
 slug: /breaking-silos
 ---
 
-You might be familiar with the following:
+You might be familiar with the following situation:
 
 - At your company you have separate Slack channels:
   `#ios-engineering`, `#android-engineering`.
