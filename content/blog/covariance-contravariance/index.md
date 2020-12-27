@@ -15,31 +15,36 @@ This is a very concise tutorial on covariance and contravariance. In 10 minutes 
 Assuming `Apple` is a subclass of `Fruit`, covariance lets you treat say `List[Apple]` as `List[Fruit]`.
 
 ```scala
+def processList(list: List[Fruit]) = {
+  // ...
+}
+
 val apples = List(new Apple(), new Apple())
 processList(apples)
-
-def processList(list: List[Fruit]) = {
-  // read the list
-}
 ```
 
 This seems obvious - indeed, a list of apples is a list of fruit, right?
 
-The surprise comes when we find out this does not work with arrays. Why is that so? Because you could do the following:
+The surprise comes when we find out this does not work with arrays.
 
 ```scala
 val a = Array(new Apple(), new Apple())
+// Compile error
 processArray(a)
+```
 
+Why is that so? Because you could do the following:
+
+```scala
 def processArray(array: Array[Fruit]) = {
   // Adding an Orange into array of Apples!
   array(1) = new Orange()
 }
 ```
 
-The main difference between `List` and `Array` here is that the `List` is immutable (you cannot change its contents) while the `Array` is mutable. As long as we are dealing with immutable types, everything is OK (as in the first example).
+The main difference between `List` and `Array` here is that the `List` is immutable (you cannot change its contents) while the `Array` is mutable. As long as we are dealing with immutable types everything is OK (as in the first example).
 
-So how does the compiler know that `List` is immutable? Here is the declaration of List:
+So how does the compiler know that `List` is immutable? Here is the declaration of `List`:
 
 ```scala
 sealed abstract class List[+A]
