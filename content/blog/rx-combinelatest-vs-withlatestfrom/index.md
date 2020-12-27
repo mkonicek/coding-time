@@ -15,7 +15,7 @@ The `combineLatest` and `withLatestFrom` operators in Rx have very similar names
 
 combineLatest simply combines multiple sources and emits any time there’s a new value from any of them.
 
-Here is a good example use case:
+Here is an example use case:
 
 ```kotlin
 // All examples below are in Kotlin

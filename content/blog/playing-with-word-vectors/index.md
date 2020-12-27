@@ -30,7 +30,7 @@ know -0.0370 -0.0138 0.0392 -0.0395 -0.1591 ...
 
 Great, this format should be easy to work with. Each line contains one word, represented as a vector in 300-dimensional space. If this was in 2D, we could imagine it as follows:
 
-![](https://cdn-images-1.medium.com/max/800/1*mWQtzgXAFTsLg6NAjK6xDg.png)
+![Words in vector space](./vectors.png)
 
 The only difference is that each word doesn’t have 2 coordinates, but 300.
 
@@ -71,7 +71,7 @@ How do we compute the distance between two word vectors a, b? You might say “E
 
 From high school (or Wikipedia):
 
-![](https://cdn-images-1.medium.com/max/800/1*Acs3Kbrrrb4d3fqMlGhMcQ.png)
+![Cosine similarity formula](./cosine_similarity.png)
 
 In Python:
 
@@ -144,7 +144,7 @@ Let’s try something more difficult. Given two words like “Paris” and “Fr
 
 It turns out we can simply add and subtract vectors to do this! This is because the vectors for those words have a specific relationship in space:
 
-![](https://cdn-images-1.medium.com/max/800/1*EOVxNmHkrsPQ7Q44N0OiQg.png)
+![Relationship between vectors](vectors_relationship.png)
 
 Surprisingly enough:
 
@@ -300,7 +300,7 @@ This is because the answer vector, computed as `answer = vector(king)-vector(man
 
 Actually, almost all answers I got simply repeated one of the input words. I added a hack to skip these redundant words in the list of suggested answers, and started getting interesting answers as shown above. This hack is called `is_redundant` in the code.
 
-UPDATE: Tomas Mikolov, the author of fastText, [replied on Facebook](https://www.facebook.com/groups/1174547215919768/permalink/1846673885373761/), saying what I did is actually a well-known trick and it is correct.
+UPDATE: Tomas Mikolov, the author of fastText, [replied](https://www.facebook.com/groups/1174547215919768/permalink/1846673885373761/), saying what I did is actually a well-known trick.
 
 #### How were the vectors produced?
 
