@@ -27,9 +27,9 @@ disposables += Observable.combineLatest(
   }
 ```
 
-Here is the marble diagram for combineLatest:
+Here is the marble diagram for `combineLatest`:
 
-![](https://cdn-images-1.medium.com/max/800/1*iU7OCStGQF2evWT38T2eRg.png)
+![Marble diagram for combineLatest](./combinelatest.png)
 
 As we can see, any time there’s a new event from any of the sources we get the latest values from all sources. It’s up to us to define how the values should be combined. For example we could wrap the values in a `Pair`, or a custom object like the `AccountInfo` above.
 
@@ -52,9 +52,9 @@ disposables += view.onNameFocusChanged() // When focus changes
   }
 ```
 
-Here’s the marble diagram:
+Here is the marble diagram for `withLatestFrom`:
 
-![](https://cdn-images-1.medium.com/max/800/0*OlgZ-bFg5OOp9MUb.png)
+![Marble diagram for withLatestFrom](./withlatestfrom.png)
 
 What this means:
 
@@ -65,16 +65,14 @@ What this means:
 
 The properties above are exactly what we want for our use case (you might need slightly different UX in your use case).
 
-If you liked this, follow me on [Twitter](https://twitter.com/martinkonicek).
-
 #### Appendix: What about the zip operator?
 
 Like the other operators above, the `zip` operator combines the values from multiple streams. The difference is that it waits until there is a new value from each stream. See “2” in the example below — nothing is emitted yet:
 
-![](https://cdn-images-1.medium.com/max/800/1*a8sHuQVVSEafeOtLUJ6DSA.png)
+![Marble diagram for zip](./zip.png)
 
 As we can see from the diagram, `zip` can be equivalent to `combineLatest` in simple cases, for example when we have just two HTTP requests:
 
-![](https://cdn-images-1.medium.com/max/800/1*VaxYTi-GDs3--kvoqKrfPg.png)
+![Marble diagram for zip when only combining two requests](./zip_equiv.png)
 
-If we know each `Observable` will emit at most one value, we should use the `Single` interface rather than Observable to make the contract explicit.
+If you know each `Observable` will emit at most one value, you should use the `Single` interface rather than Observable to make the contract explicit.
