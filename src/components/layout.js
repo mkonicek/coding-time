@@ -26,19 +26,6 @@ const Layout = ({ location, title, children }) => {
       <main>{children}</main>
       <footer>
         © Martin Konicek {new Date().getFullYear()}
-        <div>
-          <a href="https://twitter.com/martinkonicek">
-            Twitter
-          </a>
-          &nbsp;/&nbsp;
-          <a href="https://github.com/mkonicek">
-            GitHub
-          </a>
-          &nbsp;/&nbsp;
-          <a href="https://stackoverflow.com/users/90998/martin-konicek">
-            StackOverflow
-          </a>
-        </div>
       </footer>
     </div>
   )
