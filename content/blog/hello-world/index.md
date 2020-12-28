@@ -1,6 +1,6 @@
 ---
 title: Hello World!
-description: New year, new blog.
+description: New year, new blog 🎉
 date: "2021-01-01T00:00:00.000Z"
 categories: []
 keywords: []
@@ -24,4 +24,4 @@ I even brought back some of the top posts from my original blog - the one before
 - [Covariance and Contravariance](../covariance-contravariance)
 - [Transactions and Event Sourcing](../transactions-event-sourcing)
 
-Happy new year!
+Happy new year! 🎉
