@@ -4,7 +4,7 @@ description: >-
   When you make contributions to React Native we ask you to provide a Test Plan
   along with your pull request.
 date: "2017-02-13T16:40:57.242Z"
-categories: []
+categories: [tips]
 keywords: []
 slug: /what-is-a-test-plan
 ---

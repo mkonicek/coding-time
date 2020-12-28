@@ -4,7 +4,7 @@ description: >-
   How does a feature of the Go programming language
   work under the hood?
 date: "2013-08-01T00:00:00.000Z"
-categories: []
+categories: [engineering, go]
 keywords: []
 slug: /goroutines-implementation
 ---

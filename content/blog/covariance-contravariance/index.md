@@ -3,7 +3,7 @@ title: Covariance and Contravariance
 description: >-
   Examples in Scala.
 date: "2011-05-01T00:00:00.000Z"
-categories: []
+categories: [engineering, scala]
 keywords: []
 slug: /covariance-contravariance
 ---

@@ -2,7 +2,7 @@
 title: How to Slack
 description: Slack can be quite overwhelming. How to use it effectively?
 date: "2018-01-02T22:51:10.143Z"
-categories: []
+categories: [tips]
 keywords: []
 slug: /how-to-slack
 ---

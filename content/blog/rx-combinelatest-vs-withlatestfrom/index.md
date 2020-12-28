@@ -4,7 +4,7 @@ description: >-
   The difference between the operators combineLatest and withLatestFrom,
   often used in Android development.
 date: "2018-01-17T22:04:18.054Z"
-categories: []
+categories: [engineering, android]
 keywords: []
 slug: /rx-combinelatest-vs-withlatestfrom
 ---

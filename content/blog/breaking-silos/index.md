@@ -2,7 +2,7 @@
 title: Breaking Silos
 description: Communication between Android and iOS engineers working on a product together.
 date: "2018-02-28T18:22:20.614Z"
-categories: []
+categories: [tips]
 keywords: []
 slug: /breaking-silos
 ---

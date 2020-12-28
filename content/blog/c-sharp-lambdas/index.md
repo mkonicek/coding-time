@@ -3,7 +3,7 @@ title: Implementation of Lambdas in C#
 description: >-
   How closures in C# are compiled to bytecode.
 date: "2009-11-01T00:00:00.000Z"
-categories: []
+categories: [engineering, c-sharp]
 keywords: []
 slug: /c-sharp-lambdas
 ---

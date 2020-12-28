@@ -4,7 +4,7 @@ description: >-
   Transactions in distributed systems, event sourcing
   with real-world examples.
 date: "2013-06-01T00:00:00.000Z"
-categories: []
+categories: [engineering]
 keywords: []
 slug: /transactions-event-sourcing
 ---
