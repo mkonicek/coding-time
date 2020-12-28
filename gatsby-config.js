@@ -8,7 +8,9 @@ module.exports = {
     description: `Martin Konicek`,
     siteUrl: `https://coding-time.co/`,
     social: {
-      twitter: `martinkonicek`,
+      twitter: `https://twitter.com/martinkonicek`,
+      github: `https://github.com/mkonicek`,
+      stackoverflow: `https://stackoverflow.com/users/90998/martin-konicek`,
     },
   },
   plugins: [

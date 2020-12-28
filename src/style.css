@@ -85,6 +85,8 @@ body {
 
 footer {
   padding: var(--spacing-6) var(--spacing-0);
+  display: flex;
+  justify-content: space-between;
 }
 
 hr {
