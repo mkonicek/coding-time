@@ -7,6 +7,8 @@ keywords: []
 slug: /hello-world
 ---
 
+![Ocean](./ocean.jpeg)
+
 I finally got around to moving my blog from Medium to Gatsby.
 
 The name "Coding time" goes back to my very first blog from a decade ago. It is inspired by the flow when you focus and everything else disappears.
@@ -23,5 +25,7 @@ I even brought back some of the top posts from my original blog - the one before
 
 - [Covariance and Contravariance](../covariance-contravariance)
 - [Transactions and Event Sourcing](../transactions-event-sourcing)
+
+![Fireworks](./fireworks.jpeg)
 
 Happy new year! 🎉
