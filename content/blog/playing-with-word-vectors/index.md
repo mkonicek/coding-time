@@ -76,7 +76,7 @@ From high school (or Wikipedia):
 In Python:
 
 ```python
-def vector_len(v: Vector) -> float:
+def vec_len(v: Vector) -> float:
     return math.sqrt(sum([x*x for x in v]))
 
 def dot_product(v1: Vector, v2: Vector) -> float:
@@ -88,17 +88,24 @@ def cosine_similarity(v1: Vector, v2: Vector) -> float:
     Returns the cosine of the angle between the two vectors.
     Results range from -1 (very different) to 1 (very similar).
     """
-    return dot_product(v1, v2) / (vector_len(v1) * vector_len(v2))
+    return dot_product(v1, v2) / (vec_len(v1) * vec_len(v2))
 ```
 
 Now we can find words similar to a given vector:
 
 ```python
 def sorted_by_similarity(words: List[Word], base_vector: Vector) -> List[Tuple[float, Word]]:
-    """Returns words sorted by cosine distance to a given vector, most similar first"""
-    words_with_distance = [(cosine_similarity(base_vector, w.vector), w) for w in words]
-    # We want cosine similarity to be as large as possible (close to 1)
-    return sorted(words_with_distance, key=lambda t: t[0], reverse=True)
+    """
+    Returns words sorted by cosine distance to a given vector,
+    most similar first.
+    """
+    words_with_distance = [
+        (cosine_similarity(base_vector, w.vector), w) for w in words
+    ]
+    # We want cosine similarity to be as large as possible
+    # (close to 1)
+    return sorted(
+        words_with_distance, key=lambda t: t[0], reverse=True)
 ```
 
 We just need some simple utility functions to print related words:
@@ -171,15 +178,18 @@ def closest_analogies(
     closest = sorted_by_similarity(words, vector)[:10]
     def is_redundant(word: str) -> bool:
         """
-        Sometimes the two left vectors are so close the answer is e.g.
-        "shirt-clothing is like phone-phones". Skip 'phones' and get the next
-        suggestion, which might be more interesting.
+        Sometimes the two left vectors are so close the answer
+        is e.g. "shirt-clothing is like phone-phones".
+        Skip 'phones' and get the next suggestion, which
+        might be more interesting.
         """
         return (
             left1.lower() in word.lower() or
             left2.lower() in word.lower() or
             right2.lower() in word.lower())
-    return [(dist, w) for (dist, w) in closest if not is_redundant(w.text)]
+    return [
+        (dist, w) for (dist, w) in closest if not is_redundant(w.text)
+    ]
 
 def print_analogy(left2: str, left1: str, right2: str, words: List[Word]) -> None:
     analogies = closest_analogies(left2, left1, right2, words)
@@ -263,7 +273,8 @@ sushi-rice is like steak-
 [chicken (0.58), **beef (**0.56), potatoes (0.56), corn (0.55)]
 
 book-reading is like TV-
-[television (0.68), **watching** (0.64), listening (0.57), viewing (0.57)]
+[television (0.68), **watching** (0.64), listening (0.57),
+viewing (0.57)]
 
 shirt-clothing is like bowl-[food, cereal, rice, porridge]
 

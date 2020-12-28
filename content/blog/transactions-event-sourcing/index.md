@@ -19,8 +19,13 @@ You might already be familiar with the common "real world" example of transferri
 
 ```sql
 START TRANSACTION;
-UPDATE balance SET amount = amount - 1000 WHERE account_id = @id_from;
-UPDATE balance SET amount = amount + 1000 WHERE account_id = @id_to;
+
+UPDATE balance SET amount = amount - 1000
+WHERE account_id = @id_from;
+
+UPDATE balance SET amount = amount + 1000
+WHERE account_id = @id_to;
+
 COMMIT;
 ```
 

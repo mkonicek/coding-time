@@ -1,7 +1,8 @@
 ---
 title: Covariance and Contravariance
 description: >-
-  Examples in Scala.
+  Short explanation of covariance and contravariance
+  with simple examples in Scala.
 date: "2011-05-01T00:00:00.000Z"
 categories: [engineering, scala]
 keywords: []
