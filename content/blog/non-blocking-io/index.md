@@ -3,7 +3,7 @@ title: Non-blocking I/O
 description: >-
   The difference between blocking and non-blocking I/O.
 date: "2012-06-01T00:00:00.000Z"
-categories: []
+categories: [engineering]
 keywords: []
 slug: /non-blocking-io
 ---
