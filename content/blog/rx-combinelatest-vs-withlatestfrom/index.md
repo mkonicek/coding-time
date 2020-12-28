@@ -1,7 +1,7 @@
 ---
 title: "Rx: combineLatest vs withLatestFrom"
 description: >-
-  The difference between the operators combineLatest and withLatestFrom,
+  The difference between the Rx operators combineLatest and withLatestFrom,
   often used in Android development.
 date: "2018-01-17T22:04:18.054Z"
 categories: [engineering, android]

@@ -1,9 +1,8 @@
 ---
 title: Meetings
 description: >-
-  Software Engineers are usually not excited about meetings. Meetings are an easy
-  way to waste time and kill productivity. However, if done well meetings can be
-  useful and fun.
+  Software Engineers are usually not excited about meetings.
+  However, if done well meetings can be useful and fun.
 date: "2018-01-06T12:57:16.474Z"
 categories: [tips]
 keywords: []
