@@ -13,7 +13,7 @@ I finally got around to moving my blog from Medium to Gatsby.
 
 The name "Coding time" goes back to my very first blog from a decade ago. It is inspired by the flow when you focus and everything else disappears.
 
-Setting up [Gatsby](https://www.gatsbyjs.com/) and migrating content from Medium was ridiculously easy thanks to a [great article](https://www.no.lol/2019-03-16-medium-to-gatsby/) by [Lauren Tan](https://twitter.com/sugarpirate_). Already going with the hype by using Gatsby, I even threw in [Vercel](https://vercel.com/) which builds and publishes the blog after every commit. Soon I had the site up and running at https://coding-time.vercel.app.
+Setting up [Gatsby](https://www.gatsbyjs.com/) and migrating content from Medium was ridiculously easy thanks to a [great article](https://www.no.lol/2019-03-16-medium-to-gatsby/) by [Lauren Tan](https://twitter.com/sugarpirate_). Already going with the hype by using Gatsby, I even threw in [Vercel](https://vercel.com/) which builds and publishes the blog after every commit, and [caches the content in a CDN](https://vercel.com/docs/edge-network/caching). Soon I had the site up and running at https://coding-time.vercel.app.
 
 Then I just bought the domain and in the domain management interface, pointed the DNS record for `coding-time.co` at the IP address shown in the Vercel admin interface.
 
