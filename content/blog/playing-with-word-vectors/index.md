@@ -1,7 +1,7 @@
 ---
 title: Playing with Word Vectors
 description: >-
-  Experiments with natural language processing using a few lines of plain Python.
+  Experiments with natural language processing using a few lines of Python.
 date: "2018-01-24T09:54:48.119Z"
 categories: [engineering, machine-learning]
 keywords: []

@@ -19,7 +19,12 @@ Then I just bought the domain and in the domain management interface, pointed th
 
 All of the above took about two hours. Then I manually fixed the formatting in some of the generated markdown and copied images over, often looking for better, higher-quality versions of the images in my Dropbox or online. This was straightforward and took a few hours.
 
-It feels great to have a new blog, with no paywall, no signups, no ads. Writing in markdown and publishing with `git push` is amazing.
+It feels great to have a new blog with no paywall, no signups, no ads. Writing in markdown and publishing with `git push` is great. The main thing still missing compared to Medium are comments.
+
+This new blog contains almost all the posts from my Medium blog. I received good feedback on blog in the past, for example:
+
+- The people behind the Medium publication [The Startup](https://medium.com/swlh) with 700k+ followers reached out to me and published a few of my articles, such as [Meeting](../meetings) and [Why Demand for Software Engineers is Going to Stay High](../software-engineers-demand).
+- Someone reached out asking for permission to use my article [Playing with Word Vectors](../playing-with-word-vectors) in a high school class ❤
 
 I even brought back top posts from my original blog - the one before Medium:
 
