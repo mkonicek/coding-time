@@ -1,13 +1,12 @@
 ---
-title: Why demand for software engineers is going to stay high
+title: Why Demand for Software Engineers is Going to Stay High
 description: >-
-  It seems like everybody needs software engineers. Demand is much higher that
-  supply. This translates to jobs with good pay and lots of…
+  Six reasons, observed over the years.
 date: "2018-10-11T19:40:33.229Z"
 categories: []
 keywords: []
 slug: >-
-  /@martinkonicek/why-demand-for-software-engineers-is-going-to-stay-high-5acb789c5015
+  /software-engineers-demand
 ---
 
 ![Classic Supply and Demand Chart](./demand-supply.png)
@@ -69,6 +68,6 @@ The biggest step forward here was probably the web. Suddenly you didn’t have t
 
 ### 7. Extra (for fun): AI to replace software engineers?
 
-Imagine someone designs software that can replace most engineers. For example, instead of a team of ten engineers, there’s one human “tech lead” who gives very high-level commands and the program translates them into bug-free code.
+Imagine someone designs software that can replace most engineers. For example, instead of a team of 6 engineers, there would be one human “tech lead” who specifies high-level requirements and the program translates them into bug-free code.
 
-No-one has a good idea when this could happen. If it happens the demand for engineers would drop immensely. But with such technology, the demand for humans in other professions would likely drop too, so relative to other professions programming _might_ still be in demand.
+No-one has a good idea when this could happen. If it happens the demand for engineers would drop immensely. But with such technology the demand for humans in other professions would likely drop too, so relative to other professions programming _might_ still be in demand.
