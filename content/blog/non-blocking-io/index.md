@@ -8,7 +8,7 @@ keywords: []
 slug: /non-blocking-io
 ---
 
-NOTE: This article was originally written in 2012 so feels a bit dated.
+NOTE: This article was originally written in 2012 so it feels a bit dated.
 
 This is an article about inner workings of non-blocking servers, that is servers that don't block a thread per connected client. The examples are in "pseudocode" resembling JS but not specific to any technology.
 

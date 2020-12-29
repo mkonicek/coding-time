@@ -1,7 +1,7 @@
 ---
 title: Why Demand for Software Engineers is Going to Stay High
 description: >-
-  Six reasons, observed over the years.
+  Six reasons observed over fifteen years in the software industry.
 date: "2018-10-11T19:40:33.229Z"
 categories: []
 keywords: []
