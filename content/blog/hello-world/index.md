@@ -21,21 +21,19 @@ Then I just bought the domain and in the domain management interface, pointed th
 
 All of the above took about two hours. Then I manually fixed the formatting in some of the generated markdown and copied images over, often looking for better, higher-quality versions of the images in my Dropbox or online. This was straightforward and took a few hours.
 
-It feels great to have a new blog with no paywall, no signups, no ads. Writing in markdown and publishing with `git push` is great. The main thing still missing compared to Medium are comments.
+It feels great to have a new blog with no paywall, no signups, no ads. Writing in markdown and publishing with `git push` is great. The main thing missing compared to Medium are comments.
 
-This new blog contains almost all the posts from my Medium blog. I received good feedback on the blog in the past, for example:
+This new blog contains almost all of the posts from my Medium blog. Here is some feedback I received on the blog in the past:
 
-- People from the Medium publication [The Startup](https://medium.com/swlh) with 700k+ followers reached out to me and published a few of my articles, such as [Meetings](../meetings) and [Why Demand for Software Engineers is Going to Stay High](../software-engineers-demand).
-- Someone reached out asking for permission to use my article [Playing with Word Vectors](../playing-with-word-vectors) when teaching a high school programming class.
+- People from the Medium publication [The Startup](https://medium.com/swlh) with 700k+ followers reached out and published a few of my articles, such as [Meetings](../meetings) and [Why Demand for Software Engineers is Going to Stay High](../software-engineers-demand).
+- Someone used my article [Playing with Word Vectors](../playing-with-word-vectors) when teaching a high school programming class.
 - A colleague shared the article [How to Slack](../how-to-slack) with the rest of the company.
 
-I even brought back my favorite posts from my original blog - the one before Medium:
+I even brought back a few posts from my original blog "Coding time", the one before Medium:
 
 - [Covariance and Contravariance](../covariance-contravariance)
 - [Transactions and Event Sourcing](../transactions-event-sourcing)
 
 ![Fireworks](./fireworks.jpeg)
-
-That's one new year resolution done.
 
 Happy new year! 🎉
