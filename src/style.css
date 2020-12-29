@@ -335,6 +335,17 @@ a:focus {
   margin-bottom: var(--spacing-8);
 }
 
+/* Code */
+
+pre {
+  /*
+    Originally defined as "1em", probably by the Markdown plugin,
+    but it's hard to fit "1em" code on a mobile screen when people
+    hold the phone vertically.
+  */
+  font-size: 0.9em !important;
+}
+
 /* Media queries */
 
 @media (max-width: 42rem) {

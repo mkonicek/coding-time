@@ -94,18 +94,22 @@ def cosine_similarity(v1: Vector, v2: Vector) -> float:
 Now we can find words similar to a given vector:
 
 ```python
-def sorted_by_similarity(words: List[Word], base_vector: Vector) -> List[Tuple[float, Word]]:
+def sorted_by_similarity(
+    words: List[Word],
+    base_vector: Vector
+) -> List[Tuple[float, Word]]:
     """
-    Returns words sorted by cosine distance to a given vector,
-    most similar first.
+    Returns words sorted by cosine distance to
+    a given vector, most similar first.
     """
-    words_with_distance = [
-        (cosine_similarity(base_vector, w.vector), w) for w in words
+    words_with_dist = [
+        (cosine_similarity(base_vector, w.vector), w)
+        for w in words
     ]
     # We want cosine similarity to be as large as possible
     # (close to 1)
     return sorted(
-        words_with_distance, key=lambda t: t[0], reverse=True)
+        words_with_dist, key=lambda t: t[0], reverse=True)
 ```
 
 We just need some simple utility functions to print related words:
@@ -115,7 +119,10 @@ def print_related(words: List[Word], text: str) -> None:
     base_word = find_word(text, words)
     sorted_words = [
         word.text for (dist, word) in
-            sorted_by_similarity(words, base_word.vector)
+            sorted_by_similarity(
+                words,
+                base_word.vector
+            )
             if word.text.lower() != base_word.text.lower()
         ]
     print(', '.join(sorted_words[:7]))
@@ -169,17 +176,21 @@ Let’s implement it:
 def closest_analogies(
     left2: str, left1: str, right2: str, words: List[Word]
 ) -> List[Tuple[float, Word]]:
+
     word_left1 = find_word(left1, words)
     word_left2 = find_word(left2, words)
     word_right2 = find_word(right2, words)
+
     vector = add_vectors(
         sub_vectors(word_left1.vector, word_left2.vector),
         word_right2.vector)
+
     closest = sorted_by_similarity(words, vector)[:10]
+
     def is_redundant(word: str) -> bool:
         """
-        Sometimes the two left vectors are so close the answer
-        is e.g. "shirt-clothing is like phone-phones".
+        Sometimes the two left vectors are so close the
+        answer is e.g. "shirt-clothing is like phone-phones".
         Skip 'phones' and get the next suggestion, which
         might be more interesting.
         """
@@ -187,13 +198,21 @@ def closest_analogies(
             left1.lower() in word.lower() or
             left2.lower() in word.lower() or
             right2.lower() in word.lower())
+
     return [
-        (dist, w) for (dist, w) in closest if not is_redundant(w.text)
+        (dist, w) for (dist, w)
+            in closest
+            if not is_redundant(w.text)
     ]
 
-def print_analogy(left2: str, left1: str, right2: str, words: List[Word]) -> None:
-    analogies = closest_analogies(left2, left1, right2, words)
+def print_analogy(
+    left2: str, left1: str, right2: str, words: List[Word]
+) -> None:
+    analogies = closest_analogies(
+        left2, left1, right2, words
+    )
     if (len(analogies) == 0):
+        # Nothing found.
         print(f"{left2}-{left1} is like {right2}-?")
     else:
         (dist, w) = analogies[0]
@@ -219,13 +238,13 @@ quick-quickest is like far-furthest
 **It works!** 🎉 By reading Wikipedia, fastText learned something about capitals, genders, irregular verbs and adjectives (!) Let’s try a few more:
 
 ```
-English-Jaguar is like German-BMW // Expensive cars
-English-Vauxhall is like German-Opel // Cheaper cars
+English-Jaguar is like German-BMW # Expensive cars
+English-Vauxhall is like German-Opel # Cheaper cars
 ```
 
 ```
-German-BMW is like American-Lexus // Expensive cars
-German-Opel is like American-Chrysler // Cheaper cars
+German-BMW is like American-Lexus # Expensive cars
+German-Opel is like American-Chrysler # Cheaper cars
 ```
 
 And also:
@@ -250,7 +269,7 @@ Sushi is made of rice and other ingredients, pizza is made of dough / salami / c
 Let’s see the answers:
 
 ```
-sushi-rice is like pizza-wheat // Makes sense
+sushi-rice is like pizza-wheat # Makes sense
 sushi-rice is like steak-chicken
 shirt-clothing is like bowl-food
 shirt-clothing is like phone-mobile
