@@ -288,6 +288,16 @@ a:focus {
   font-size: var(--fontSize-2);
 }
 
+.hi {
+  display: flex;
+  align-items: center;
+  margin-bottom: var(--spacing-16);
+}
+
+.hi p {
+  margin-bottom: var(--spacing-2);
+}
+
 .bio {
   display: flex;
   align-items: center;
@@ -298,11 +308,14 @@ a:focus {
   margin-bottom: var(--spacing-0);
 }
 
-.bio-avatar {
+.avatar {
   margin-right: var(--spacing-4);
   margin-bottom: var(--spacing-0);
+  min-width: 110px;
+}
+
+.bio-avatar {
   min-width: 50px;
-  border-radius: 100%;
 }
 
 .blog-post header h1 {

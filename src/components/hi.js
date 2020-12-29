@@ -8,23 +8,16 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import Image from "gatsby-image"
-import SocialLinks from "./social-links"
 
-const Bio = () => {
+const SHOW_PROFILE_PIC = true
+
+export default function Hi() {
   const data = useStaticQuery(graphql`
-    query BioQuery {
+    query HiQuery {
       avatar: file(absolutePath: { regex: "/profile-pic-crop.jpg/" }) {
         childImageSharp {
-          fixed(width: 50, height: 50, quality: 100) {
+          fixed(width: 110, height: 110, quality: 100) {
             ...GatsbyImageSharpFixed
-          }
-        }
-      }
-      site {
-        siteMetadata {
-          author {
-            name
-            summary
           }
         }
       }
@@ -32,27 +25,30 @@ const Bio = () => {
   `)
 
   // Set these values by editing "siteMetadata" in gatsby-config.js
-  const author = data.site.siteMetadata?.author
   const avatar = data?.avatar?.childImageSharp?.fixed
 
   return (
-    <div className="bio">
-      {avatar && (
+    <div className="hi">
+      {avatar && SHOW_PROFILE_PIC && (
         <Image
           fixed={avatar}
-          alt={author?.name || ``}
-          className="avatar bio-avatar"
+          alt="Martin Konicek"
+          className="avatar"
           imgStyle={{
             borderRadius: `50%`,
           }}
         />
       )}
+      <div>
         <p>
-            Written by <strong>{author.name}</strong> {author?.summary || null}
-            <SocialLinks />
+            Hi! I am Martin.
         </p>
+        <p>I'm a Software Engineer based in London,
+            currently building an IDE for biology at <a href="https://www.synthace.com/about-us/">
+            Synthace</a>. Previously I worked on <a href="https://reactnative.dev/">
+            React Native</a> at Facebook.
+        </p>
+      </div>
     </div>
   )
 }
-
-export default Bio
