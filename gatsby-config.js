@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `Coding time - Martin Konicek`,
+    title: `Coding time ⌨️`,
     author: {
       name: `Martin Konicek`,
       summary: `who is a software engineer based in London.`,
