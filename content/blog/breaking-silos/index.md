@@ -16,7 +16,7 @@ You might be familiar with the following situation:
 
 However, what you build are two very similar apps - both in terms of UI and business logic:
 
-![iOS and Android UI is often very similar](./ios_android_ui.png)
+![iOS and Android UI is often very similar](./ios-android-ui.png)
 
 To build this experience, you use two different programming languages, two different ways of handling dependencies, different libraries, different IDEs. It seems impossible for one person to develop for both platforms and keep the knowledge up-to-date.
 
