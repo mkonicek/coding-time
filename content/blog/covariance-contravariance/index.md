@@ -69,7 +69,9 @@ def isGoodFruit(f: Fruit) = f.ageDays < 3
 and filter a list of Apples using this function:
 
 ```scala
-val list: List[Apple] = List(new Apple(), new Apple())
+val list: List[Apple] = List(
+  new Apple(), new Apple()
+)
 // filter takes a func Apple=>Boolean
 list.filter(isGoodFruit)
 ```
