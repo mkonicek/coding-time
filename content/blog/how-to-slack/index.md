@@ -34,25 +34,21 @@ We look at these questions below:
 
 By default, Slack is just a long wall of text. I can’t tell what’s relevant to me without reading all of it. Channels should help with this, so we created some. But now there are too many channels:
 
-![](https://cdn-images-1.medium.com/max/800/1*YQ_-GKOc9PUV3BGiwiulSA.png)
+![Slack with many channels](./many-channels.png)
 
 #### Fix Your Sidebar
 
-To solve this issue of information overload, we’ll need to do a few things. First, fix your sidebar. Go to Settings → Sidebar:
-
-![](https://cdn-images-1.medium.com/max/800/0*td7wMfHJokeO_qXx.png)
-
-Next, star a few channels you really want to keep track of:
+To solve this issue of information overload, **star a few channels** you really want to keep track of:
 
 ![](https://cdn-images-1.medium.com/max/800/0*B8PVOLD3xQb5mxvY.png)
 
 Suddenly, your sidebar is much cleaner:
 
-![](https://cdn-images-1.medium.com/max/800/1*S6Ltlp0duZAYiU49rMadXw.png)
+![Cleaner sidebar with starred channels](./clean-sidebar.png)
 
 You should also **leave channels** you’re not reading anyway:
 
-![](https://cdn-images-1.medium.com/max/800/0*13Ki1zVWasc_e9E9.png)
+![Leaving a channel](./leave-channel.png)
 
 Now press **Shift+Esc** to mark everything as read and start with a clean slate. You can still jump to any channel later by pressing **Cmd+K**.
 
@@ -62,11 +58,13 @@ Just fixing your Slack settings is not enough. People need to communicate in a w
 
 Consider using **semantic emojis**. Thanks to [Emma Guy](https://twitter.com/emmaguy) for the idea. Example:
 
-🔥 Something is wrong and needs attention now
+```
+🔥 Something needs attention now
 ℹ️ General message informing the channel
-❓Question
- 🔈 Announcement
-💡Idea
+❓ Question
+🔈 Announcement
+💡 Idea
+```
 
 You should **start a thread for every new topic**! I can’t stress how important this is. It **completely changes your Slack experience** from a chaotic screen of text into a neat list of topics.
 
@@ -128,11 +126,11 @@ The last question is: “I want to post something, but in which channel?” 🤔
 
 Try **Cmd+K** and guess some channel names:
 
-![](https://cdn-images-1.medium.com/max/800/1*i2OIYreHpbRfVuRqE3jyhw.png)
+![Cmd + K to search channels](./cmd-k.png)
 
 Every channel should have a topic so you know what it’s about:
 
-![](https://cdn-images-1.medium.com/max/800/1*ULqrBXyhCIFcKe6gqiOBHQ.png)
+![Each channel should have a topoc](./channel-topic.png)
 
 #### Use Channels, not Private Messages
 
