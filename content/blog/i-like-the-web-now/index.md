@@ -10,9 +10,9 @@ slug: /i-like-the-web-now
 
 ![HTML, CSS and JavaScript logo](./html.png)
 
-Around 2003 a lot of my friends were talking about web development. They were doing PHP, HTML and CSS. I got excited, bought a book about PHP, and tried building something.
+Around 2003 several of my friends were talking about web development. They were doing PHP, HTML and CSS. I got excited, bought a book about PHP, and tried building something.
 
-I thought everything about the experience was horrible. Web development felt like trying to build an application on top of a platform that wasn’t meant to be used for applications at all. Layout done using CSS, navigation between pages and trying to pass around state, it sucked.
+I thought everything about the experience was horrible. Web development felt like trying to build an application on top of a platform that wasn’t meant to be used for applications at all. Layout using CSS was notoriously difficult, navigation between pages and trying to keep around state felt hacky.
 
 I went back to desktop development, Direct3D and forgot about web development. Luckily there was still lots to do on desktop.
 
@@ -22,9 +22,9 @@ In 2013 I contributed to a single-page app using Backbone and Handlebars templat
 
 Now, I’m working on a [web app](https://synthace.com/introducing-antha/) written in React and I love it. Web development is for the first time in history a great experience. This is thanks to React, Babel, Flexbox, Webpack, npm, Prettier and ideas like [CSS in JS](https://speakerdeck.com/vjeux/react-css-in-js).
 
-The biggest idea here is definitely React. Why is that? Consider all the UI frameworks across desktop, mobile and web that are trying to solve the exact same set of problems around presenting data on the screen. React was the first radically different idea. And it is such a good idea that other frameworks (including desktop, iOS and Android) should shamelessly copy React.
+The biggest idea for me is React. Why is that? Consider all the UI frameworks across desktop, mobile and web that are trying to solve the exact same set of problems around presenting data on the screen. React was the first radically different idea. And it is such a good idea that other frameworks (including desktop, iOS and Android) should shamelessly copy React.
 
-Flexbox made CSS sane, which is huge. Babel, later TypeScript and Prettier made me more productive. Webpack and npm allow me to clearly define dependencies.
+Flexbox made CSS sane, which is huge. Babel and later TypeScript made me more productive. Webpack and npm allow me to clearly define dependencies.
 
 I am thankful to everyone who has pushed the web forward over the years. You’ve transformed it into the best app development platform that has ever existed. And it’s a great user experience too — cross-platform, no need to install anything, instant updates. These benefits were there since the beginning. The web always allowed us to achieve a lot, it was just a massive pain. Now it allows anyone to achieve a lot while being productive and having fun.
 

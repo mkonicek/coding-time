@@ -1,7 +1,7 @@
 ---
-title: Why Demand for Software Engineers is Going to Stay High
+title: Why Demand for Software Engineers Will Stay High
 description: >-
-  Six reasons observed during fifteen years in the software industry.
+  Six reasons the demand for software engineers will stay high, observed during fifteen years in the software industry.
 date: "2018-10-11T19:40:33.229Z"
 categories: []
 keywords: []
@@ -30,21 +30,21 @@ Here are my observations on why that is:
 
 ### 1. The whole world runs on software
 
-This is probably obvious because it’s a transition that’s been ongoing for a few generations. However, it cannot be understated. Almost every business / organisation in the world needs a website or an app, plus lots of software. At my current company with 80 employees we use more than 20 different SaaS solutions - for HR, accounting, recruiting and more. Every person with internet access (which eventually will be the whole world) uses apps and websites every day, and many people use software as a service at work. If a company is large it often needs custom software.
+This is probably obvious because the transition has been ongoing for a few generations. However, it cannot be understated. Almost every business / organisation in the world needs a website or an app, plus lots of software. At my current company with 80 employees we use more than 20 different SaaS solutions for HR, accounting, recruiting and more. Every person with internet access (which eventually will be the whole world) uses apps and websites every day, and many people use software at work. Large companies often needs custom software.
 
 ### 2. Most things get built many times
 
-Why is there Bing when there is Google? Why are there a thousand competing e-commerce platforms? Why are there a million messaging apps, each built from scratch by a different team? This seems like the duplicated effort but it’s normal. It’s just how competition works and it’s not unique to software. For example, there are many car companies, each with tens of thousands of employees designing and building very similar cars.
+Why is there Bing when there is Google? Why are there a thousand competing e-commerce platforms? Why are there so many messaging apps, each built from scratch by a different team? This seems like duplicated effort but it’s normal. It’s just how competition works and it is not unique to software. For example, there are many car companies, each with tens of thousands of employees designing and building very similar cars.
 
-Part of the reason is software is still local. There is the “X of Asia” for almost any X you can think of.
+Part of the reason is software is still local. There is “X of Asia” for almost any X you can think of.
 
 ### 3. Code has limited lifetime
 
-It might seem that once an app is built it is “done”. When I worked at Facebook people asked me “Is there still anything to do?” However, most code is being changed constantly and most companies are constantly hiring. Each line of code has a lifetime of only a few years. Sometimes as a product gets old it’s easier to throw it away and rebuild using modern technologies. I’ve seen this happen to custom in-house systems and public-facing websites. This is again similar to car companies constantly innovating and designing new cars.
+It might seem that once an app is built it is “done”. When I worked at Facebook friends asked me “Is there still anything to do?” However, most code is being changed constantly and most companies are constantly hiring. Each line of code has a lifetime of only a few years. Sometimes as a product gets old it is easier to throw it away and rebuild using modern technologies. I have seen this happen to custom in-house systems and public-facing websites. This is again similar to car companies constantly innovating and designing new cars.
 
 From the 3 points above you can already see a clear pattern:
 
-- Everybody need more and more software
+- We need more and more software
 - There are more and more software solutions to do anything
 - Each solution requires software engineers constantly
 
@@ -52,7 +52,7 @@ But what if programming becomes easier over time? Surely we would need fewer pro
 
 ### 4. Code sharing didn’t happen
 
-In the 90s there was a dream of code sharing, where we design software components with business logic inside them and anyone will be able to reuse them like lego bricks. This didn’t work out, not even reusing business logic across projects written in Java. Across technology stacks, the story is even worse. There was COM but it was Windows-only. Yes, you can call Rust from Python but it’s not become the standard way of building software. There are many programming languages and new ones are coming out. At my last company, we rewrote an existing codebase from Ruby to Rust.
+In the 90s there was a dream of code sharing, where we design software components with business logic inside them and anyone will be able to reuse them like lego bricks. This didn’t work out, not even reusing business logic across projects written in Java. Across technology stacks, the story is even worse. There was COM but it was Windows-only. Yes, you can call Rust from Python but it’s not become the standard way of building software. There are many programming languages and new ones keep appearing. At my last company for example, we rewrote a part of an existing codebase from Ruby to Rust.
 
 Code reuse did improve over the years thanks to package managers, GitHub and an explosion of open source libraries. Systems like npm are a huge step forward. However, we came nowhere near the dream of true code sharing. Open source libraries help a lot but not enough to significantly slow the demand for engineers.
 
