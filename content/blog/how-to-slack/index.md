@@ -47,7 +47,7 @@ Suddenly, your sidebar is cleaner:
 
 You should also **leave channels** you’re not reading anyway:
 
-![Leaving a channel](./leave-channel.png)
+![Leaving a channel](./leave-channel-light.png)
 
 Now press **Shift+Esc** to mark everything as read and start with a clean slate. You can still jump to any channel later by pressing **Cmd+K**.
 
@@ -55,7 +55,7 @@ Now press **Shift+Esc** to mark everything as read and start with a clean slate.
 
 It's important to only be notified about the things that matter, otherwise you get lost in the noise:
 
-![Notification settings - do not notify on every message](./notif-settings.png)
+![Notification settings - do not notify on every message](./notif-settings-light.png)
 
 #### Use Threads for Everything
 
@@ -99,17 +99,17 @@ You might suggest turning on all notifications but that will notify you for all 
 
 You can also create your own quick To-do list. Just save a message that’s important to you:
 
-![Save a message](./save-message.png)
+![Save a message](./save-message-light.png)
 
 You can see all your saved messages in the sidebar:
 
-![Saved messages](./saved-messages.png)
+![Saved messages](./saved-message-light.png)
 
 #### Help People by Mentioning Them
 
 You can also help people see important messages by @mentioning them. Make sure you get notified when others mention you:
 
-![Notification settings - get notified on mentions](./notif-settings.png)
+![Notification settings - get notified on mentions](./notif-settings-light.png)
 
 #### Bonus
 
