@@ -25,7 +25,7 @@ It feels great to have a new blog with no paywall, no signups, no ads. Writing i
 
 This new blog contains almost all of the posts from my Medium blog. Here is some feedback I received on the blog in the past:
 
-- People from the Medium publication [The Startup](https://medium.com/swlh) with 700k+ followers reached out and published a few of my articles, such as [Meetings](../meetings) and [Why Demand for Software Engineers is Going to Stay High](../software-engineers-demand).
+- People from the Medium publication [The Startup](https://medium.com/swlh) with 700k+ followers reached out and published a few of my articles, such as [Meetings](../meetings) and [Why Demand for Software Engineers Will Stay High](../software-engineers-demand).
 - Someone used my article [Playing with Word Vectors](../playing-with-word-vectors) when teaching a high school programming class.
 - A colleague shared the article [How to Slack](../how-to-slack) with the rest of the company.
 
