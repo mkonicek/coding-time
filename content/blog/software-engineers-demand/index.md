@@ -30,7 +30,7 @@ Here are my observations on why that is:
 
 ### 1. The whole world runs on software
 
-This is probably obvious because the transition has been ongoing for a few generations. However, it cannot be understated. Almost every business / organisation in the world needs a website or an app, plus lots of software. At my current company with 80 employees we use more than 20 different SaaS solutions for HR, accounting, recruiting and more. Every person with internet access (which eventually will be the whole world) uses apps and websites every day, and many people use software at work. Large companies often needs custom software.
+This is probably obvious because the transition has been ongoing for a few generations. However, it cannot be understated. Almost every business / organisation in the world needs a website or an app, plus lots of software. At my current company with 80 employees we use more than 20 different SaaS solutions for HR, accounting, recruiting and more. Every person with internet access (which eventually will be the whole world) uses apps and websites every day, and many people use software at work. Large companies often need custom software.
 
 ### 2. Most things get built many times
 
