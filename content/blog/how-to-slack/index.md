@@ -16,7 +16,6 @@ At first Slack seemed extremely chaotic but over time I learned how to use it ef
 - **Use threads**
 - Short messages
 - Fix your sidebar
-- Star / leave channels
 - Semantic emojis
 - All Threads screen
 
@@ -30,7 +29,7 @@ When I first started using Slack, I immediately had three pressing questions:
 
 We look at these questions below:
 
-### 1\. **How do I see what’s important?**
+## 1. How do I see what’s important?
 
 By default, Slack is just a long wall of text. I can’t tell what’s relevant to me without reading all of it. Channels should help with this, so we created some. But now there are too many channels:
 
@@ -40,9 +39,9 @@ By default, Slack is just a long wall of text. I can’t tell what’s relevant 
 
 To solve this issue of information overload, **star a few channels** you really want to keep track of:
 
-![](https://cdn-images-1.medium.com/max/800/0*B8PVOLD3xQb5mxvY.png)
+![Star a channel](./star-channel.png)
 
-Suddenly, your sidebar is much cleaner:
+Suddenly, your sidebar is cleaner:
 
 ![Cleaner sidebar with starred channels](./clean-sidebar.png)
 
@@ -51,6 +50,12 @@ You should also **leave channels** you’re not reading anyway:
 ![Leaving a channel](./leave-channel.png)
 
 Now press **Shift+Esc** to mark everything as read and start with a clean slate. You can still jump to any channel later by pressing **Cmd+K**.
+
+#### Fix your notification settings
+
+It's important to only be notified about the things that matter, otherwise you get lost in the noise:
+
+![Notification settings - do not notify on every message](./notif-settings.png)
 
 #### Use Threads for Everything
 
@@ -66,19 +71,15 @@ Consider using **semantic emojis**. Thanks to [Emma Guy](https://twitter.com/emm
 💡 Idea
 ```
 
-You should **start a thread for every new topic**! I can’t stress how important this is. It **completely changes your Slack experience** from a chaotic screen of text into a neat list of topics.
+You should **start a thread for every new topic**!
 
-![](https://cdn-images-1.medium.com/max/800/0*yAw6-fSOoiLzwiJO.png)
+I can’t stress how important threads are. Threads **completely change your Slack experience** from a chaotic screen of text into a neat list of topics.
 
-Keep the message short. If you want to add more info, add it in the first comment! With threads like this, it’s much easier to quickly scan the contents of a channel and have a good idea what’s going on.
+![Good example use of a thread](./thread-example.png)
 
-#### Bonus
+Keep the message short. If you want to add more info, add it in the first comment. With threads like this, it’s much easier to quickly scan the contents of a channel and have a good idea what’s going on.
 
-Occasionally check out the **Highlights** view:
-
-![](https://cdn-images-1.medium.com/max/800/0*wMMA3rvcNRdSV8Xq.png)
-
-### 2\. **How do I make sure to follow up?**
+## 2. How do I make sure to follow up?
 
 I had the following problem. Say I’m talking to someone in a thread:
 
@@ -88,45 +89,41 @@ I had the following problem. Say I’m talking to someone in a thread:
 
 However, I **never knew he replied**:
 
-![](https://cdn-images-1.medium.com/max/800/1*tlKemutnzixrk70VBOAFCQ.png)
+![Missed a reply in a thread](./missed-reply.png)
 
 #### Use the All Threads Screen
 
 You might suggest turning on all notifications but that will notify you for all messages in all channels. Let’s use a different solution — the awesome **All Threads** screen. It has all the discussions you’re part of, newest at the top:
 
-![](https://cdn-images-1.medium.com/max/800/1*Y1zrUv4JTbpjpVxUhlQRsQ.png)
+![All Threads screen - never miss a reply](./all-threads.png)
 
-You can also create your own quick To-do list. Just star a message that’s important to you:
+You can also create your own quick To-do list. Just save a message that’s important to you:
 
-![](https://cdn-images-1.medium.com/max/800/0*JzQRHEhub56d36FP.png)
+![Save a message](./save-message.png)
 
-You can see all your starred messages in the top right corner of Slack:
+You can see all your saved messages in the sidebar:
 
-![](https://cdn-images-1.medium.com/max/800/0*XSJ_6Ooddxxm7n6P.png)
+![Saved messages](./saved-messages.png)
 
 #### Help People by Mentioning Them
 
 You can also help people see important messages by @mentioning them. Make sure you get notified when others mention you:
 
-![](https://cdn-images-1.medium.com/max/800/0*0Mbsgmz3No8z_D8K.png)
+![Notification settings - get notified on mentions](./notif-settings.png)
 
 #### Bonus
 
-You can Show Activity in the top right corner to see when people react to your posts:
-
-![](https://cdn-images-1.medium.com/max/800/0*o-3NB61FqNP97Cf-.png)
-
 You can go back/forward between your conversations. This only works with channels, not threads, however:
 
-![](https://cdn-images-1.medium.com/max/800/0*KJE_DRU1Ta_FDtUG.png)
+![Navigating back and forward](./history.png)
 
-### 3\. Where do I post?
+## 3. Where do I post?
 
 The last question is: “I want to post something, but in which channel?” 🤔
 
 Try **Cmd+K** and guess some channel names:
 
-![Cmd + K to search channels](./cmd-k.png)
+![Cmd + K to search channels](./cmd-k-search-light-crop.png)
 
 Every channel should have a topic so you know what it’s about:
 
@@ -144,14 +141,12 @@ Hope these tips will help you stay focused, find important posts and enjoy Slack
 
 _If you only remember one thing from this post, remember the usage of threads:_
 
-![](https://cdn-images-1.medium.com/max/800/0*yAw6-fSOoiLzwiJO.png)
+![Good example use of a thread](./thread-example.png)
 
 If you want tips on promoting the usage of threads, I wrote a [short separate post](https://medium.com/p/4a55a17d9a20).
-
-If you liked this, follow me on [Twitter](https://twitter.com/martinkonicek).
 
 ### Appendix: Should you use Slack at all?
 
 There are around 200 people at my company. As explained in this post, it was possible to make Slack work for us.
 
-But what about using Workplace instead? I wrote a [short separate post about Workplace](https://medium.com/p/afd7eaa2a233).
+But what about using Workplace instead? I wrote a [separate short post about Workplace](https://medium.com/p/afd7eaa2a233).
