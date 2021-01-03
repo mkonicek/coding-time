@@ -73,11 +73,12 @@ val list: List[Apple] = List(
   new Apple(),
   new Apple()
 )
-// filter takes a func Apple=>Boolean
+// filter expects a func Apple=>Boolean
+//        we pass a func Fruit=>Boolean
 list.filter(isGoodFruit)
 ```
 
-So a _function on Fruits is a function on Apples_ - the filter will throw Apples in and isGoodFruit will know how to handle them.
+So a _function on Fruits is a function on Apples_. We can pass in an `Apple` and `isGoodFruit` will know how to handle it.
 
 The type of `isGoodFruit` is actually `Function[Fruit, Boolean]` - yes, in Scala even functions are traits, declared as:
 
