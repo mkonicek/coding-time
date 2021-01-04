@@ -33,11 +33,11 @@ Try shortening your meeting from 45 minutes to 30. You will be surprised that yo
 
 #### 2. Finish early
 
-Have you covered all topics, made all decisions and still have five minutes left? This is an amazing outcome! Declare the meeting finished and leave the room. On my team at Facebook we often used the phrase “Let’s get five minutes back”.
+Have you covered all topics, made all decisions and still have five minutes left? This is an amazing outcome! Declare the meeting finished and leave the room. I like the phrase “Let’s get five minutes back”.
 
 #### 3. Never go overtime
 
-People invested 30 minutes of their day to go into the meeting. You should respect their time. If the meeting is finished, it is finished and everyone leaves the room. At Facebook it was trivial to enforce this because any room was booked for a fixed amount of time, and there was often a meeting right after ours. We occasionally went 2 minutes over time if we were close to making a decision.
+People invested 30 minutes of their day to go into the meeting. You should respect their time. If the meeting is finished, it is finished and everyone leaves the room. This becomes trivial to enforce if someone has the room after you and is waiting outside. With Zoom meetings, you might get kicked out because of the time limit :)
 
 #### 4. If people are late start without them
 
@@ -55,7 +55,7 @@ If you don’t have topics you should cancel the meeting.
 
 If you have 6 topics and 30 minutes, that’s roughly 5 minutes per topic, ideally less so you can finish early! If some topics are obviously simple, you can move them to the top of the agenda to better split the remaining time.
 
-Everyone’s topic should get an equal chance to be discussed. You can’t spend 15 minutes on the first topic. I was once on a team at Facebook where we did this a few times and only got through 3/5 topics or so. I set a timer on my phone and literally started announcing: “1 MINUTE REMAINING! … 10 SECONDS REMAINING!” as the end of each topic timeslot was approaching. Of course I explained why I was doing this. At first people looked a bit surprised, especially because I was the only remote engineer, yelling “TIME’S UP!” from a video-conferencing screen on the wall :) After the second meeting like this people said they actually liked the meeting more because we got through all the topics. I stopped using the timer and we were fine.
+Everyone’s topic should get an equal chance to be discussed. You can’t spend 15 minutes on the first topic. I was once on a team where we did this a few times and only got through 3/5 topics or so. I set a timer on my phone and literally started announcing: “1 MINUTE REMAINING! … 10 SECONDS REMAINING!” as the end of each topic timeslot was approaching. Of course I explained why I was doing this. At first people looked a bit surprised, especially because I was the only remote engineer, yelling “TIME’S UP!” from a video-conferencing screen on the wall :) After the second meeting like this people said they actually liked the meeting more because we got through all the topics. I stopped using the timer and we were fine.
 
 #### 7. Be as concise as possible
 
@@ -83,7 +83,7 @@ The best time for a meeting is right before or after another meeting. This way y
 
 #### Conclusion
 
-The 10 points above are the bare minimum to have good meetings. Each of my teams at Facebook was at 10/10 constantly, except that one time we didn’t timebox topics.
+The 10 points above are the bare minimum to have good meetings.
 
 What’s your score? Can you go to 10/10? Try it! In my experience people really enjoy meetings done this way.
 
