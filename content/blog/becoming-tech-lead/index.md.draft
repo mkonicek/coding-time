@@ -1,0 +1,255 @@
+---
+title: Becoming Tech Lead
+description: Lessons learned leading technical projects.
+date: "2021-01-27T10:00:00.000Z"
+categories: [tips]
+keywords: []
+slug: /becoming-tech-lead
+---
+
+A few years ago I switched from being an individual contributor to leading a technical project with five engineers including me. Since then, I’ve been a tech lead on other projects. I made many mistakes along the way. This article summarises what I learned so far.
+
+The target audience for this article are software engineers aspiring to lead a small team for the first time.
+
+## Story time — React Native open source project
+
+Between 2015 and 2017 I worked on React Native at Facebook. When React Native was originally announced, it was iOS-only. The Android part was being developed internally at Facebook. Once the Android part was battle-tested by shipping the Facebook Ads Manager for Android, we were ready to open source the code.
+
+One day, my engineering manager approached me with a challenge: “Let’s get you to grow in your career. Here are a few potential projects you could own.” After a short chat, I agreed to be responsible for open sourcing React Native for Android.
+
+What this meant in practice was that I would start the project and figure out a plan. Four other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android at a conference with a fixed date.
+
+So here I was, with a brand new goal and no plan. What does it mean to open source a project? I set out to do some research. Luckily, the people who worked on the existing iOS release gave me lots of tips. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a _copy_ that is bidirectionally synced between GitHub and the Facebook repo. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
+
+After a bit of research I had a rough plan in my head and started executing on it. I spent some time moving code, making sure I didn't break anything in the process. I created a private GitHub repo and set up code syncing using custom internal tools.
+
+Then came the real challenge: **four other engineers joined me, and expected me to tell them what to work on** 😱 If this sounds scary — good! Accepting scary challenges is the best way to learn quickly.
+
+I created some tasks that covered the steps for the next four weeks or so, and set up dependencies between tasks. I knew the engineers, and knew they disliked meetings. [No surprise so far](http://paulgraham.com/makersschedule.html). So I didn’t set up a weekly meeting. As you'll find out below, this was a big mistake.
+
+#### Struggling to coordinate
+
+The problem was, everyone was working on their bit and making progress but it didn’t feel like we were working towards a coherent product. I wasn’t sure everyone’s work fit together well. I had a vision in my head and broke it down into maybe 20 tasks but the picture wasn’t very obvious to the rest of the team. I had more context because I had been working on the project solo for a few weeks. After a while, I could tell one of the engineers was getting annoyed. It didn’t occur to me to meet him 1:1 and ask listen. I was worried and thought the people aspect of the job was very difficult.
+
+Eventually, the engineer told my engineering manager he wanted to see the project organised better. My manager got both of us into a room. It felt good to sit down and talk to my teammate. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that he opened up and simply said he’d like to see a roadmap and have a better picture of how the project fits together. The conversation was surprisingly easy.
+
+I went back to my desk and wrote a one-page **Roadmap** that had a few high-level milestones in it. I sent this to my colleague and asked what he thought. He simply said “This is very good, thanks.”
+
+This is a perfect example of something I’ve heard many times since: _Most conflicts at work happen because of a misunderstanding. To resolve it, you just need to talk._
+
+## The basics
+
+In this section we'll talk about the basics things you should do at the start of a project.
+
+#### You need a roadmap
+
+As I explained above, I learned the hard way we needed a roadmap. I was using tasks at first, but tasks were too low-level. Some task management systems let you create Milestones, Epics and whatnot. But there is nothing simpler and easier to understand than a simple document like this:
+
+- Milestone 1: Move the framework code to a standalone folder.
+- Milestone 2: Set up continuous syncing from our Mercurial repo to GitHub.
+- Milestone 3: Make sure the code builds from a clean GitHub checkout.
+- Milestone 4: The open source CLI (`react-native init`) scaffolds a working cross-platform app.
+- Milestone 5: Update public docs.
+- Milestone 6: Open source additional modules, like `AsyncStorage` and `Slider`.
+
+It was mind-blowing to me how much of a difference this simple Roadmap document made. Everyone now saw the basic outline of what we should work on.
+
+#### When pressed on time, cut down scope
+
+Our roadmap described everything we needed to do in order to ship this project. (Remember the conference with a fixed date where our project would be announced, no matter what?)
+
+We had six milestones. We absolutely had to get the first five done. The last milestone was:
+
+- Milestone 6: Open source additional modules, like `AsyncStorage` and `Slider`.
+
+Notice the last milestone could be easily cut down in scope if we were short on time. It was simply a long list of modules we wanted to add to the release. As the deadline was getting closer we cut down the scope of the last milestone aggressively. A week or so before the release our engineering manager actually pushed us drop even more modules. This was to make sure we had enough time left to properly test everything.
+
+We shipped, and everything worked. The project was a success!
+
+Because we cut down scope, React Native for Android didn’t have as many modules as we had on iOS but this was OK. In the next few releases (0.12, 0.13, etc.) we added more Android modules and eventually got to feature parity with iOS.
+
+#### You need a weekly meeting
+
+At the very start of the project we didn't have a weekly meeting. As I learned the hard way when coordination started falling apart, we needed the meeting as a basic necessity really.
+
+So I set up the meeting. It was very simple: We went around the room and gave updates. We talked about how it all fit together. Of course, we would always have the current state of the roadmap document open on the big screen. That simple meeting helped us so much!
+
+Your role as a tech lead is to:
+
+- Run the meeting.
+- Listen & ask questions. Don’t be afraid to ask any question. If you want to ask, a few other people in the room probably want to ask the same.
+- Bring up hidden dependencies and potential risks. Does your plan have any blind spots? You are the one with the big picture who thinks every day about how the individual pieces fit together.
+- Update the roadmap — who’s working on what, what are the blockers and risks that come up.
+- Always aim to make decisions in the meeting! If you need to do more research to make a decision, at the very least _decide_ who’s doing the research and by when. You should make progress in every meeting.
+- Make sure to write down the decisions from each meeting — can be notes directly in the roadmap for example — and share them. You can do this yourself, or rotate the responsibility among team members.
+
+If you want more tips on running meetings, I wrote a separate [blog post on meetings](../meetings).
+
+#### Note on the value of repetition
+
+A big lesson I learned when trying to share something important in our meetings:
+
+When you mention something in a meeting, don't assume anyone will remember it.
+
+Just think about the information overload we all get every day. If there’s some important information the only way you’ll get it through is _repeat, repeat, repeat_. Repeat the information in your written update, repeat it again at the next weekly meeting, and later in a related Slack conversation that comes up.
+
+#### Basics - Summary so far
+
+So far we’ve talked about the basics of how to run a project:
+
+- Roadmap
+- Weekly meeting
+- Cutting down scope to hit a deadline
+
+We'll now get to slightly more advanced topics.
+
+#### Leading and leaving enough autonomy at the same time
+
+Say in a team meeting someone steps up with a strong opinion about how some feature should work, tooling, or structure of the code. Never shoot them down, especially in front of everyone, and especially if they are still learning and this is one of their first ideas they shared!
+
+Say an engineers suggests an improvement that would take at most a few days to complete. Here are a few options:
+
+- You totally agree with the idea. Say you agree, ask others for their opinion. Ideally you’ll get a quick conclusion and the person will ship it in the next few days!
+- Sounds very reasonable but you’re not totally sure. Aim to show trust — e.g. recently I said during a chat at our team area: “Sounds good. You own this part of the app now. Do whatever you think is best.” Sounds scary? Not if you’ve done hiring well!
+- Sounds reasonable but there are many higher-priority things. Especially people new to a project might sometime suggest good ideas that are out of scope for now. You should definitely say it’s a good idea, and politely explain the roadmap and that we’d likely implement the idea eventually. But if the engineer is very passionate about it, and it takes a day or two, they should just go for it IMHO. _Feels good to propose an improvement and ship it the next day!_ Unless you do this every day, you should be fine.
+- The idea needs a lot of discussion first. Say something like “I’m not yet sure how it would work and it will take a while to explain. Would you mind taking time after this meeting to talk through it?” And then spend the time with the engineer 1:1 in person to really understand the proposal, and figure out together how to do it and when. You might find out the idea won’t work right now because of some constraints you discover.
+
+It’s important to realise there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part, people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too.
+
+For example, someone new to the team wants to propose something, take ownership of it and prove they can drive it to completion. You shouldn’t be a dictator who discourages new ideas.
+
+If everyone on your team is pulling in a different direction, you have a serious problem. This never happened to me, and shouldn’t happen if your project is well defined, has a clear roadmap and support from the rest of the company.
+
+However, it is quite common that occasionally someone on the team will come up with an improvement or have a strong opinion on how something should be done, and will push for it. If it’s reasonable and won’t really make a big difference to when you ship, IMHO you should be supportive and let them just run with it.
+
+This brings me to the next topic on how each person on the team is different:
+
+#### Different leadership styles
+
+Every person on the team is different. You have to understand what kind of support they need. There is a well known approach called Situational Leadership. It looks like this:
+
+![Situational leaderships](./situational-leadership.gif)
+
+For each person on your team, you need to figure out which of these four groups they are in:
+
+- S1 — lacks the knowledge, skills or confidence to complete a task
+- S2 —  willing to work on the task but don’t have the necessary context yet
+- S3 — is ready to help. Has more context than the previous group.
+- S4 — is ready to work independently. Has high level of confidence, the right skills and context.
+
+The most important thing is that based on where the person is currently, they want you to behave differently towards them.
+
+Here are some examples:
+
+- Someone is new to your codebase _and_ their career. They are almost definitely in S1 initially. You can help them progress to S2 quickly. Over time they should move to S3 and to S4. This can take a year or more.
+- An experienced engineer who just joined your company will be and S2 or even S3 on day one. They should quickly progress to S4.
+
+Note: The _same person_ can be S4 when it comes to React, S2 at Docker, S3 at public speaking. That is, different levels of support are needed based on the task at hand!
+
+How do you understand in what group each person is? This should become obvious fairly quickly by simply working with them day to day — talking about technical problems, doing code review. When someone joins the team and you know little about them, give them a few small and very well-defined tasks. This way you quickly get a sense of whether they are S1, S2 or S3.
+
+Once you know what group a person is in, roughly, here is how to work with them:
+
+- S1 — lacks the knowledge, skills or confidence to complete a task
+
+Write down small, very specific, detailed tasks. The person doesn’t want exploration and freedom yet. They need to get going and build confidence. Tell them they’re doing well as they complete the small tasks!
+
+- S2 — willing to work on the task but don’t have the necessary context yet
+
+Starting to look promising. You should still make the call on harder technical decisions. Try to ask questions like “How would you design this part of the system?” If they are usually not sure, they are still S2. If they understand edge cases and provide more and more reasonable solutions over time, this is great. They are moving to S3!
+
+- S3 — is ready to help. Has more context than the previous group.
+
+Let this person operate pretty independently. If you try to micro-manage them like an S1, they usually won’t like it! They might still need some help with technical discussions — just chat about solutions and see if you can provide some ideas. Often, your help won’t be needed as much, but sometimes help is still needed. For example, there might be an edge case or a dependency on another project happening at the company you help identify.
+
+- S4 — is ready to work independently. Has high level of confidence, the right skills and context.
+
+This person is killing it and knows everything you do. Just give them something large and difficult to work on and let them run with it!
+
+S3 and S4 can actually help you a great deal. As a tech lead you are not alone, trying to figure out how everything will work. You can bounce ideas off each other.
+
+#### Staying calm
+
+You’ll be working with others and relying on others much more than you’re probably used to. This will inevitably have some effect on your own mood at first.
+
+A manager once gave me some interesting advice about mood and emotions. He drew this diagram on a whiteboard:
+
+![Mood of the team over time](mood.png)
+
+The chart above is about emotions. People are emotional. Your team members have emotions, you have emotions and cannot ignore those emotions.
+
+This is actually a good preparation for being an engineering manager, if you ever consider that later. As a tech lead, you won’t be directly managing the people on your team but you’ll have to start thinking about how people are feeling. This is one of the big parts of being a manager. Being a tech lead is therefore lightweight training for management!
+
+—
+
+All of the above should give you a good idea of what it’s like to be a tech lead. The rest of this article asks whether you actually want to try this, and shows a way to get started.
+
+## Day in the life...
+
+From what we’ve learned so far, you can probably imagine what the “day in the life” is like:
+
+##### Non-coding (most of this will be new)
+
+- Be responsible for the delivery of a project.
+- Understand what everyone is working on at any moment.
+- Understand dependencies, blockers and risks.
+- Create the roadmap and keep it up to date.
+- Run a weekly engineering meeting.
+- Help resolve disputes around scope, priorities.
+- Answer technical questions, both inside and outside the team.
+- Give regular updates to people outside the team. Tune the update to the audience — different level of detail if the audience is non-technical.
+- Help the engineers on the team grow from S1 all the way to S4.
+
+##### Coding (should feel familiar)
+
+- Still build features like everyone else.
+- Solve some of the harder engineering problems on the project.
+- Give useful, timely code review (this could be a whole separate article).
+- Volunteer to do the boring work.
+- Take pride in code cleanup and refactoring.
+
+Given all the above, my coding throughput looked like this:
+
+![Number of commits over time](commits.png)
+
+The drop in coding is one of the main reasons some senior engineers don’t want to become tech leads. A friend of mine switched back to being an individual contributor because he wanted to write code as much as possible.
+
+## How to become a tech lead
+
+From what you've read so far you should have a good overview of what tech leading is like. Want to give it a go? Here we discuss how.
+
+#### Pre-requisites
+
+You need to be a relatively strong engineer before you can start thinking about becoming a tech lead. You don’t have to be the strongest engineer on the team but you should be reasonably strong.
+
+What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is maintainable, usually passes code review easily. You solve some of the more difficult problems on your team. You are willing step up and do the boring work no one wants to do. You take pride in cleaning up and deleting code, and know that the code with fewest bugs is no code at all. You can work with others effectively.
+
+In terms of situational leadership, you should be operating at S4. This is why your manager wants you to be the tech lead so they can delegate a project to you. They want to have the confidence that under your leadership the project will ship. The manager should support you of course, especially when this is your first time leading a project.
+
+If you feel like you could probably tech lead a project, but not quite and it feels scary, you are ready.
+
+#### Having a supportive manager / coach
+
+You’ll be doing a lot of new and unfamiliar stuff, especially when it comes to dealing with people. It really helps to have someone who knows you, knows your team, knows your project and can give you advice periodically. Ideally, this should be your engineering manager.
+
+It was my manager who pushed me to run the project. She supported me during our weekly 1:1s as well as outside the 1:1s — was always responsive and available when I struggled. And I did struggle!
+
+My employer also provided extra “tech lead coaching” sessions. We had a program called Good to Great where I would sit down with another experienced engineering manager once a week, and he would ask “How is everything going?”, then listen and advise.
+
+Having a great manager is not a hard pre-requisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice during the project is highly desirable.
+
+#### Easiest way to start tech leading
+
+In all cases so far, I was the engineer who kick-started the project. I worked on the code by myself for a month or two, did a lot of thinking and exploration.
+
+At a great company where managers support career growth, your manager should hand you the opportunity to be a tech lead — including a project idea! In a smaller company, I asked: What are the top three big projects we should be doing? I picked one of those and started coding.
+
+If you start the project and spend a few weeks thinking about it, you have a lot of context. As you add more people to the project it makes sense for you to provide value by coordinating.
+
+#### Give it a try!
+
+If you’re considering becoming a tech lead, you should give it a try.
+
+You can try tech leading just for a few months! Tech lead one project and if you don’t enjoy it you can go back to being an individual contributor.
+
+Definitely give it a try as soon as you can! I’m sure you won’t regret it.
