@@ -103,6 +103,12 @@ So far we’ve talked about the basics of how to run a project:
 
 We'll now get to slightly more advanced topics.
 
+## Advanced topics
+
+If you are an engineer, the section "Basics" should feel relatively straightforward to you. It is mostly algorithmic: Set up a roadmap, run a weekly meeting using these few steps, if approaching deadline, do X.
+
+This next section is more about dealing with people. It is just as important.
+
 #### Leading and leaving enough autonomy at the same time
 
 Say in a team meeting someone steps up with a strong opinion about how some feature should work, tooling, or structure of the code. Never shoot them down, especially in front of everyone, and especially if they are still learning and this is one of their first ideas they shared!
@@ -111,18 +117,16 @@ Say an engineers suggests an improvement that would take at most a few days to c
 
 - You totally agree with the idea. Say you agree, ask others for their opinion. Ideally you’ll get a quick conclusion and the person will ship it in the next few days!
 - Sounds very reasonable but you’re not totally sure. Aim to show trust — e.g. recently I said during a chat at our team area: “Sounds good. You own this part of the app now. Do whatever you think is best.” Sounds scary? Not if you’ve done hiring well!
-- Sounds reasonable but there are many higher-priority things. Especially people new to a project might sometime suggest good ideas that are out of scope for now. You should definitely say it’s a good idea, and politely explain the roadmap and that we’d likely implement the idea eventually. But if the engineer is very passionate about it, and it takes a day or two, they should just go for it IMHO. _Feels good to propose an improvement and ship it the next day!_ Unless you do this every day, you should be fine.
+- Sounds reasonable but there are many higher-priority things. Especially people new to a project might sometime suggest good ideas that have relatively low impact. You should definitely say it’s a good idea, and politely explain the roadmap and that we’d likely implement the idea eventually. But if the engineer is very passionate about it, and it takes a day or two, they should just go for it IMHO. _Feels good to propose an improvement and ship it the next day!_ Unless you do this every day, you should be fine.
 - The idea needs a lot of discussion first. Say something like “I’m not yet sure how it would work and it will take a while to explain. Would you mind taking time after this meeting to talk through it?” And then spend the time with the engineer 1:1 in person to really understand the proposal, and figure out together how to do it and when. You might find out the idea won’t work right now because of some constraints you discover.
 
-It’s important to realise there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part, people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too.
-
-For example, someone new to the team wants to propose something, take ownership of it and prove they can drive it to completion. You shouldn’t be a dictator who discourages new ideas.
+It’s important to realise there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part, people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone new to the team wants to propose something, take ownership of it and prove they can drive it to completion.
 
 If everyone on your team is pulling in a different direction, you have a serious problem. This never happened to me, and shouldn’t happen if your project is well defined, has a clear roadmap and support from the rest of the company.
 
-However, it is quite common that occasionally someone on the team will come up with an improvement or have a strong opinion on how something should be done, and will push for it. If it’s reasonable and won’t really make a big difference to when you ship, IMHO you should be supportive and let them just run with it.
+However, it is quite common that occasionally someone on the team will come up with an improvement or have a strong opinion on how something should be done, and will push for it. If the idea is reasonable and won’t make a big difference to when you ship, IMHO you should be supportive and let them just run with it.
 
-This brings me to the next topic on how each person on the team is different:
+This brings us to the next topic on how each person on the team is different, and you often need a different approach for communicating with each of your team mates. Just when you thought things would be easy :)
 
 #### Different leadership styles
 
@@ -130,14 +134,14 @@ Every person on the team is different. You have to understand what kind of suppo
 
 ![Situational leaderships](./situational-leadership.gif)
 
-For each person on your team, you need to figure out which of these four groups they are in:
+For each person on your team, you need to figure out which of these four categories they are in:
 
-- S1 — lacks the knowledge, skills or confidence to complete a task
-- S2 —  willing to work on the task but don’t have the necessary context yet
-- S3 — is ready to help. Has more context than the previous group.
+- S1 — lacks the knowledge, skills or confidence to complete a task.
+- S2 — willing to work on the task but don’t have the necessary context yet.
+- S3 — is ready to help. Has more context than S2.
 - S4 — is ready to work independently. Has high level of confidence, the right skills and context.
 
-The most important thing is that based on where the person is currently, they want you to behave differently towards them.
+The most important thing is that based on where the person is currently, they want you to behave differently towards them. Don't forget people move between these categories over time!
 
 Here are some examples:
 
@@ -146,9 +150,9 @@ Here are some examples:
 
 Note: The _same person_ can be S4 when it comes to React, S2 at Docker, S3 at public speaking. That is, different levels of support are needed based on the task at hand!
 
-How do you understand in what group each person is? This should become obvious fairly quickly by simply working with them day to day — talking about technical problems, doing code review. When someone joins the team and you know little about them, give them a few small and very well-defined tasks. This way you quickly get a sense of whether they are S1, S2 or S3.
+How do you understand in what group each person is? This should become obvious fairly quickly when working with them day to day — talking about technical problems, doing code review. When someone joins the team and you know little about them, give them a few small and very well-defined tasks. This way you quickly get a sense of whether they are S1, S2 or S3.
 
-Once you know what group a person is in, roughly, here is how to work with them:
+Once you know where a person is, roughly, here is how to work with them:
 
 - S1 — lacks the knowledge, skills or confidence to complete a task
 
@@ -156,7 +160,7 @@ Write down small, very specific, detailed tasks. The person doesn’t want explo
 
 - S2 — willing to work on the task but don’t have the necessary context yet
 
-Starting to look promising. You should still make the call on harder technical decisions. Try to ask questions like “How would you design this part of the system?” If they are usually not sure, they are still S2. If they understand edge cases and provide more and more reasonable solutions over time, this is great. They are moving to S3!
+You should still make the call on harder technical decisions. Try to ask questions like “How would you design this part of the system?” If they are usually not sure, they are still S2. If they understand edge cases and provide more and more reasonable solutions over time, this is great. They are moving towards S3.
 
 - S3 — is ready to help. Has more context than the previous group.
 
@@ -164,9 +168,9 @@ Let this person operate pretty independently. If you try to micro-manage them li
 
 - S4 — is ready to work independently. Has high level of confidence, the right skills and context.
 
-This person is killing it and knows everything you do. Just give them something large and difficult to work on and let them run with it!
+This person is killing it and knows as much as you do. Just give them something large and difficult to work on and let them run with it!
 
-S3 and S4 can actually help you a great deal. As a tech lead you are not alone, trying to figure out how everything will work. You can bounce ideas off each other.
+S3 and S4 can help you a great deal with your job as a tech lead. You can bounce ideas off each other and they can spot what you missed.
 
 #### Staying calm
 
@@ -176,15 +180,15 @@ A manager once gave me some interesting advice about mood and emotions. He drew 
 
 ![Mood of the team over time](mood.png)
 
-The chart above is about emotions. People are emotional. Your team members have emotions, you have emotions and cannot ignore those emotions.
+The chart above is about emotions. People are emotional. Your team members have emotions. You have emotions and cannot ignore them.
 
-This is actually a good preparation for being an engineering manager, if you ever consider that later. As a tech lead, you won’t be directly managing the people on your team but you’ll have to start thinking about how people are feeling. This is one of the big parts of being a manager. Being a tech lead is therefore lightweight training for management!
+This area happens to have overlap with engineering management. As a tech lead, you won’t be directly managing the people on your team but you’ll have to start thinking about how people are feeling. This is one of the big parts of being a manager. Being a tech lead is therefore lightweight training for management.
 
 —
 
 All of the above should give you a good idea of what it’s like to be a tech lead. The rest of this article asks whether you actually want to try this, and shows a way to get started.
 
-## Day in the life...
+## Do you want to be a tech lead?
 
 From what we’ve learned so far, you can probably imagine what the “day in the life” is like:
 
@@ -214,7 +218,7 @@ Given all the above, my coding throughput looked like this:
 
 The drop in coding is one of the main reasons some senior engineers don’t want to become tech leads. A friend of mine switched back to being an individual contributor because he wanted to write code as much as possible.
 
-## How to become a tech lead
+## How to start tech leading now
 
 From what you've read so far you should have a good overview of what tech leading is like. Want to give it a go? Here we discuss how.
 
@@ -236,7 +240,7 @@ It was my manager who pushed me to run the project. She supported me during our 
 
 My employer also provided extra “tech lead coaching” sessions. We had a program called Good to Great where I would sit down with another experienced engineering manager once a week, and he would ask “How is everything going?”, then listen and advise.
 
-Having a great manager is not a hard pre-requisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice during the project is highly desirable.
+Having a great manager is not a hard pre-requisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice during the project is very useful.
 
 #### Easiest way to start tech leading
 
