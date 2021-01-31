@@ -1,0 +1,13 @@
+---
+title: Making a CV in LaTeX
+description: >-
+  Making a good looking CV.
+date: "2021-02-01T00:00:00.000Z"
+categories: [tips]
+keywords: []
+slug: /cv
+---
+
+This will be a blog post about a new CV.
+
+[My CV](./cv_2021.tex)
