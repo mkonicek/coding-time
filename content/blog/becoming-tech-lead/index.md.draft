@@ -45,12 +45,14 @@ In this section we'll talk about the basics things you should do at the start of
 
 As I explained above, I learned the hard way we needed a roadmap. I was using tasks at first, but tasks were too low-level. Some task management systems let you create Milestones, Epics and whatnot. But there is nothing simpler and easier to understand than a simple document like this:
 
-- Milestone 1: Move the framework code to a standalone folder.
-- Milestone 2: Set up continuous syncing from our Mercurial repo to GitHub.
-- Milestone 3: Make sure the code builds from a clean GitHub checkout.
-- Milestone 4: The open source CLI (`react-native init`) scaffolds a working cross-platform app.
+- Milestone 1: Move all the framework Java and C++ code to a standalone folder. Figure out how to handle 3rd-party dependencies.
+- Milestone 2: Make sure the code builds from that standalone folder. We'll use Gradle - the popular build system on Android, while we use Buck to build the code at Facebook.
+- Milestone 3: Set up continuous syncing from our Mercurial repo to a temporary private GitHub repo. Make sure the code builds from a clean checkout. Make sure we can import pull requests back into the Mercurial repo.
+- Milestone 4: The open source CLI (`react-native init`) creates the iOS and Android apps, ready to go.
 - Milestone 5: Update public docs.
-- Milestone 6: Open source additional modules, like `AsyncStorage` and `Slider`.
+- Milestone 6: Open source additional Android modules, like `AsyncStorage` and `Slider`.
+- One week before launch day: Feature freeze.
+- On the launch day: Publish to npm. Merge code from the private repo into the public React Native repo.
 
 It was mind-blowing to me how much of a difference this simple Roadmap document made. Everyone now saw the basic outline of what we should work on.
 
