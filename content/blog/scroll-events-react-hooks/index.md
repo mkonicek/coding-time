@@ -1,17 +1,17 @@
 ---
-title: React refs and hooks
+title: Scroll events, React Hooks and Refs
 description: Using a seemingly simple example of attaching a scroll listener to a div in a React app, we dive into React refs and React hooks.
-date: "2021-02-12T10:00:00.000Z"
+date: "2021-02-15T10:00:00.000Z"
 categories: [engineering]
 keywords: []
 slug: /react-refs-hooks
 ---
 
-It is relatively common that you need to use a React ref to get access to a DOM element on the page. It turns out using the ref in a React hook is not totally straightforward.
+It is relatively common that we need to use a React ref to get access to a DOM element on the page. For example, we need to use a React ref in order to attach a scroll listener to a div. It turns out this is not totally straightforward.
 
-### Simple at first
+### Starting simple
 
-Let's use a very simple example - imagine you want to attach a scroll listener to a div on the page:
+Let's use a very simple example - imagine we want to attach a scroll listener to a div on the page:
 
 ```jsx
 import React, { useRef, useEffect } from "react";
@@ -38,21 +38,21 @@ export default function App() {
 }
 ```
 
-This works just fine. When we scroll, we see "scrolling" printed in the console. Here is [a working sandbox](https://codesandbox.io/s/flamboyant-wilbur-0358h?file=/src/App.js).
+This works fine. When we scroll, we see "scrolling" printed in the console. Here is [a working sandbox](https://codesandbox.io/s/flamboyant-wilbur-0358h?file=/src/App.js).
 
 ### Things get tricky
 
 The example becomes more interesting once we want to display data from the server and show a loading indicator.
 
-The example below is simplified to be as short as possible. Later in this article we share a sandbox with a complete example. The gist of what we are trying to do is the following:
+The example below is simplified in order to the highlight the most interesting parts. Later in this article we share a sandbox with a complete example. The gist is the following:
 
 ```jsx
-const [dataFromServer, setDataFromServer] = useState(null);
+const [itemsFromServer, setItemsFromServer] = useState(null);
 
 // ...
 
 useEffect(() => {
-  fetchDataFromServer().then(data => setDataFromServer(data));
+  fetchItemsFromServer().then(items => setItemsFromServer(items));
 }, []);
 
 // Attach the scroll listener to the div, exact same as before.
@@ -61,21 +61,20 @@ useEffect(() => {
   div.addEventListener('scroll', handleScroll);
 }, [handleScroll]);
 
-// This is new.
-if (!dataFromServer) {
+// If no data we render a loading indicator.
+if (!itemsFromServer) {
   return <LoadingIndicator />;
 }
 
+// Otherwise we render a scrollable div.
 return (
   <div ref={ref}>
-    {dataFromServer}
+    {itemsFromServer}
   </div>
 );
 ```
 
 Can you spot the problem? On which line will the code crash?
-
----
 
 The code crashes here:
 
@@ -116,7 +115,7 @@ In practice, we know the function `handleScroll` never changes when our componen
 
 ### The fragile fix
 
-We can make a one-line fix:
+It is possible to do a one-line fix:
 
 ```jsx
 useEffect(() => {
@@ -126,15 +125,38 @@ useEffect(() => {
     // The second time we render, the hook runs again and we get here.
     div.addEventListener('scroll', handleScroll);
   }
-}, [handleScroll, dataFromServer]); // Depend on dataFromServer
+}, [handleScroll, itemsFromServer]); // Depend on itemsFromServer
 ```
 
-Since we added `dataFromServer` to the list of the dependencies the hook will now re-run and correctly attach the scroll listener to the div on the page. Our code now works.
+Since we added `itemsFromServer` to the list of the dependencies the hook will now re-run and correctly attach the scroll listener to the div on the page. Our code now works.
 
 This is great, right? Not quite.
 
-As we just saw, the dependency on `dataFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `dataFromServer` is needed. They will have to understand that `dataFromServer` is really how we decide whether to render the div that `ref.current` points to! In a real-world scenario where we have much more code it will require quite a bit of effort to figure out this non-obvious dependency: `dataFromServer` -> `ref.current`.
-
-
+As we just saw, the dependency on `itemsFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`.
 
 Here is a [sandbox with the example above](https://codesandbox.io/s/cool-microservice-1x5gr?file=/src/App.js).
+
+### Cannot we just depend on ref.current?
+
+You might want to do the following:
+
+```jsx
+useEffect(() => {
+  const div = ref.current;
+  if (div) {
+    div.addEventListener('scroll', handleScroll);
+  }
+  // Now we should attach the listener
+  // any time we render a new div, right?
+  // Unfortunately this does not work.
+}, [handleScroll, ref.current]);
+```
+
+Unfortunately, this does not work. The linter gives us a really good explanation:
+
+![lint](./depend-ref.png)
+
+This is a great linter error because it contains exactly what we need to know:
+
+> Mutable values like 'ref.current' aren't valid dependencies because mutating them doesn't re-render the component.
+
