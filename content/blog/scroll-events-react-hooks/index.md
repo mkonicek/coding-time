@@ -88,7 +88,7 @@ Why is that? It is because the first time our component runs we return `<Loading
 
 We could try a simple fix:
 
-```jsx
+```js
 const div = ref.current;
 if (div) {
   div.addEventListener('scroll', handleScroll);
@@ -97,7 +97,7 @@ if (div) {
 
 Now our code does not crash anymore but also the scroll listener is never attached! Why is that? Let's take a closer look at our usage of `useEffect`:
 
-```jsx
+```js
 // This hook only runs once.
 useEffect(() => {
   const div = ref.current;
@@ -117,7 +117,7 @@ In practice, we know the function `handleScroll` never changes when our componen
 
 It is possible to do a one-line fix:
 
-```jsx
+```js
 useEffect(() => {
   // The first time we render, `ref.current` is undefined.
   const div = ref.current;
@@ -132,15 +132,53 @@ Since we added `itemsFromServer` to the list of the dependencies the hook will n
 
 This is great, right? Not quite.
 
-As we just saw, the dependency on `itemsFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`.
+As we just saw, the dependency on `itemsFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`. The linter doesn't understand this implicit dependency on `itemsFromServer` and therefore if someone removes it later the linter won't complain and our code will be broken.
 
 Here is a [sandbox with the example above](https://codesandbox.io/s/cool-microservice-1x5gr?file=/src/App.js).
+
+Note that this gets even worse when the `useEffect` is wrapped in another custom hook. For example:
+
+```js
+// A hook that attaches a scroll listener to the `ref`
+// and automatically adds more items as we scroll near
+// the end of the div.
+const itemsFromServer = usePagination(
+  fetchItemsFromServer,
+  ref
+);
+
+// If no data we render a loading indicator.
+if (!itemsFromServer) {
+  return <LoadingIndicator />;
+}
+
+// Otherwise we render a scrollable div.
+return (
+  <div ref={ref}>
+    {itemsFromServer}
+  </div>
+);
+```
+
+and in the implementation of `usePagination` we have:
+
+```js
+useEffect(() => {
+  const div = ref.current;
+  if (div) {
+    div.addEventListener('scroll', handleScroll);
+  }
+  // We are in a generic reusable hook.
+  // How do we know when ref.current is actually valid
+  // and when we need to attach the scroll listener?
+}, [handleScroll]);
+```
 
 ### Cannot we just depend on ref.current?
 
 You might want to do the following:
 
-```jsx
+```js
 useEffect(() => {
   const div = ref.current;
   if (div) {
@@ -159,4 +197,58 @@ Unfortunately, this does not work. The linter gives us a really good explanation
 This is a great linter error because it contains exactly what we need to know:
 
 > Mutable values like 'ref.current' aren't valid dependencies because mutating them doesn't re-render the component.
+
+### What is the clean fix then?
+
+The simplest "solution" I found so far is to make sure the div is always rendered. I'm still looking for a better solution but I like it better than the fragile fix above.
+
+The code ends up looking like this:
+
+```jsx
+// Make sure we always render the div.
+return (
+  <>
+    {!itemsFromServer && "Loading..."}
+    <div className="scrollableContainer" ref={ref}>
+      {itemsFromServer && (
+        <div className="content">
+          {itemsFromServer.map((item) => (
+            <p key={item.id}>{item.name}</p>
+          ))}
+        </div>
+      )}
+    </div>
+  </>
+);
+```
+
+The div "scrollableContainer" is always rendered. Our hook only needs the dependencies recommended by the linter:
+
+```js
+// Attach the scroll listener to the div.
+useEffect(() => {
+  // The div exists after each render.
+  const div = ref.current;
+  if (div) {
+    // The hook only runs once but it's OK - we get here.
+    div.addEventListener("scroll", handleScroll);
+  }
+  // No more dependencies needed here.
+}, [handleScroll]);
+```
+
+And if we are using a custom hook like `usePagination`, it will also work fine:
+
+```js
+const itemsFromServer = usePagination(
+  fetchItemsFromServer,
+  ref
+);
+```
+
+Here is [a sandbox showing this approach to render the div unconditionally](https://codesandbox.io/s/happy-murdock-e36ql?file=/src/App.js).
+
+This is still fragile though. If someone tweaks our component later to render the div conditionally the scroll listener will not attach. I'm still experimenting with cleaner alternatives.
+
+
 
