@@ -70,19 +70,7 @@ const SEO = ({ description, lang, meta, title }) => {
           content: metaDescription,
         },
       ].concat(meta)}
-    >
-      <link rel="preconnect" href="https://www.google-analytics.com" />
-      <link rel="dns-prefetch" href="https://www.google-analytics.com" />
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-Z37TYKLNGK" />
-      <script>
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-Z37TYKLNGK');
-        `}
-      </script>
-    </Helmet>
+    />
   )
 }
 
