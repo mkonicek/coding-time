@@ -246,6 +246,3 @@ const itemsFromServer = usePagination(
 Here is [a sandbox showing this approach to render the div unconditionally](https://codesandbox.io/s/happy-murdock-e36ql?file=/src/App.js).
 
 This is still fragile though. If someone tweaks our component later to render the div conditionally the scroll listener will not attach. I'm still experimenting with cleaner alternatives.
-
-
-
