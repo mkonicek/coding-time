@@ -31,7 +31,7 @@ export default function App() {
   }, [handleScroll]);
 
   return (
-    <div ref={ref}>
+    <div className="scrollableContainer" ref={ref}>
       This is the content that scrolls.
     </div>
   );
@@ -68,7 +68,7 @@ if (!itemsFromServer) {
 
 // Otherwise we render a scrollable div.
 return (
-  <div ref={ref}>
+  <div className="scrollableContainer" ref={ref}>
     {itemsFromServer}
   </div>
 );
@@ -154,7 +154,7 @@ if (!itemsFromServer) {
 
 // Otherwise we render a scrollable div.
 return (
-  <div ref={ref}>
+  <div className="scrollableContainer" ref={ref}>
     {itemsFromServer}
   </div>
 );
@@ -198,9 +198,9 @@ This is a great linter error because it contains exactly what we need to know:
 
 > Mutable values like 'ref.current' aren't valid dependencies because mutating them doesn't re-render the component.
 
-### What is the clean fix then?
+### A slightly better fix
 
-The simplest "solution" I found so far is to make sure the div is always rendered. I'm still looking for a better solution but I like it better than the fragile fix above.
+We can fix the problem by making sure the div is always rendered.
 
 The code ends up looking like this:
 
@@ -210,13 +210,7 @@ return (
   <>
     {!itemsFromServer && "Loading..."}
     <div className="scrollableContainer" ref={ref}>
-      {itemsFromServer && (
-        <div className="content">
-          {itemsFromServer.map((item) => (
-            <p key={item.id}>{item.name}</p>
-          ))}
-        </div>
-      )}
+      {itemsFromServer}
     </div>
   </>
 );
@@ -246,4 +240,65 @@ const itemsFromServer = usePagination(
 
 Here is [a sandbox showing this approach to render the div unconditionally](https://codesandbox.io/s/happy-murdock-e36ql?file=/src/App.js).
 
-This is still fragile though. If someone tweaks our component later to render the div conditionally the scroll listener will not attach. I'm still experimenting with cleaner alternatives.
+This is still fragile though. If someone tweaks our component later to render the div conditionally the scroll listener will not attach.
+
+### A clean solution
+
+The cleanest solution I found is to introduce a component which handles the two logically related things: the ref, and attaching the scroll listener.
+
+Here is the component:
+
+```jsx
+function ScrollableList(props) {
+  const { itemsFromServer, onScroll } = props;
+
+  const ref = useRef();
+
+  useEffect(() => {
+    const div = ref.current;
+    if (div) {
+      div.addEventListener("scroll", onScroll);
+    }
+  }, [onScroll]);
+
+  return (
+    <div className="scrollableContainer" ref={ref}>
+      {itemsFromServer}
+    </div>
+  );
+  ```
+
+  and here is how to use it:
+
+
+```jsx
+export default function App() {
+  const [itemsFromServer, setItemsFromServer] = useState(null);
+
+  const handleScroll = useCallback(() => {
+    console.log("scrolling");
+  }, []);
+
+  useEffect(() => {
+    fetchItemsFromServer().then(items => setItemsFromServer(items));
+  }, []);
+
+  if (!itemsFromServer) {
+    return <LoadingIndicator />;
+  }
+
+  // We can render the ScrollableList conditionally. That's fine.
+  return (
+    <ScrollableList
+      itemsFromServer={itemsFromServer}
+      onScroll={handleScroll}
+    />
+  );
+}
+```
+
+Here is a [sandbox with this final example](https://codesandbox.io/s/agitated-snow-pwgoz?file=/src/App.js).
+
+### Conclusion
+
+The final solution is nice and very simple. It took us a bit of a journey to get there, exploring different options and diving into React APIs like Refs and Hooks. Hopefully this article will help you when you are dealing with React Refs, the `useEffect` hook and when you are thinking about how to structure your React application.
