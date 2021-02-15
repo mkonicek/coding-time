@@ -162,14 +162,14 @@ return (
 and in the implementation of `usePagination` we have:
 
 ```js
+// Inside usePagination.js
 useEffect(() => {
   const div = ref.current;
   if (div) {
     div.addEventListener('scroll', handleScroll);
   }
   // We are in a generic reusable hook.
-  // How do we know when ref.current is actually valid
-  // and when we need to attach the scroll listener?
+  // How do we know what the dependencies should be?
 }, [handleScroll]);
 ```
 
