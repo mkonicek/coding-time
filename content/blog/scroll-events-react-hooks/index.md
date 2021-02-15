@@ -7,7 +7,7 @@ keywords: []
 slug: /react-refs-hooks
 ---
 
-It is relatively common that we need to use a React ref to get access to a DOM element on the page. For example, we need to use a React ref in order to attach a scroll listener to a div. It turns out this is not totally straightforward.
+It is relatively common that we need to use a React ref to get access to a DOM element on the page. For example, we need to use a React ref in order to attach a scroll listener to a div. It turns out this is not always straightforward.
 
 ### Starting simple
 
