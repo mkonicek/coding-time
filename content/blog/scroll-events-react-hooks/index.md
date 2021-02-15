@@ -121,6 +121,7 @@ It is possible to do a one-line fix:
 useEffect(() => {
   const div = ref.current;
   if (div) {
+    // On second render, we get here and attach the listener.
     div.addEventListener('scroll', handleScroll);
   }
   // The fix: Depend on `itemsFromServer`.
