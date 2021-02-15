@@ -119,13 +119,12 @@ It is possible to do a one-line fix:
 
 ```js
 useEffect(() => {
-  // The first time we render, `ref.current` is undefined.
   const div = ref.current;
   if (div) {
-    // The second time we render, the hook runs again and we get here.
     div.addEventListener('scroll', handleScroll);
   }
-}, [handleScroll, itemsFromServer]); // Depend on itemsFromServer
+  // The fix: Depend on `itemsFromServer`.
+}, [handleScroll, itemsFromServer]);
 ```
 
 Since we added `itemsFromServer` to the list of the dependencies the hook will now re-run and correctly attach the scroll listener to the div on the page. Our code now works.
@@ -222,18 +221,16 @@ return (
 );
 ```
 
-The div "scrollableContainer" is always rendered. Our hook only needs the dependencies recommended by the linter:
+The div `scrollableContainer` is always rendered. Our hook only needs the dependencies recommended by the linter:
 
 ```js
-// Attach the scroll listener to the div.
 useEffect(() => {
-  // The div exists after each render.
   const div = ref.current;
   if (div) {
     // The hook only runs once but it's OK - we get here.
     div.addEventListener("scroll", handleScroll);
   }
-  // No more dependencies needed here.
+  // No extra dependencies needed here.
 }, [handleScroll]);
 ```
 
