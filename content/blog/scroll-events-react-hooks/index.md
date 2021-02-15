@@ -134,9 +134,9 @@ This is great, right? Not quite.
 
 As we just saw, the dependency on `itemsFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`. The linter doesn't understand this implicit dependency on `itemsFromServer` and therefore if someone removes it later the linter won't complain and our code will be broken.
 
-Here is a [sandbox with the example above](https://codesandbox.io/s/cool-microservice-1x5gr?file=/src/App.js).
+Here is a [sandbox with the fragile solution above](https://codesandbox.io/s/cool-microservice-1x5gr?file=/src/App.js).
 
-Note that this gets even worse when the `useEffect` is wrapped in another custom hook. For example:
+Note this gets even worse when the `useEffect` is wrapped in a custom hook. For example:
 
 ```js
 // A hook that attaches a scroll listener to the `ref`
@@ -268,7 +268,7 @@ function ScrollableList(props) {
   );
   ```
 
-  and here is how to use it:
+and here is how to use it:
 
 
 ```jsx
