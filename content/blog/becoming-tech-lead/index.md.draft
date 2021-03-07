@@ -1,113 +1,121 @@
 ---
 title: Becoming Tech Lead
 description: Lessons learned leading technical projects.
-date: "2021-01-27T10:00:00.000Z"
+date: "2021-03-09T10:00:00.000Z"
 categories: [tips]
 keywords: []
 slug: /becoming-tech-lead
 ---
 
-A few years ago I switched from being an individual contributor to leading a technical project with five engineers including me. Since then, I’ve been a tech lead on other projects. I made many mistakes along the way. This article summarises what I learned so far.
+Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have lead a few other projects - mostly building large features over the course of a few months with teams of 2 to 5 engineers.
 
-The target audience for this article are software engineers aspiring to lead a small team for the first time.
+I have made many mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarises those mistakes and lessons. Hopefully this article will be helpful if you are considering becoming a tech lead, or recently started tech leading a project.
 
 ## Story time — React Native open source project
 
-Between 2015 and 2017 I worked on React Native at Facebook. When React Native was originally announced, it was iOS-only. The Android part was being developed internally at Facebook. Once the Android part was battle-tested by shipping the Facebook Ads Manager for Android, we were ready to open source the code.
+One day my engineering manager approached me with a challenge:
 
-One day, my engineering manager approached me with a challenge: “Let’s get you to grow in your career. Here are a few potential projects you could own.” After a short chat, I agreed to be responsible for open sourcing React Native for Android.
+> “Let’s get you to the next level. I think you are ready to start leading a project.”
 
-What this meant in practice was that I would start the project and figure out a plan. Four other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android at a conference with a fixed date.
+After a short chat, I agreed to be responsible for open sourcing React Native for Android. React Native for Android was being built inside Facebook. The challenge was to turn it into an open source project.
 
-So here I was, with a brand new goal and no plan. What does it mean to open source a project? I set out to do some research. Luckily, the people who worked on the existing iOS release gave me lots of tips. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a _copy_ that is bidirectionally synced between GitHub and the Facebook repo. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
+I needed to figure out a plan and start executing on it. Four other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android at a keynote of a conference.
 
-After a bit of research I had a rough plan in my head and started executing on it. I spent some time moving code, making sure I didn't break anything in the process. I created a private GitHub repo and set up code syncing using custom internal tools.
+So here I was, with a brand new goal and no plan. I set out to do some research. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a _copy_ that is bidirectionally synced between GitHub and the Facebook repo. We also had to figure out how to scaffold new cross-platform React Native apps, using a build system which was different from the one we were using. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
 
-Then came the real challenge: **four other engineers joined me, and expected me to tell them what to work on** 😱 If this sounds scary — good! Accepting scary challenges is the best way to learn quickly.
+After a bit of research I had a rough plan in my head and started executing on it. Then came the real challenge: _four other engineers joined me, and expected me to tell them what to work on_ 😱 If this sounds scary — good! Accepting scary challenges is the best way to learn quickly.
 
-I created some tasks that covered the steps for the next four weeks or so, and set up dependencies between tasks. I knew the engineers, and knew they disliked meetings. [No surprise so far](http://paulgraham.com/makersschedule.html). So I didn’t set up a weekly meeting. As you'll find out below, this was a big mistake.
-
-#### Struggling to coordinate
-
-The problem was, everyone was working on their bit and making progress but it didn’t feel like we were working towards a coherent product. I wasn’t sure everyone’s work fit together well. I had a vision in my head and broke it down into maybe 20 tasks but the picture wasn’t very obvious to the rest of the team. I had more context because I had been working on the project solo for a few weeks. After a while, I could tell one of the engineers was getting annoyed. It didn’t occur to me to meet him 1:1 and ask listen. I was worried and thought the people aspect of the job was very difficult.
-
-Eventually, the engineer told my engineering manager he wanted to see the project organised better. My manager got both of us into a room. It felt good to sit down and talk to my teammate. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that he opened up and simply said he’d like to see a roadmap and have a better picture of how the project fits together. The conversation was surprisingly easy.
-
-I went back to my desk and wrote a one-page **Roadmap** that had a few high-level milestones in it. I sent this to my colleague and asked what he thought. He simply said “This is very good, thanks.”
-
-This is a perfect example of something I’ve heard many times since: _Most conflicts at work happen because of a misunderstanding. To resolve it, you just need to talk._
+I made lots of mistakes and learned lots of lessons. It wasn't easy but I learned how to coordinate the team so the pieces built by different people fit together. We shipped on time and the project was a success. The rest of the article documents what I learned during this project as well as other projects that came in the years to follow.
 
 ## The basics
 
 In this section we'll talk about the basics things you should do at the start of a project.
 
-#### You need a roadmap
+#### You need a high-level roadmap
 
-As I explained above, I learned the hard way we needed a roadmap. I was using tasks at first, but tasks were too low-level. Some task management systems let you create Milestones, Epics and whatnot. But there is nothing simpler and easier to understand than a simple document like this:
+I created some tasks that covered the steps for the next four weeks or so, and set up dependencies between tasks. I had a vision in my head and broke it down into maybe 20 tasks. The other engineers, however, didn't share all the context I had. It was hard to see the vision from those tasks alone. I didn't write a __basic high-level document that outlined the main decisions and steps__ in the project.
 
-- Milestone 1: Move all the framework Java and C++ code to a standalone folder. Figure out how to handle 3rd-party dependencies.
-- Milestone 2: Make sure the code builds from that standalone folder. We'll use Gradle - the popular build system on Android, while we use Buck to build the code at Facebook.
-- Milestone 3: Set up continuous syncing from our Mercurial repo to a temporary private GitHub repo. Make sure the code builds from a clean checkout. Make sure we can import pull requests back into the Mercurial repo.
-- Milestone 4: The open source CLI (`react-native init`) creates the iOS and Android apps, ready to go.
+Of course, it didn't occur to me back then we needed that document. Everyone was working on their bit and making progress but I became increasingly unsure whether we were working towards a coherent product. After a while, I could tell one of the engineers was becoming unhappy. He didn't say why and it didn’t occur to me to set up a 1:1 chat and listen. I thought the people aspect of the job was very difficult.
+
+Eventually, the engineer told my engineering manager he wanted to see the project organised better. My manager got both of us into a room. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that he opened up and simply said he’d like to have a better picture of how everything fit together. The conversation was surprisingly easy.
+
+Looking back at this story, it's hard for me to believe I struggled with something so simple. Something that could be resolved by a short chat. But I did struggle, and it was a part of the learning process.
+
+I went back to my desk and wrote a one-page **Roadmap** that had a few high-level milestones in it. I sent this to my colleague and asked what he thought. He simply said “This is very good, thanks.”
+
+This is a perfect example of something I’ve heard many times since: _Most conflicts at work happen because of a misunderstanding. To resolve it, you just need to talk._
+
+Here is what the Roadmap looked like. Some task management systems let you create Milestones, Epics and whatnot. But there is nothing simpler and easier to understand than a document like this:
+
+- Milestone 1: Move all the framework code to a standalone folder.
+- Milestone 2: Make sure the code builds from that standalone folder.
+- Milestone 3: Set up continuous syncing from our internal repo to a temporary private GitHub repo.
+- Milestone 4: The open source CLI creates the iOS and Android apps, ready to go.
 - Milestone 5: Update public docs.
-- Milestone 6: Open source additional Android modules, like `AsyncStorage` and `Slider`.
+- Milestone 6: Open source more Android modules.
 - One week before launch day: Feature freeze.
 - On the launch day: Publish to npm. Merge code from the private repo into the public React Native repo.
 
-It was mind-blowing to me how much of a difference this simple Roadmap document made. Everyone now saw the basic outline of what we should work on.
+Each of the milestones had one paragraph explaining a bit of detail and links to a few important tasks.
+
+It was mind-blowing to me how much of a difference this simple Roadmap document made. The basic outline of the project was now clear to everyone.
 
 #### When pressed on time, cut down scope
 
-Our roadmap described everything we needed to do in order to ship this project. (Remember the conference with a fixed date where our project would be announced, no matter what?)
+Our roadmap described everything we needed to do in order to ship this project. Remember the conference with a fixed date where our project would be announced, no matter what?
 
-We had six milestones. We absolutely had to get the first five done. The last milestone was:
+We had six milestones. We absolutely had to get the first five milestones done. The last milestone was:
 
-- Milestone 6: Open source additional modules, like `AsyncStorage` and `Slider`.
+> Milestone 6: Open source additional modules, like `AsyncStorage`, `Slider`, and more.
 
-Notice the last milestone could be easily cut down in scope if we were short on time. It was simply a long list of modules we wanted to add to the release. As the deadline was getting closer we cut down the scope of the last milestone aggressively. A week or so before the release our engineering manager actually pushed us drop even more modules. This was to make sure we had enough time left to properly test everything.
-
-We shipped, and everything worked. The project was a success!
+Notice the last milestone was perfect for cutting down features if we were short on time. It was simply a long list of modules we wanted to add to the release. As the deadline was approaching we cut down the the list of the modules. A week or so before the release our engineering manager actually pushed us to drop even more modules. This was to make sure we had enough time left to properly test everything.
 
 Because we cut down scope, React Native for Android didn’t have as many modules as we had on iOS but this was OK. In the next few releases (0.12, 0.13, etc.) we added more Android modules and eventually got to feature parity with iOS.
 
-#### You need a weekly meeting
+#### You absolutely need a weekly meeting
 
-At the very start of the project we didn't have a weekly meeting. As I learned the hard way when coordination started falling apart, we needed the meeting as a basic necessity really.
+At the very start of the project we didn't have a weekly meeting. I knew that [meetings were a huge disruption](http://paulgraham.com/makersschedule.html) so I and wanted to help my teammates by not introducing another meeting. As I learned the hard way, not having a weekly meeting was a bad idea. The lack of the meeting meant that it was hard to stay in sync and execute on the roadmap as a team.
 
-So I set up the meeting. It was very simple: We went around the room and gave updates. We talked about how it all fit together. Of course, we would always have the current state of the roadmap document open on the big screen. That simple meeting helped us so much!
+So I set up the meeting. It was very simple: At the start of the meeting, I would share my screen showing the current state of the Roadmap. We would talk about blockers, dependencies, figure out who's doing what next.
+
+That simple meeting helped us so much! I would say the meeting was a basic necessity for the success of the project.
 
 Your role as a tech lead is to:
 
 - Run the meeting.
-- Listen & ask questions. Don’t be afraid to ask any question. If you want to ask, a few other people in the room probably want to ask the same.
-- Bring up hidden dependencies and potential risks. Does your plan have any blind spots? You are the one with the big picture who thinks every day about how the individual pieces fit together.
-- Update the roadmap — who’s working on what, what are the blockers and risks that come up.
-- Always aim to make decisions in the meeting! If you need to do more research to make a decision, at the very least _decide_ who’s doing the research and by when. You should make progress in every meeting.
-- Make sure to write down the decisions from each meeting — can be notes directly in the roadmap for example — and share them. You can do this yourself, or rotate the responsibility among team members.
+- Listen & ask questions. Don’t be afraid to ask any question. It's important you have full understanding, and chances are a few other people in the room probably have the same question.
+- Bring up hidden dependencies and potential risks. Does your plan have any blind spots? You are the one with the big picture who thinks every day about how the puzzle fits together.
+- Update the roadmap — who’s working on what, what the blockers and risks are.
+- Always aim to make decisions in the meeting! If you need to do more research to make a decision, at the very least _decide_ who’s doing the research. You should make progress in every meeting.
+- Make sure to write down the decisions from each meeting and share them. You can do this yourself, or rotate the responsibility among team members.
 
 If you want more tips on running meetings, I wrote a separate [blog post on meetings](../meetings).
 
+You might be wondering why I didn't introduce daily standups or even Scrum for example. The answer is it wasn't needed. The lightweight process with a regular weekly meeting worked great for our team. We shipped the project on time and in a good state. I've used this lightweight process with a few different teams since.
+
 #### Note on the value of repetition
 
-A big lesson I learned when trying to share something important in our meetings:
+Here is one big lesson I learned during our meetings:
 
-When you mention something in a meeting, don't assume anyone will remember it.
+> When you mention something in a meeting, don't assume anyone will remember it.
 
-Just think about the information overload we all get every day. If there’s some important information the only way you’ll get it through is _repeat, repeat, repeat_. Repeat the information in your written update, repeat it again at the next weekly meeting, and later in a related Slack conversation that comes up.
+I made the big mistake at first when I mentioned something crucial _just once_ and later was baffled why no one knew about it.
+
+Just think about the information overload we all get every day. If you realise there is some information crucial for the success of the project, you have to _repeat it_. Repeat the information in your written update, repeat it again at the next weekly meeting, and repeat it again in a related Slack conversation that comes up two weeks later.
 
 #### Basics - Summary so far
 
 So far we’ve talked about the basics of how to run a project:
 
 - Roadmap
-- Weekly meeting
 - Cutting down scope to hit a deadline
+- Weekly meeting
 
 We'll now get to slightly more advanced topics.
 
 ## Advanced topics
 
-If you are an engineer, the section "Basics" should feel relatively straightforward to you. It is mostly algorithmic: Set up a roadmap, run a weekly meeting using these few steps, if approaching deadline, do X.
+If you are an engineer, the __Basics__ should feel relatively straightforward to you. What we talked about so far was algorithmic: Set up a roadmap, run a weekly meeting using these few steps. If approaching a deadline, do X.
 
 This next section is more about dealing with people. It is just as important.
 
@@ -218,7 +226,9 @@ Given all the above, my coding throughput looked like this:
 
 ![Number of commits over time](commits.png)
 
-The drop in coding is one of the main reasons some senior engineers don’t want to become tech leads. A friend of mine switched back to being an individual contributor because he wanted to write code as much as possible.
+This is my recent commit history from when I switched to tech leading at my last company. Before July 2019 I worked as an individual contributor. Then I took some time off in July, and after that started tech leading a project - you can see a clear drop in commit rate.
+
+This is one of the main reasons some senior engineers don’t want to become tech leads. A friend of mine switched back to being an individual contributor because he wanted to write code as much as possible.
 
 ## How to start tech leading now
 
