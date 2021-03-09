@@ -123,7 +123,7 @@ As you have probably guessed, there is more to tech leading than that. Let's exp
 
 ## Advanced topics
 
-If you are an engineer, the Basics we've covered so far should feel relatively straightforward to you. All of the Basics are mostly algorithmic: Set up a roadmap, run a weekly meeting using these few steps. If approaching a deadline, do X.
+The Basics we've covered so far should feel relatively straightforward to you. All of the Basics are mostly algorithmic: Set up a roadmap, run a weekly meeting using these few steps. If approaching a deadline, do X.
 
 This next section is about dealing with people. It is just as important.
 
@@ -285,3 +285,7 @@ If the idea of becoming a tech lead feels tempting you should give it a try.
 You can try tech leading for a few months. You can lead one project and if you don’t enjoy it, go back to being an individual contributor.
 
 Definitely give tech leading a try as soon as you can! I’m sure you won’t regret it.
+
+#### Let's talk
+
+Do you have any questions or want to share your experience? Please share them with me on [Twitter](https://twitter.com/martinkonicek).
