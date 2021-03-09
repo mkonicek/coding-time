@@ -288,4 +288,4 @@ Definitely give tech leading a try as soon as you can! I’m sure you won’t re
 
 #### Let's talk
 
-Do you have any questions or want to share your experience? Please share them with me on [Twitter](https://twitter.com/martinkonicek).
+Do you have any questions or want to share your experience? Please reach out on [Twitter](https://twitter.com/martinkonicek).
