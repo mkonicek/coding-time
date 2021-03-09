@@ -19,7 +19,7 @@ One day my engineering manager approached me with a challenge:
 
 After a short chat, I agreed to be responsible for open sourcing React Native for Android. React Native for Android was being built inside Facebook. The challenge was to turn it into an open source project.
 
-I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android at a keynote of a conference.
+I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Anroid in a confence keynote.
 
 So here I was, with a brand new goal and no plan. I set out to do some research. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a _copy_ that is bidirectionally synced between GitHub and the Facebook repo. We also had to figure out how to scaffold new cross-platform React Native apps, using a build system which was different from the one we were using. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
 
