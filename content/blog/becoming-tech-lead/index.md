@@ -106,7 +106,7 @@ Just think about the information overload we all get every day. If you realise t
 
 #### What about coding?
 
-You will still be writing code on the project with you teammates. This is the part that should feel very familiar. As a tech lead you are expected to step up and tackle some of the harder technical challenges.
+You will be writing code, and reviewing lots of code. This is the part that should feel very familiar. It is worth saying that as a tech lead you are expected to step up and tackle some of the harder technical challenges.
 
 Note: You will write less code than before. This makes sense because you now have other responsibilities besides coding. We will discuss the balance later in this article.
 
@@ -254,7 +254,7 @@ Want to give tech leading a go? Here is how.
 
 You need to be a relatively strong engineer before you can start thinking about becoming a tech lead. You don’t have to be the strongest engineer on the team but you should be reasonably strong.
 
-What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is maintainable, usually passes code review easily. You solve some of the more difficult problems on your team. You are willing step up and do the boring work no one wants to do. You take pride in cleaning up and deleting code, and know that the best bug-free code is no code at all. You can work with others effectively. You can communicate with people inside and outside the team.
+What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is maintainable, usually passes code review easily. You solve some of the more difficult problems on your team. You are willing step up and do the boring work no one wants to do. You make improvements that make work easier for others. You take pride in cleaning up and deleting code, and know that the best bug-free code is no code at all. You can work with others effectively. You can communicate with people inside and outside the team.
 
 In terms of situational leadership, you should be operating at S4. This is why your manager wants you to be the tech lead so they can delegate a project to you. They want to have the confidence that under your leadership the project will ship. The manager should support you of course, especially when this is your first time leading a project.
 
