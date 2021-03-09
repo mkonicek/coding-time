@@ -7,7 +7,7 @@ keywords: []
 slug: /becoming-tech-lead
 ---
 
-Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have lead a few other projects - mostly building large features over the course of a few months with teams of 2 to 5 engineers.
+Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have led a few other projects - mostly building large features over the course of a few months with teams of 2 to 5 engineers.
 
 I have made many mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarises those mistakes and lessons. Hopefully this article will be helpful if you are considering becoming a tech lead, or recently started tech leading a project.
 
