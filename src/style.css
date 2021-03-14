@@ -319,7 +319,7 @@ a:focus {
 }
 
 .blog-post header h1 {
-  margin: var(--spacing-0) var(--spacing-0) var(--spacing-4) var(--spacing-0);
+  margin: var(--spacing-0) var(--spacing-0) var(--spacing-8) var(--spacing-0);
 }
 
 .blog-post header p {

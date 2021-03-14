@@ -9,9 +9,29 @@ slug: /becoming-tech-lead
 
 Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have led a few other projects - mostly building large features over the course of a few months with teams of 2 to 5 engineers.
 
-I have made many mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarises those mistakes and lessons. Hopefully this article will be helpful if you are considering becoming a tech lead, or recently started tech leading a project.
+I have made mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarises those mistakes and lessons.
 
-## Story time — React Native open source project
+If you are considering becoming a tech lead or recently started, this article is for you.
+
+Here is an outline of the article:
+
+- Introduction — React Native open source project
+- The Basics
+  - You need a roadmap
+  - When pressed on time, cut down scope
+  - You need a weekly meeting
+  - What about coding?
+- Advanced topics
+  - Leading and leaving enough autonomy at the same time
+  - Different leadership styles
+  - One to one
+  - Staying calm
+- Do you want to be a tech lead?
+  - Prerequisites
+  - Having a supportive manager / coach
+  - An easy way to start tech leading
+
+## Introduction — React Native open source project
 
 One day my engineering manager approached me with a challenge:
 
@@ -21,7 +41,7 @@ After a short chat, I agreed to be responsible for open sourcing React Native fo
 
 I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Anroid in a confence keynote.
 
-So here I was, with a brand new goal and no plan. I set out to do some research. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a _copy_ that is bidirectionally synced between GitHub and the Facebook repo. We also had to figure out how to scaffold new cross-platform React Native apps, using a build system which was different from the one we were using. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
+So here I was, with a brand new goal and no plan. I set out to do some research. The React Native code at Facebook was a folder in Facebook’s gigantic monorepo. We couldn’t simply move that folder to GitHub. We had to maintain a copy that is bidirectionally synced between GitHub and the Facebook repo. We also had to figure out how to scaffold new cross-platform React Native apps, using a build system which was different from the one we were using. The details are outside the scope of this article but if you are interested, these [slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
 
 After a bit of research I had a rough plan in my head and started executing on it. Then came the real challenge: _three other engineers joined me, and expected me to tell them what to work on_ 😱 If this sounds scary — good! Accepting scary challenges is the best way to learn quickly.
 
@@ -72,7 +92,7 @@ Notice the last milestone was perfect for cutting down features if we were short
 
 Because we cut down scope, React Native for Android didn’t have as many modules as we had on iOS but this was OK. In the next few releases (0.12, 0.13, etc.) we added more Android modules and eventually got to feature parity with iOS.
 
-#### You absolutely need a weekly meeting
+#### You need a weekly meeting
 
 At the very start of the project we didn't have a weekly meeting. I knew that [meetings were a huge disruption](http://paulgraham.com/makersschedule.html) so I and wanted to help my teammates by not introducing another meeting. As I learned the hard way, not having a weekly meeting was a bad idea. The lack of the meeting meant that it was hard to stay in sync and execute on the roadmap as a team.
 
@@ -250,7 +270,7 @@ This is one of the main reasons some experienced engineers don’t want to becom
 
 Want to give tech leading a go? Here is how.
 
-#### Pre-requisites
+#### Prerequisites
 
 You need to be a relatively strong engineer before you can start thinking about becoming a tech lead. You don’t have to be the strongest engineer on the team but you should be reasonably strong.
 
@@ -268,9 +288,9 @@ It was my manager who pushed me to run my first project. She supported me during
 
 My employer also provided extra “tech lead coaching” sessions. We had a program called Good to Great where I would sit down with another experienced engineering manager once a week. He would ask “How is everything going?”, listen and advise.
 
-Having a great manager is not a hard pre-requisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice during the project is very useful.
+Having a great manager is not a hard prerequisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice during the project is very useful.
 
-#### Easiest way to start tech leading
+#### An easy way to start tech leading
 
 In all cases so far, I was the engineer who kick-started the project. I worked on the code by myself for a month or two. I did a lot of thinking and exploration.
 
@@ -288,4 +308,4 @@ Definitely give tech leading a try as soon as you can! I’m sure you won’t re
 
 #### Let's talk
 
-Do you have any questions or want to share your experience? Please reach out on [Twitter](https://twitter.com/martinkonicek).
+Do you have any questions or want to share your experience? Let's talk on [Twitter](https://twitter.com/martinkonicek).
