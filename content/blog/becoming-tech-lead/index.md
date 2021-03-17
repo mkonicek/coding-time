@@ -9,7 +9,7 @@ slug: /becoming-tech-lead
 
 Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have led a few other projects - mostly building large features over the course of a few months with teams of 2 to 5 engineers.
 
-I have made mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarises those mistakes and lessons.
+I have made mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarizes those mistakes and lessons.
 
 If you are considering becoming a tech lead or recently became one, this article is for you.
 
@@ -161,7 +161,7 @@ For example, say an engineer suggests an improvement that would take at most a f
 - The prposal is reasonable but there are many higher-priority things. Especially people new to a project sometime suggest good ideas that have relatively low impact. You should say the idea is good and politely explain there are high-priority things on the roadmap. But if the engineer is very passionate about it, and it takes a day or two, why not just go for it? It feels good to propose an improvement and ship it the next day! Unless you do this every day, you should be fine.
 - The idea needs more discussion. Say something like “I don't yet understand how it would work and it will take a while for me to understand. Can we have a separate chat about it?” And then spend the time with the engineer 1:1 or in a small group. Understand the proposal, and figure out together how to execute on it and when. You might find out the idea wouldn't work right now because of constraints you discover.
 
-It is important to realise there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone new to the team might be proposing an idea because they want to prove they can take ownership and deliver.
+It is important to realize there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone new to the team might be proposing an idea because they want to prove they can take ownership and deliver.
 
 If everyone on your team is pulling in different directions, you have a serious problem. This never happened to me, and should not happen if your project is well defined, has a clear roadmap and support from the rest of the company.
 
