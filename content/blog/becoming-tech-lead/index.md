@@ -239,37 +239,13 @@ What we discussed so far should give you an idea of what it is like to be a tech
 
 ## Do you want to be a tech lead?
 
-From what we covered so far, you can probably imagine what the Day in the Life looks like. Throughout each week you will switch between many different tasks. Let's split everything into two categories: Coding and Non-coding.
+One important thing to realize is that as a tech lead, you will likely be writing less code. Throughout each week you will switch between many different tasks. You will be writing and reviewing code but you will also be doing many other things like running meetings, maintaining the Roadmap, coordinating releases with other teams, etc.
 
-##### Coding
-
-This should feel familiar:
-
-- Build features like everyone else.
-- Solve some of the harder engineering problems on the project.
-- Give useful, timely code review. (This topic deserves its own article.)
-- Volunteer to do the boring work.
-- Take pride in code cleanup and refactoring.
-
-##### Non-coding
-
-Most of the non-coding responsibilities will be new:
-
-- Be responsible for the delivery of a project.
-- Understand what everyone is working on at any moment.
-- Understand dependencies, blockers and risks.
-- Create the roadmap and keep it up to date.
-- Run a weekly engineering meeting.
-- Help resolve disputes around scope, priorities.
-- Answer technical questions, both inside and outside the team.
-- Give regular updates to people outside the team. Tune the update to the audience — different level of detail if the audience is non-technical.
-- Help the engineers on the team grow from S1 all the way to S4.
-
-Given all of the above, my coding throughput looked like this:
+The reduction in the amount of code I wrote was obvious when I looked at my commit history:
 
 ![Number of commits over time](commits.png)
 
-This is my commit history from when I switched to tech leading at my current company. Before July 2019 I worked as an individual contributor. Then I took some time off in July, and after that started tech leading a project. You can see a clear drop in commit rate once I became a tech lead.
+Before July 2019 I worked as an individual contributor. Then I took some time off in July, and after that started tech leading a project. You can see a clear drop in commit rate once I became a tech lead.
 
 This reduced amount of time spent coding is one of the main reasons some experienced engineers don’t want to become tech leads. A friend of mine switched from being a tech lead to being an individual contributor. He wanted to spend as much time writing code as possible.
 
