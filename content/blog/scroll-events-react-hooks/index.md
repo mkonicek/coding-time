@@ -320,4 +320,4 @@ Here is a [sandbox with this final example](https://codesandbox.io/s/agitated-sn
 
 ### Conclusion
 
-The final solution is nice and very simple. It took us a bit of a journey to get there, exploring different options and diving into React APIs like Refs and Hooks. Hopefully this article will help you when you are dealing with React Refs, the `useEffect` hook and when you are thinking about how to structure your React application.
+The final solution is nice and very simple. It took us a bit of a journey to get there, exploring different options and diving into React APIs like Refs and Hooks. Hopefully this article will help you when deal with React Refs and when you think about how to structure your React application.
