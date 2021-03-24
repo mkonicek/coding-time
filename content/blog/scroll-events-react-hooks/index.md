@@ -32,9 +32,26 @@ export default function App() {
 
   return (
     <div className="scrollableContainer" ref={ref}>
-      This is the content that scrolls.
+      <div className="content">
+        When this content is taller than the parent,
+        it scrolls.
+      </div>
     </div>
   );
+}
+```
+
+The styles, for the purposes of a simple demo, look like this:
+
+```css
+.scrollableContainer {
+  width: 200px;
+  height: 300px;
+  overflow-y: auto;
+}
+
+.content {
+  height: 500px;
 }
 ```
 
@@ -266,9 +283,11 @@ function ScrollableList(props) {
       {itemsFromServer}
     </div>
   );
-  ```
+```
 
-and here is how to use it:
+Notice the div is rendered unconditionally inside this simple component.
+
+And here is how to use the component:
 
 
 ```jsx
