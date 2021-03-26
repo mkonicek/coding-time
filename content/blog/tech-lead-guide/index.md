@@ -109,15 +109,15 @@ That simple weekly meeting helped us so much! More than that. It was crucial for
 Your role as a tech lead is to:
 
 - Run the meeting.
-- Listen & ask questions. Don’t be afraid to ask any question. It is important you have full understanding. Chances are a few other people in the room have the same question.
+- Ask questions. Don’t be afraid to ask any question. It is important you have full understanding. Chances are a few other people have the same question.
 - Bring up hidden dependencies and potential risks. Does your plan have any blind spots?
 - Update the roadmap — who’s working on what, what the blockers and risks are.
-- Always aim to make decisions in the meeting! If you need to do more research to make a decision, at the very least _decide_ who’s doing the research. You should make progress in every meeting.
+- Always aim to make decisions in the meeting! If you need to do more research to make a decision, at least decide who’s doing the research. You should make progress in every meeting.
 - Make sure to write down the decisions from each meeting  and share them. You can do this yourself or rotate the responsibility among team members.
 
 If you want more tips on running meetings, I wrote a separate [blog post on meetings](../meetings).
 
-You might be wondering why I didn't introduce daily standups or Scrum for example. The answer is it was not needed. The lightweight process with a regular weekly meeting worked great for our team. We shipped the project on time and in a good state. I have used this lightweight process with a few different teams at a different company since then.
+You might be wondering why I didn't introduce daily standups or Scrum for example. The answer is it was not needed. The lightweight process with a regular weekly meeting worked great for our team. We shipped the project on time. I have used this lightweight process with a few different teams since.
 
 #### Note on the value of repetition
 
@@ -125,51 +125,51 @@ Here is one big lesson I learned during our meetings:
 
 > When you mention something in a meeting, don't assume anyone will remember it.
 
-I still remember when I mentioned something crucial _just once_ and later was baffled why no one knew about it.
+I will never forget that time I mentioned something crucial _just once_ and later was baffled why no one knew about it.
 
-Just think about the information overload we all get every day. If you realize there is some information crucial for the success of the project, you have to _repeat it_. Repeat the information in your written update, repeat it again at the next weekly meeting, and repeat it again in a related Slack conversation that comes up two weeks later.
+Just think about the information overload we get every day. If you realize there is some crucial information important for the success of the project, you have to _repeat it_. Repeat the information in your written update, repeat it again in the next meeting, and repeat it again in a Slack conversation that comes up two weeks later.
 
 #### What about coding?
 
-You will be writing code, and reviewing lots of code. This is the part that should feel very familiar. It is worth saying that as a tech lead you are expected to step up and tackle some of the harder technical challenges.
+You will be writing code, and reviewing lots of code. This should feel very familiar. It is worth noting that as a tech lead you are expected to step up and tackle some of the harder technical challenges.
 
-Note: You will most likely write less code than before. This makes sense because you now have other responsibilities besides coding. We will discuss the balance later in this article.
+You will most likely write less code than before. This makes sense because of all the other responsibilities. We expand on this topic further down.
 
 #### Basics - Summary so far
 
-So far we’ve talked about the basics responsibilities of a tech lead:
+So far we covered the basics responsibilities of a tech lead:
 
 - Maintain the roadmap
 - Cut down scope when necessary
 - Run the weekly meeting
 - Write code
 
-As you have probably guessed, there is more to tech leading than that. Let's explore some slightly more advanced topics.
+As you have probably guessed there is more to tech leading than that. Let's explore those juicy, more advanced topics.
 
 ## Advanced topics
 
-The Basics we've covered so far should feel relatively straightforward. All of the Basics are mostly algorithmic: Set up a roadmap. Run a weekly meeting using these few steps. If approaching a deadline, do X.
+The basics we covered so far are straightforward. They are mostly algorithmic: Set up a roadmap. Run a weekly meeting using these few steps. If approaching a deadline, do X.
 
 The next section is about dealing with people. It is just as important.
 
 #### Leading and leaving enough autonomy at the same time
 
-Imagine in your team meeting someone steps up with a strong opinion about anything - coding style, a library, a feature. Never shoot them down, especially in front of everyone, and especially if they are still learning and this is one of their first ideas they shared!
+Imagine in your team meeting someone steps up with a strong opinion about anything - coding style, a library, a feature. Never shoot them down, especially in front of everyone!
 
 For example, say an engineer suggests an improvement that would take at most a few days to complete. Here are a few options:
 
-- You totally agree with the idea. Say you agree, ask others for their opinion. Ideally you will reach a quick conclusion and the person will ship the improvement in the next few days. Shipping feels great, especially if it was their own idea!
-- The proposal seems reasonable but you are not sure. Aim to show trust. For example, recently I said: “Sounds good. You own this part of the app now. Do whatever you think is best.” Sounds scary? Not if you’ve done hiring well!
-- The prposal is reasonable but there are many higher-priority things. Especially people new to a project sometime suggest good ideas that have relatively low impact. You should say the idea is good and politely explain there are high-priority things on the roadmap. But if the engineer is very passionate about it, and it takes a day or two, why not just go for it? It feels good to propose an improvement and ship it the next day! Unless you do this every day, you should be fine.
-- The idea needs more discussion. Say something like “I don't yet understand how it would work and it will take a while for me to understand. Can we have a separate chat about it?” And then spend the time with the engineer 1:1 or in a small group. Understand the proposal, and figure out together how to execute on it and when. You might find out the idea wouldn't work right now because of constraints you discover.
+- You totally agree with the idea. Say you agree, ask others for their opinion. Ideally you will reach a quick conclusion and the person will ship the improvement in the next few days. It feels great to propose something and ship it!
+- The proposal seems reasonable but you are not sure. Aim to show trust. For example, recently I said: “Sounds good. You own this part of the app now. Do whatever you think is best.” Sounds scary? Not if you’ve done hiring well.
+- The proposal is reasonable but there are many higher-priority things. Especially people new to a project sometime suggest good ideas that have relatively low impact. You should say the idea is good and politely explain there are high-priority things on the roadmap. But if the engineer is very passionate about the improvement and it only takes a day, why not just go for it? Unless you do this every day, you should be fine.
+- The idea needs more discussion. Say something like “I don't yet understand how it would work and it will take a while for me to understand. Can we have a separate chat about it?” And then spend the time with the engineer 1:1 or in a small group. Understand the proposal, and figure out together how to execute on it and when. You might find out the idea wouldn't work because of constraints you discover.
 
-It is important to realize there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part people will be mainly concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone new to the team might be proposing an idea because they want to prove they can take ownership and deliver.
+It is important to realize there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part, people will be concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone might propose an idea because they want to prove they can take ownership and deliver.
 
 If everyone on your team is pulling in different directions, you have a serious problem. This never happened to me, and should not happen if your project is well defined, has a clear roadmap and support from the rest of the company.
 
-However, it is quite common that occasionally someone on the team will come up with an improvement or have a strong opinion on how something should be done, and will push for it. If the idea is reasonable and won’t make a big difference to when you ship, IMHO you should be supportive and let them just run with it.
+However, it is quite common that occasionally someone on the team will come up with an improvement or have a strong opinion on how something should be done. If the idea is reasonable and won’t make a big difference to when you ship, IMHO you should be supportive and let them just run with it.
 
-This brings us to the next topic on how each person on the team is different, and how you often need a different approach for communicating with each of your teammates.
+Each person on the team is different, and you often need a different approach for communicating with each of your teammates. This brings us to the next topic - leadership styles.
 
 #### Different leadership styles
 
