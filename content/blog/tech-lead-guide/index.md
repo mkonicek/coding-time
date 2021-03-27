@@ -180,34 +180,32 @@ Every person on the team is different. You have to understand what kind of suppo
 For each person on your team, you need to figure out which of these four categories they are in:
 
 - S1 — lacks the knowledge, skills or confidence to complete a task.
-- S2 — willing to work on the task but don’t have the necessary context yet.
+- S2 — willing to work on the task but does not have enough context.
 - S3 — is ready to help. Has more context than S2.
 - S4 — is ready to work independently. Has high level of confidence, the right skills and context.
 
-The most important thing is that based on where the person is currently, they _want you to behave differently towards them_.
-
-Here are a few examples:
+Based on where the person is, they _want you to behave differently towards them_. Here are a few examples:
 
 - Someone is new to your codebase _and_ their career. They are almost definitely at S1 initially. You should help them progress to S2 quickly.
 - An experienced engineer who just joined your company will be at S2 or even S3 on day one. They should quickly progress to S4.
 
 Note: The same person can be at S4 when it comes to React, S2 at Docker, S3 at public speaking. That is, different levels of support are needed based on the task at hand!
 
-How do you understand what group each person is in? This should become obvious fairly quickly when working with the person day to day — talking about technical problems, doing code review. When someone joins the team and you know little about them, give them a few small and very well-defined tasks. This way you quickly get a sense of whether they are at S1, S2 or S3.
+How do you know what group each person is in? This should become obvious fairly quickly when working together — talking about technical problems, reviewing code. When someone joins the team and you know little about them, give them a few small and very well-defined tasks. This way you quickly get a sense of whether they are at S1, S2 or S3.
 
-Once you know where a person is, roughly, here is how to work with them:
+Once you know where a person is, here is how to work with them:
 
 - S1 — lacks the knowledge, skills or confidence to complete a task
 
-Find tasks that are well defined and can be completed quickly. Make sure to add lots of detail to each task. The person doesn’t want exploration and freedom yet. They need to get going and build confidence. Tell them they are doing well as they complete the small tasks!
+Find tasks that are well defined and can be completed quickly. Make sure to add lots of detail to each task. The person does not want exploration and freedom yet. They need to get going and build confidence. Tell them they are doing well as they complete the small tasks!
 
-- S2 — willing to work on the task but don’t have the necessary context yet
+- S2 — willing to work on the task but does not have enough context
 
 You should still make the call on harder technical decisions. Try to ask questions like “How would you design this part of the system?” If they are usually not sure, they are still at S2. If they understand edge cases and provide more and more reasonable solutions over time, this is great. They are moving towards S3.
 
 - S3 — is ready to help. Has more context than the previous group.
 
-Let this person operate pretty independently. If you try to micro-manage them like you did at S1, they usually won’t like it! They might still need some help with technical discussions — just chat about solutions and see if you can provide some ideas. Often, your help won’t be needed as much, but sometimes help is still needed. For example, you might identify an edge case or a dependency on another project.
+Let this person operate pretty independently. If you try to micro-manage them like you did at S1, they usually won’t like it! They might still need some help with technical discussions — just chat about solutions and see if you can provide ideas. Your help won’t be needed as much, but sometimes help is still needed. For example, you might identify an edge case or a dependency on another project.
 
 - S4 — is ready to work independently. Has high level of confidence, the right skills and context.
 
@@ -215,41 +213,41 @@ This person is killing it and knows as much as you do. Just give them something 
 
 People operating at S3 and S4 can help you a great deal with your job as a tech lead. You can bounce ideas off each other. They often spot what you missed.
 
-Don't forget people move between these categories over time. This means your approach for each person must evolve over time. And you should help people progress from each category to the next, but trusting them with larger and larger tasks over time.
+Don't forget people move between these categories over time. This means your approach for each person must evolve over time. And you should help people progress from each category to the next, trusting them with larger tasks over time.
 
 #### One to one
 
-You shouldn't be afraid to set up an occasional 1:1 chat with each member of the team. This doesn't need to be a weekly thing. Just talk to them and ask how they feel about the project. Ask if they have any ideas what you could do better. Get to know them as a person. People are usually interested in talking about things outside the project. It could be different programming languages or things totally outside work.
+You should not be afraid to set up an occasional 1:1 chat with each member of the team. This doesn't need to be a weekly thing. Just talk to them and ask how they feel about the project. Ask if they have ideas about what you could do better. Get to know them as a person. People are usually interested in talking about things outside the project. It could be different programming languages or things totally outside of work.
 
-The 1:1 doesn't need to be formal. It can be a chat over lunch or when you happen to bump into each other. If you work remotely and don't see each other in person then I believe setting aside 30 minutes for a call with each team member is crucial.
+The 1:1 doesn't need to be formal. It can be a chat over lunch or when you happen to bump into each other. If you work remotely and don't see each other in person I believe setting aside occasional 30 minutes with each team member is important.
 
 #### Staying calm
 
-You will be working with others and relying on others much more than you are probably used to. This will inevitably have some effect on your own mood at first.
+You will be relying on others more than you are probably used to. This will inevitably have some effect on your own mood at first.
 
-A manager once gave me very interesting advice about mood and emotions. He drew this diagram on a whiteboard:
+A mentor once gave me interesting advice about mood and emotions. He drew this diagram on a whiteboard:
 
 ![Mood of the team over time](mood.png)
 
-The chart above shows that your emotions should not swing too much over time. Yes, the chart is about emotions. Everyone on the team including yourself have emotions and must pay attention to them.
+The chart above shows that your emotions should not swing too much over time. Yes, the chart is about emotions. Everyone on the team—including yourself—have emotions. You must pay attention to them.
 
-This area happens to have some overlap with engineering management. As a tech lead, you won’t be directly managing the people on your team but you will have to start thinking about how people are feeling. Understanding how people feel is one of the many responsiblities of a manager. Being a tech lead is therefore lightweight training for management.
+This area happens to have some overlap with engineering management. As a tech lead you won’t be directly managing the people on your team but you will have to start thinking about how people are feeling. Understanding how people feel is one of the many responsiblities of a manager. Being a tech lead is therefore lightweight training for management.
 
-—
+---
 
-What we discussed so far should give you an idea of what it is like to be a tech lead. The rest of this article asks whether you actually want to try it, and shows a way to get started.
+What we discussed so far should help you as a tech lead. The rest of this article asks whether you actually want to be a tech lead, and shows a way to get started.
 
 ## Do you want to be a tech lead?
 
-One important thing to realize is that as a tech lead, you will likely be writing less code. Throughout each week you will switch between many different tasks. You will be writing and reviewing code but you will also be doing many other things like running meetings, maintaining the Roadmap, coordinating releases with other teams, etc.
+One important thing to realize is that as a tech lead you will likely be writing less code. Throughout each week you will switch between many different tasks. You will write and review code but you will also do many other things like run meetings, maintain the Roadmap, coordinate releases with other teams and more.
 
-The reduction in the amount of code I wrote was obvious when I looked at my commit history:
+Here is what my commit history looked like:
 
 ![Number of commits over time](commits.png)
 
-Before July 2019 I worked as an individual contributor. Then I took some time off in July, and after that started tech leading a project. You can see a clear drop in commit rate once I became a tech lead.
+Before July 2019 I worked as an individual contributor. Then I took some time off in the summer. At the end of the summer I started tech leading a project. You can see a clear drop in commit rate once I became a tech lead.
 
-This reduced amount of time spent coding is one of the main reasons some experienced engineers don’t want to become tech leads. A friend of mine switched from being a tech lead to being an individual contributor. He wanted to spend as much time writing code as possible.
+This reduced amount of time spent coding is a reason why some experienced engineers don’t want to become tech leads. A friend of mine switched from tech leading to being an individual contributor. He wanted to spend as much time writing code as possible.
 
 ## How to start tech leading now
 
@@ -259,33 +257,35 @@ Do you want to give tech leading a go? Here is how.
 
 You need to be a relatively strong engineer before you can start thinking about becoming a tech lead. You don’t have to be the strongest engineer on the team but you should be reasonably strong.
 
-What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is well structured and easy to understand. You solve some of the more difficult problems on your team. You are willing step up and do the boring work. You make improvements that make work easier for others. You take pride in cleaning up and deleting code, and know that the best code is no code at all. You can work with others effectively. You can communicate with people inside and outside the team.
+What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is well structured and easy to understand. You solve some of the more difficult problems on your team. You are willing step up and do the boring work. You make improvements that make work easier for others. You take pride in cleaning up and deleting code, and know that the best code is no code at all.
 
-In terms of situational leadership, you should be operating at S4. This is why your manager wants you to be the tech lead. They want to delegate a project to you. They want to have the confidence that under your leadership the project will ship. Of course, the manager should support you, especially if this is your first time leading a project.
+Last but not least, you can work with others effectively. You communicate well with people inside and outside the team. A big part of being a tech lead is about communication, after all.
+
+In terms of situational leadership, you should be operating at S4. This is why your manager wants you to be the tech lead. They want to delegate a project to you. They want to have the confidence that under your leadership the project will succeed. Of course, the manager should support you, especially if this is your first time leading a project.
 
 If you feel like you could probably tech lead a project but it feels scary, you are ready.
 
 #### Having a supportive manager / coach
 
-You will be doing a lot of new and unfamiliar work, especially when it comes to dealing with people. It really helps to have someone who knows you, knows your team, knows your project and will give you advice. Ideally, this should be your engineering manager.
+You will have new responsibilities, especially when it comes to dealing with people. It really helps to have someone who knows you, knows your team, knows your project and will give you advice. Ideally, this should be your engineering manager.
 
 It was my manager who pushed me to run my first project. She supported me during our weekly 1:1s as well as outside the 1:1s. She was always responsive and available when I struggled. And I did struggle!
 
 My employer also provided extra “tech lead coaching” sessions. We had a program called Good to Great where I would sit down with another experienced engineering manager once a week. He would ask “How is everything going?” Then he would listen and advise.
 
-Having a great manager is not a hard prerequisite to start tech leading. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice is very useful.
+Having a great manager is not a hard prerequisite to becoming a tech lead. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice is very useful.
 
 #### An easy way to start tech leading
 
 At a great company where managers support career growth, your manager should hand you the opportunity to be a tech lead — including a project idea! Make it clear to your manager you want to work towards tech leading. In a smaller company, I asked: What are the top three big projects we should be doing? I picked one of those and started coding.
 
-If you start the project and spend a few weeks exploring it, you will have a lot of context. As the company decides to add more people to the project it makes sense for you to provide value by coordinating.
+If you start the project and spend a few weeks exploring it, you will have a lot of context. As more people join the project it makes sense for you to provide value by coordinating.
 
 #### Give it a try!
 
-If the idea of becoming a tech lead feels tempting you should give it a try. If you find out you don’t enjoy it, you can always go back to being an individual contributor.
+Just do it. If you find out you don’t enjoy tech leading, you can always go back to being an individual contributor.
 
-Give it a try as soon as you can! I’m sure you won’t regret it.
+Give it a try as soon as you can! I am sure you won’t regret it.
 
 #### Let's talk
 
