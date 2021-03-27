@@ -7,7 +7,7 @@ keywords: []
 slug: /tech-lead-guide
 ---
 
-Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then I have led a few other projects - mostly building large features in teams of 2 to 5 engineers.
+Back in 2015 and 2016 I was the tech lead for the open source side of the React Native project. Since then, I have led a few other projects - mostly building large features in teams of 2 to 5 engineers.
 
 I have made mistakes along the way and learned lessons the hard way, especially at the beginning. This article summarizes those mistakes and lessons.
 
@@ -41,7 +41,7 @@ Let's start with a short story on how I got into tech leading. I was an engineer
 
 After a short chat, I agreed to be responsible for open sourcing React Native for Android. Our team built React Native for Android. Another team inside Facebook used it to ship a new app. The next challenge was to turn the project into an open source project.
 
-I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android in a confence keynote.
+I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android in a conference keynote.
 
 So here I was, with a brand new goal and no plan. I set out to do some research. I had to figure out how to sync the code between Facebook's gigantic monorepo and GitHub, make sure the code builds on both sides, and add support for Android into our open source tooling. The details are outside the scope of this article but if you are interested, [these slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
 
@@ -137,7 +137,7 @@ You will most likely write less code than before. This makes sense because of al
 
 #### Basics - Summary so far
 
-So far we covered the basics responsibilities of a tech lead:
+So far we covered the basic responsibilities of a tech lead:
 
 - Maintain the roadmap
 - Cut down scope when necessary
@@ -231,7 +231,7 @@ A mentor once gave me interesting advice about mood and emotions. He drew this d
 
 The chart above shows that your emotions should not swing too much over time. Yes, the chart is about emotions. Everyone on the team—including yourself—have emotions. You must pay attention to them.
 
-This area happens to have some overlap with engineering management. As a tech lead you won’t be directly managing the people on your team but you will have to start thinking about how people are feeling. Understanding how people feel is one of the many responsiblities of a manager. Being a tech lead is therefore lightweight training for management.
+This area happens to have some overlap with engineering management. As a tech lead you won’t be directly managing people but you will have to start thinking about how people feel. Understanding how people feel is one of the many responsibilities of a manager. Being a tech lead is therefore lightweight training for management.
 
 ---
 
