@@ -29,6 +29,7 @@ Here is an outline of this article:
   - One to one
   - Staying calm
 - Do you want to be a tech lead?
+- How to get started
   - Prerequisites
   - Having a supportive manager / coach
   - An easy way to start tech leading
@@ -233,37 +234,35 @@ The chart above shows that your emotions should not swing too much over time. Ye
 
 This area happens to have some overlap with engineering management. As a tech lead you won’t be directly managing people but you will have to start thinking about how people feel. Understanding how people feel is one of the many responsibilities of a manager. Being a tech lead is therefore lightweight training for management.
 
----
-
-What we discussed so far should help you as a tech lead. The rest of this article asks whether you actually want to be a tech lead, and shows a way to get started.
-
 ## Do you want to be a tech lead?
 
-One important thing to realize is that as a tech lead you will likely be writing less code. Throughout each week you will switch between many different tasks. You will write and review code but you will also do many other things like run meetings, maintain the Roadmap, coordinate releases with other teams and more.
+After reading the above, you should have a good idea what it is like to be a tech lead. Do all the non-coding responsibilities make you excited?
+
+You should also consider that you will be writing less code than before. Each week you will switch between many different tasks. You will write and review code but you will also do many other things like run meetings, maintain the Roadmap, coordinate releases with other teams and more.
 
 Here is what my commit history looked like:
 
 ![Number of commits over time](commits.png)
 
-Before July 2019 I worked as an individual contributor. Then I took some time off in the summer. At the end of the summer I started tech leading a project. You can see a clear drop in commit rate once I became a tech lead.
+Before July 2019 I worked as an individual contributor. Then I took some time off in the summer. At the end of the summer I started tech leading a project. You can see a clear drop in commit rate.
 
-This reduced amount of time spent coding is a reason why some experienced engineers don’t want to become tech leads. A friend of mine switched from tech leading to being an individual contributor. He wanted to spend as much time writing code as possible.
+This reduced amount of time spent coding is a reason why some experienced engineers don’t want to be tech leads. A friend of mine switched from tech leading to being an individual contributor. He wanted to spend as much time writing code as possible.
 
-## How to start tech leading now
+## How to get started
 
-Do you want to give tech leading a go? Here is how.
+Assuming you answered "Yes" to the question "Do you want be a tech lead?", in this final section we discuss what you need to get started.
 
 #### Prerequisites
 
-You need to be a relatively strong engineer before you can start thinking about becoming a tech lead. You don’t have to be the strongest engineer on the team but you should be reasonably strong.
+Before you start tech leading, your technical skills should be relatively strong.
 
-What does it mean to be a “strong” engineer? You give timely and useful feedback on code review. You deliver features quickly and with few bugs. Your code is well structured and easy to understand. You solve some of the more difficult problems on your team. You are willing step up and do the boring work. You make improvements that make work easier for others. You take pride in cleaning up and deleting code, and know that the best code is no code at all.
+What are those important technical skills? You give timely and valuable feedback on code review. You design and deliver complex features quickly and with few bugs. Your code is well structured and easy to understand. You solve some of the more difficult problems on your team. You are willing step up and do the boring work. You make improvements that make work easier for others. You take pride in cleaning up and deleting code, and know that the best code is no code at all.
 
 Last but not least, you can work with others effectively. You communicate well with people inside and outside the team. A big part of being a tech lead is about communication, after all.
 
 In terms of situational leadership, you should be operating at S4. This is why your manager wants you to be the tech lead. They want to delegate a project to you. They want to have the confidence that under your leadership the project will succeed. Of course, the manager should support you, especially if this is your first time leading a project.
 
-If you feel like you could probably tech lead a project but it feels scary, you are ready.
+If you feel like you could probably be a tech lead of a project but it feels scary, you are ready.
 
 #### Having a supportive manager / coach
 
@@ -273,19 +272,21 @@ It was my manager who pushed me to run my first project. She supported me during
 
 My employer also provided extra “tech lead coaching” sessions. We had a program called Good to Great where I would sit down with another experienced engineering manager once a week. He would ask “How is everything going?” Then he would listen and advise.
 
-Having a great manager is not a hard prerequisite to becoming a tech lead. You could figure it out on your own, and hopefully this article will help you. However, having someone to ask for advice is very useful.
+Having a great manager is not a hard prerequisite to becoming a tech lead. You could figure it out on your own, and hopefully this article will help you. Having someone to ask for advice makes things easier.
 
 #### An easy way to start tech leading
 
-At a great company where managers support career growth, your manager should hand you the opportunity to be a tech lead — including a project idea! Make it clear to your manager you want to work towards tech leading. In a smaller company, I asked: What are the top three big projects we should be doing? I picked one of those and started coding.
+One of the responsibilities of an engineering manager is to help each engineer with career growth. Your manager should hand you the opportunity to be a tech lead — including a project idea! Make it clear to your manager you want to work towards tech leading.
+
+At a smaller company with not much engineering management in place, I asked: "What are three most important large projects we should be doing?" I picked one of those and started coding.
 
 If you start the project and spend a few weeks exploring it, you will have a lot of context. As more people join the project it makes sense for you to provide value by coordinating.
 
 #### Give it a try!
 
-Just do it. If you find out you don’t enjoy tech leading, you can always go back to being an individual contributor.
+Give tech leading a try. The risk is low. If you find out you don’t enjoy tech leading, you can always go back to being an individual contributor. The upside of learning new skills is great.
 
-Give it a try as soon as you can! I am sure you won’t regret it.
+Just do it!
 
 #### Let's talk
 
