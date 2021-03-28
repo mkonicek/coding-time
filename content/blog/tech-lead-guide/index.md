@@ -36,7 +36,9 @@ Here is an outline of this article:
 
 ## Introduction — React Native open source project
 
-Let's start with a short story on how I got into tech leading. I was an engineer on the React Native team at Facebook and one day my engineering manager approached me with a challenge:
+![React Native tagline](./react-native.png)
+
+Let's start with a short story on how I got into tech leading. I was an engineer on the React Native team at Facebook. One day my engineering manager approached me with a challenge:
 
 > “Let’s get you to the next level. I think you are ready to start leading a project.”
 
@@ -58,11 +60,12 @@ This section explains the basics you should get in place for any new project. It
 
 #### You need a high-level roadmap
 
-Here is how I started and quickly messed up. Don't get me wrong, I tried to be organized. I created tasks that covered the steps for the next few weeks. I set up dependencies between tasks. I had a vision in my head. My teammates, however, did not have all the context. From the tasks alone, it was difficult to understand how everything fit together.
+Here is how I started and quickly messed up. Don't get me wrong, I tried to be organized. I created tasks that covered the steps for the next few weeks. I set up dependencies between tasks. I had a vision in my head.
+My teammates, however, did not have all the context. It was difficult to understand how everything fit together.
 
 My first mistake was that I didn't write a **basic high-level document that outlined the main decisions and steps** in the project.
 
-It didn't occur to me back then we needed the document. Everyone was working on their bit and making progress but I became increasingly unsure whether we were working towards a coherent product. After a while, I could tell one of the engineers was becoming unhappy. He didn't say why. It didn’t occur to me to set up a 1:1 chat and listen. I thought the people aspect of the job was difficult.
+It didn't occur to me we needed the document. Everyone was working on their bit and making progress but I became increasingly unsure whether we were working towards a coherent product. After a while, I could tell one of the engineers was becoming unhappy. He didn't say why. It didn’t occur to me to set up a 1:1 chat and listen. I thought the people aspect of the job was difficult.
 
 Eventually, the engineer told my engineering manager he wanted to see the project organized better. My manager set up a meeting for the three of us. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that my teammate opened up and simply said he’d like to have a better picture of how everything fit together. The conversation was surprisingly easy.
 
