@@ -288,6 +288,8 @@ Give tech leading a try. The risk is low. If you find out you don’t enjoy tech
 
 Just do it!
 
+![New horizons](./ocean.jpeg)
+
 #### Let's talk
 
 Do you have any questions or want to share your experience? Let's talk on [Twitter](https://twitter.com/martinkonicek).

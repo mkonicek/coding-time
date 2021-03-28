@@ -7,7 +7,7 @@ keywords: []
 slug: /hello-world
 ---
 
-![Ocean](./ocean.jpeg)
+![New horizons](./ocean.jpeg)
 
 I finally got around to moving my blog from Medium to Gatsby.
 
