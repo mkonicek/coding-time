@@ -36,8 +36,6 @@ Here is an outline of this article:
 
 ## Introduction — React Native open source project
 
-![React Native tagline](./react-native.png)
-
 Let's start with a short story on how I got into tech leading. I was an engineer on the React Native team at Facebook. One day my engineering manager approached me with a challenge:
 
 > “Let’s get you to the next level. I think you are ready to start leading a project.”
