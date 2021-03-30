@@ -40,11 +40,11 @@ Let's start with a short story on how I got into tech leading. I was an engineer
 
 > “Let’s get you to the next level. I think you are ready to start leading a project.”
 
-After a short chat, I agreed to be responsible for open sourcing React Native for Android. Our team built React Native for Android. Another team inside Facebook used it to ship a new app. The next challenge was to turn the project into an open source project.
+After a short chat, I agreed to be responsible for open sourcing React Native for Android. Our team built React Native for Android and another team used it to build an app. The next challenge was to turn the project into an open source project.
 
 I needed to figure out a plan and start executing on it. Three other engineers from the React Native team would join a few weeks later. We had a **hard deadline** — our engineering director would announce React Native for Android in a conference keynote.
 
-So here I was, with a brand new goal and no plan. I set out to do some research. I had to figure out how to sync the code between Facebook's gigantic monorepo and GitHub, make sure the code builds on both sides, and add support for Android into our open source tooling. The details are outside the scope of this article but if you are interested, [these slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
+So here I was, with a brand new goal and no plan. I set out to do some research. I had to figure out how to sync the code between Facebook's gigantic monorepo and GitHub, make sure the code built, and add support for Android into our open source tooling. The details are outside the scope of this article but if you are interested, [these slides](https://speakerdeck.com/mkonicek/under-the-hood-of-react-native?slide=51) explain the process.
 
 After a bit of research I had a rough plan and started executing on it. Then came the real challenge: _Three other engineers joined me, and expected me to tell them what to do_ 😱
 
@@ -61,17 +61,19 @@ This section explains the basics you should get in place for any new project. It
 Here is how I started and quickly messed up. Don't get me wrong, I tried to be organized. I created tasks that covered the steps for the next few weeks. I set up dependencies between tasks. I had a vision in my head.
 My teammates, however, did not have all the context. It was difficult to understand how everything fit together.
 
-My first mistake was that I didn't write a **basic high-level document that outlined the main decisions and steps** in the project.
+My first mistake was that I didn't write a **basic high-level document** that outlined the main decisions and steps in the project.
 
 It didn't occur to me we needed the document. Everyone was working on their bit and making progress but I became increasingly unsure whether we were working towards a coherent product. After a while, I could tell one of the engineers was becoming unhappy. He didn't say why. It didn’t occur to me to set up a 1:1 chat and listen. I thought the people aspect of the job was difficult.
 
-Eventually, the engineer told my engineering manager he wanted to see the project organized better. My manager set up a meeting for the three of us. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that my teammate opened up and simply said he’d like to have a better picture of how everything fit together. The conversation was surprisingly easy.
+Eventually the engineer told my engineering manager he wanted to see the project organized better. My manager set up a meeting for the three of us. I started and said “Look, I know I’m probably messing up here. I’m trying to help us ship this project together. What can I do better?” After that my teammate opened up and simply said he’d like to have a better picture of how everything fit together. The conversation was surprisingly easy.
 
 Looking back at this story, it is hard to believe I struggled with something so simple. Something that got resolved with a short chat. But I did struggle, and it was a part of the learning process.
 
 I went back to my desk and wrote a one-page **Roadmap** that had a few high-level milestones in it. I sent this to my colleague and asked what he thought. He simply said “This is very good, thanks.”
 
-This is a perfect example of something I’ve heard many times since: _Most conflicts at work happen because of a misunderstanding. To resolve them, you just need to talk._
+This is a perfect example of something I have heard many times since:
+
+> Most conflicts at work happen because of a misunderstanding. To resolve them, you just need to talk.
 
 Here is what the Roadmap looked like. Some task management systems let you create Milestones, Epics and whatnot. There is nothing simpler to understand than a document like this:
 
@@ -92,19 +94,19 @@ It was mind-blowing to me how much of a difference this simple Roadmap document 
 
 Our roadmap described everything we needed to do in order to ship this project. Remember the conference with a fixed date where our project would be announced, no matter what?
 
-We had six milestones. We absolutely had to get the first five milestones done. The last milestone was:
+We had six milestones. The first five milestones - we absolutely had to do them. There was little wiggle room. The last milestone was:
 
 > Milestone 6: Open source additional modules, like `AsyncStorage`, `Slider`, and more.
 
-This last milestone was perfect for cutting down scope if we were short on time. It was simply a long list of modules we wanted to add to the release. As the deadline approached we cut down the list aggressively. Our engineering manager actually pushed us to drop yet more modules. This was to make sure we had enough time left to properly test everything.
+This was simply a long list of modules we wanted to add to the release. As the deadline approached we cut down the list aggressively. Our engineering manager actually pushed us to drop yet more modules. This was to make sure we had enough time left to properly test everything.
 
-Because we cut down scope, React Native for Android did not have as many modules as we had on iOS. This was OK. We released a new version every two weeks. In the next few releases (0.12, 0.13, etc.) we added more Android modules and eventually got to feature parity with iOS.
+Because we cut down scope, React Native for Android did not have as many modules as we had on iOS. This was OK. In the next few releases (0.12, 0.13, etc.) we added more Android modules and eventually got to feature parity with iOS. We released a new version every two weeks.
 
 #### You need a weekly meeting
 
-At the very start of the project we did not have a weekly meeting. I knew that [meetings were a huge disruption](http://paulgraham.com/makersschedule.html) so I wanted to help my teammates by not introducing another meeting. As I learned the hard way, not having a weekly meeting was a bad idea. The lack of the meeting meant it was difficult for us to stay in sync and "pull in the same direction".
+At the very start of the project we did not have a weekly meeting. I knew that [meetings were a huge disruption](http://paulgraham.com/makersschedule.html) so I wanted to help my teammates by not introducing another meeting. As I learned the hard way, not having a weekly meeting was a very bad idea. The lack of the meeting meant it was difficult for us to stay in sync and "pull in the same direction".
 
-So I set up the meeting. It was very simple: At the start of the meeting, I would share my screen showing the current state of the Roadmap. We would talk about blockers, dependencies, and figure out what to do next.
+So I set up the meeting. It was simple: At the start of the meeting, I would share my screen showing the current state of the Roadmap. We would talk about blockers, dependencies, and figure out what to do next.
 
 That simple weekly meeting helped us so much! More than that. It was crucial for the success of the project.
 
@@ -156,7 +158,7 @@ The next section is about dealing with people. It is just as important.
 
 #### Leading and leaving enough autonomy at the same time
 
-Imagine in your team meeting someone steps up with a strong opinion about anything - coding style, a library, a feature. Never shoot them down, especially in front of everyone!
+Imagine in your team meeting someone expresses a strong opinion about anything - coding style, a library, a feature. Never shoot them down, especially in front of everyone!
 
 For example, say an engineer suggests an improvement that would take at most a few days to complete. Here are a few options:
 
@@ -165,7 +167,7 @@ For example, say an engineer suggests an improvement that would take at most a f
 - The proposal is reasonable but there are many higher-priority things. Especially people new to a project sometime suggest good ideas that have relatively low impact. You should say the idea is good and politely explain there are high-priority things on the roadmap. But if the engineer is very passionate about the improvement and it only takes a day, why not just go for it? Unless you do this every day, you should be fine.
 - The idea needs more discussion. Say something like “I don't yet understand how it would work and it will take a while for me to understand. Can we have a separate chat about it?” And then spend the time with the engineer 1:1 or in a small group. Understand the proposal, and figure out together how to execute on it and when. You might find out the idea wouldn't work because of constraints you discover.
 
-It is important to realize there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines that are concerned with delivering the project and nothing else. For the most part, people will be concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone might propose an idea because they want to prove they can take ownership and deliver.
+It is important to realize there might be a deeper reason why someone on your team is proposing something. The people on your team are not machines concerned with delivering the project and nothing else. For the most part, people will be concerned with delivering the project. But remember that everyone has their own career aspirations, too. For example, someone might propose an idea because they want to prove they can take ownership and deliver.
 
 If everyone on your team is pulling in different directions, you have a serious problem. This never happened to me, and should not happen if your project is well defined, has a clear roadmap and support from the rest of the company.
 
@@ -239,7 +241,7 @@ This area happens to have some overlap with engineering management. As a tech le
 
 After reading the above, you should have a good idea what it is like to be a tech lead. Do all the non-coding responsibilities make you excited?
 
-You should also consider that you will be writing less code than before. Each week you will switch between many different tasks. You will write and review code but you will also do many other things like run meetings, maintain the Roadmap, coordinate releases with other teams and more.
+You should consider that you will be writing less code than before. Each week you will switch between many different tasks. You will write and review code but you will also do many other things like run meetings, maintain the Roadmap, coordinate releases with other teams and more.
 
 Here is what my commit history looked like:
 
@@ -279,9 +281,7 @@ Having a great manager is not a hard prerequisite to becoming a tech lead. You c
 
 One of the responsibilities of an engineering manager is to help each engineer with career growth. Your manager should hand you the opportunity to be a tech lead — including a project idea! Make it clear to your manager you want to work towards tech leading.
 
-At a smaller company with not much engineering management in place, I asked: "What are three most important large projects we should be doing?" I picked one of those and started coding.
-
-If you start the project and spend a few weeks exploring it, you will have a lot of context. As more people join the project it makes sense for you to provide value by coordinating.
+At a smaller company with not much engineering management in place, I asked: "What are three most important large projects we should be doing?" I picked one of those and started coding. If you start the project and spend a few weeks exploring it, you will have a lot of context. As more people join the project it makes sense for you to provide value by coordinating.
 
 #### Give it a try!
 
