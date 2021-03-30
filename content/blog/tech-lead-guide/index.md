@@ -293,4 +293,4 @@ Just do it!
 
 #### Let's talk
 
-Do you have any questions or want to share your experience? Let's talk on [Twitter](https://twitter.com/martinkonicek).
+Do you have any questions or want to share your experience? Let's talk on [Twitter](https://twitter.com/martinkonicek/status/1376858666494738432).
