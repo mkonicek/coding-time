@@ -61,7 +61,7 @@ This works fine. When we scroll, we see "scrolling" printed in the console. Here
 
 The example becomes more interesting once we want to display data from the server and show a loading indicator.
 
-The example below is simplified in order to the highlight the most interesting parts. Later in this article we share a sandbox with a complete example. The gist is the following:
+The example below is simplified in order to highlight the most interesting parts. The gist is the following:
 
 ```jsx
 const [itemsFromServer, setItemsFromServer] = useState(null);
@@ -78,7 +78,7 @@ useEffect(() => {
   div.addEventListener('scroll', handleScroll);
 }, [handleScroll]);
 
-// If no data we render a loading indicator.
+// If we have no data yet, we render a loading indicator.
 if (!itemsFromServer) {
   return <LoadingIndicator />;
 }
@@ -128,7 +128,7 @@ useEffect(() => {
 
 Focusing on the dependencies of the hook - the array `[handleScroll]` - we realize that the hook only runs when the function `handleScroll` changes. This dependency was automatically added by the [linter](https://www.npmjs.com/package/eslint-plugin-react-hooks) because we are using `handleScroll` inside the hook.
 
-In practice, we know the function `handleScroll` never changes when our component re-renders. This means that our hook really only runs once. On the first render we display the loading indicator so there is no div to attach the scroll listener to. Once the data from the server has been fetched our component re-renders, and we render the div. However, our hook never runs again so it never attaches the scroll listener.
+In practice, we know the function `handleScroll` never changes when our component re-renders. This means that our hook only runs once. On the first render we display the loading indicator so there is no div to attach the scroll listener to. Once the data from the server has been fetched our component re-renders, and we render the div. However, our hook never runs again so it never attaches the scroll listener.
 
 ### The fragile fix
 
@@ -149,7 +149,7 @@ Since we added `itemsFromServer` to the list of the dependencies the hook will n
 
 This is great, right? Not quite.
 
-As we just saw, the dependency on `itemsFromServer` is critical. Without this the hook does nothing useful. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`. The linter doesn't understand this implicit dependency on `itemsFromServer` and therefore if someone removes it later the linter won't complain and our code will be broken.
+As we just saw, the dependency on `itemsFromServer` is critical for our code to work. To someone reading the code later, however, it won't be obvious why the dependency on `itemsFromServer` is needed. They will have to understand that `itemsFromServer` is really how we decide whether to render the div that `ref` refers to! In a real-world scenario where we have much more code it will require quite a bit of effort to understand the non-obvious dependency of `ref.current` on `itemsFromServer`. The linter doesn't understand this implicit dependency on `itemsFromServer` and therefore if someone removes it later the linter will not complain and our code will be broken.
 
 Here is a [sandbox with the fragile solution above](https://codesandbox.io/s/cool-microservice-1x5gr?file=/src/App.js).
 
@@ -246,7 +246,7 @@ useEffect(() => {
 }, [handleScroll]);
 ```
 
-And if we are using a custom hook like `usePagination`, it will also work fine:
+And if we use a custom hook like `usePagination`, it will also work:
 
 ```js
 const itemsFromServer = usePagination(
@@ -306,7 +306,7 @@ export default function App() {
     return <LoadingIndicator />;
   }
 
-  // We can render the ScrollableList conditionally. That's fine.
+  // We can render the ScrollableList conditionally.
   return (
     <ScrollableList
       itemsFromServer={itemsFromServer}
