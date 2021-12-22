@@ -20,7 +20,7 @@ You write some code and try that it works. You run the website locally, then cli
 
 ![Upload UI](./imgur_upload.png)
 
-They you drag a .png file into the browser and see the file was uploaded and displayed. Great, your code works!
+Then you drag a .png file into the browser and see the file was uploaded and displayed. Great, your code works!
 
 Now you send a pull request so team members can review your code. You explain two things:
 
