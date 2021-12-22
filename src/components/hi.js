@@ -40,13 +40,11 @@ export default function Hi() {
         />
       )}
       <div>
+        <p>Hi! I am Martin.</p>
         <p>
-            Hi! I am Martin.
-        </p>
-        <p>I'm a Software Engineer based in London,
-            currently building an IDE for biology at <a href="https://www.synthace.com/about-us/">
-            Synthace</a>. Previously I worked on <a href="https://reactnative.dev/">
-            React Native</a> at Facebook.
+          I'm a Software Engineer at <a href="https://www.figma.com/">Figma</a>{" "}
+          in London. Previously I worked on{" "}
+          <a href="https://reactnative.dev/">React Native</a> at Facebook.
         </p>
       </div>
     </div>
