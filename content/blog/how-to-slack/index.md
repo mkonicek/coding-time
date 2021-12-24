@@ -127,7 +127,7 @@ Try **Cmd+K** and guess some channel names:
 
 Every channel should have a topic so you know what it’s about:
 
-![Each channel should have a topoc](./channel-topic.png)
+![Each channel should have a topic](./channel-topic.png)
 
 #### Use Channels, not Private Messages
 
