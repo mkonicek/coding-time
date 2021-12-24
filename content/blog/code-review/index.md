@@ -10,8 +10,8 @@ slug: /code-review
 
 This is a post on authoring pull requests. The tricks below will help you achieve the following:
 
-- Your pull request gets a thorough review. This leads to higher quality code - easier to maintain, fewer bugs.
-- The reviewer understands the pull request quickly. This is good both for you and the reviewer.
+- Your pull request gets a thorough review. This leads to higher quality code. That is code with fewer bugs which is easier to maintain.
+- The reviewer understands the pull request quickly. This means less work for the reviewer and less work for you answering questions and rebasing old pull requests.
 
 ### Trick 1 - Add inline comments
 
