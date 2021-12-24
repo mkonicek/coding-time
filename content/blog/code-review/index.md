@@ -8,7 +8,7 @@ keywords: []
 slug: /code-review
 ---
 
-This is a post on authoring pull requests. The tricks in this post will help you achieve the following:
+This is a post on authoring pull requests. The tricks below will help you achieve the following:
 
 - The pull request gets a thorough review, with useful feedback.
 - The reviewer can understand the pull request in as little time as possible.
