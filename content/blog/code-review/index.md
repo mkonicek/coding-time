@@ -79,7 +79,7 @@ This trick is similar to the multiple commits above, except you make one pull re
 
 ![Stack of pull requests](./stack.png)
 
-Notice the number of comments on each pull request in the screenshot above: 28 comments, 9 comments, 20 comments. I could have made a single pull request called "Optimize performance". Managing the discussion about various parts of that pull request would be a pain, both for the reviewer and me.
+Notice the number of comments on each pull request above: 28 comments, 9 comments, 20 comments. I could have made a single pull request called "Optimize performance". Managing the discussion about various parts of that pull request would be a pain, both for the reviewer and me.
 
 The advantages of splitting work into multiple pull requests are:
 
