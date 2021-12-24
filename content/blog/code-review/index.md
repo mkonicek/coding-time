@@ -1,7 +1,7 @@
 ---
 title: Making Pull Requests Easy to Review
 description: >-
-  How to get useful and timely feedback on pull requests.
+  Better code, quicker.
 date: "2021-12-22T00:00:00.000Z"
 categories: [engineering]
 keywords: []
