@@ -62,15 +62,13 @@ Some pull requests end up large and complex which makes them very difficult to r
 
 ![Sarah Drasner: Most of my work as an engineering manager has been teaching people how to scope work to smaller bits. So any time you have a big honking PR it's a nightmare to review - either too much discussion or none because no one can get their head around it.](./sarah2.png)
 
-Consider splitting the work into multiple commits:
+If you've ever had to read through a pull request with 20 changed files, 500 non-trivial changed lines, I'm sure you can imagine how much easier it would be to review smaller, logically separate pieces. Consider splitting the work into multiple commits:
 
 ![Commits](./commits.png)
 
-If you've ever had to read through a pull request with 20 changed files, 500 non-trivial changed lines, I'm sure you can imagine how much easier it would be to review smaller, logically separate pieces.
+A good way to split work into commits is:
 
-A good way to split work into pieces is:
-
-1. Implement an MVP first
+1. Implement an MVP
 2. Improve it
 
 ### Trick 4 - Multiple pull requests
