@@ -95,4 +95,4 @@ You don't want to spend a few days writing code only to finally open a pull requ
 
 If you remember only one thing from this post, start **adding comments on your own pull requests**. This is the action which costs you virtually no effort and pretty much guarantees the reviewer will understand your code better and quicker.
 
-As the next level, try to scope work into smaller bits. You don't have to find the perfect split. Any progress towards the goal helps. It will only get easier and better over time.
+As the next level, try to scope work into smaller bits. You don't have to find the perfect split. Any progress towards the goal helps. It will only get easier over time.
