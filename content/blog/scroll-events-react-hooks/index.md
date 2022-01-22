@@ -1,6 +1,6 @@
 ---
 title: Scroll events, React Hooks and Refs
-description: Using a seemingly simple example of attaching a scroll listener to a div in a React app, we dive into React refs and React hooks.
+description: Using a seemingly simple example of attaching a scroll listener to a div, we dive into React refs and React hooks.
 date: "2021-02-15T10:00:00.000Z"
 categories: [engineering]
 keywords: []
@@ -14,30 +14,29 @@ It is relatively common that we need to use a React ref to get access to a DOM e
 Let's use a very simple example - imagine we want to attach a scroll listener to a div on the page:
 
 ```jsx
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect } from "react"
 
 export default function App() {
-  const ref = useRef();
+  const ref = useRef()
 
   // The scroll listener
   const handleScroll = useCallback(() => {
-    console.log("scrolling");
-  }, []);
+    console.log("scrolling")
+  }, [])
 
   // Attach the scroll listener to the div
   useEffect(() => {
-    const div = ref.current;
-    div.addEventListener('scroll', handleScroll);
-  }, [handleScroll]);
+    const div = ref.current
+    div.addEventListener("scroll", handleScroll)
+  }, [handleScroll])
 
   return (
     <div className="scrollableContainer" ref={ref}>
       <div className="content">
-        When this content is taller than the parent,
-        it scrolls.
+        When this content is taller than the parent, it scrolls.
       </div>
     </div>
-  );
+  )
 }
 ```
 
@@ -64,23 +63,23 @@ The example becomes more interesting once we want to display data from the serve
 The example below is simplified in order to highlight the most interesting parts. The gist is the following:
 
 ```jsx
-const [itemsFromServer, setItemsFromServer] = useState(null);
+const [itemsFromServer, setItemsFromServer] = useState(null)
 
 // ...
 
 useEffect(() => {
-  fetchItemsFromServer().then(items => setItemsFromServer(items));
-}, []);
+  fetchItemsFromServer().then(items => setItemsFromServer(items))
+}, [])
 
 // Attach the scroll listener to the div, exact same as before.
 useEffect(() => {
-  const div = ref.current;
-  div.addEventListener('scroll', handleScroll);
-}, [handleScroll]);
+  const div = ref.current
+  div.addEventListener("scroll", handleScroll)
+}, [handleScroll])
 
 // If we have no data yet, we render a loading indicator.
 if (!itemsFromServer) {
-  return <LoadingIndicator />;
+  return <LoadingIndicator />
 }
 
 // Otherwise we render a scrollable div.
@@ -88,7 +87,7 @@ return (
   <div className="scrollableContainer" ref={ref}>
     {itemsFromServer}
   </div>
-);
+)
 ```
 
 Can you spot the problem? On which line will the code crash?
@@ -96,9 +95,9 @@ Can you spot the problem? On which line will the code crash?
 The code crashes here:
 
 ```js
-const div = ref.current;
+const div = ref.current
 // div is `undefined`
-div.addEventListener('scroll', handleScroll);
+div.addEventListener("scroll", handleScroll)
 ```
 
 Why is that? It is because the first time our component runs we return `<LoadingIndicator />` and therefore the div is not rendered. The `ref.current` is correctly set to `undefined`.
@@ -106,9 +105,9 @@ Why is that? It is because the first time our component runs we return `<Loading
 We could try a simple fix:
 
 ```js
-const div = ref.current;
+const div = ref.current
 if (div) {
-  div.addEventListener('scroll', handleScroll);
+  div.addEventListener("scroll", handleScroll)
 }
 ```
 
@@ -117,13 +116,13 @@ Now our code does not crash anymore but also the scroll listener is never attach
 ```js
 // This hook only runs once.
 useEffect(() => {
-  const div = ref.current;
+  const div = ref.current
   // `div` is undefined
   if (div) {
     // We never get here.
-    div.addEventListener('scroll', handleScroll);
+    div.addEventListener("scroll", handleScroll)
   }
-}, [handleScroll]);
+}, [handleScroll])
 ```
 
 Focusing on the dependencies of the hook - the array `[handleScroll]` - we realize that the hook only runs when the function `handleScroll` changes. This dependency was automatically added by the [linter](https://www.npmjs.com/package/eslint-plugin-react-hooks) because we are using `handleScroll` inside the hook.
@@ -136,13 +135,13 @@ It is possible to do a one-line fix:
 
 ```js
 useEffect(() => {
-  const div = ref.current;
+  const div = ref.current
   if (div) {
     // On second render, we get here and attach the listener.
-    div.addEventListener('scroll', handleScroll);
+    div.addEventListener("scroll", handleScroll)
   }
   // The fix: Depend on `itemsFromServer`.
-}, [handleScroll, itemsFromServer]);
+}, [handleScroll, itemsFromServer])
 ```
 
 Since we added `itemsFromServer` to the list of the dependencies the hook will now re-run and correctly attach the scroll listener to the div on the page. Our code now works.
@@ -159,14 +158,11 @@ Note this gets even worse when the `useEffect` is wrapped in a custom hook. For 
 // A hook that attaches a scroll listener to the `ref`
 // and automatically adds more items as we scroll near
 // the end of the div.
-const itemsFromServer = usePagination(
-  fetchItemsFromServer,
-  ref
-);
+const itemsFromServer = usePagination(fetchItemsFromServer, ref)
 
 // If no data we render a loading indicator.
 if (!itemsFromServer) {
-  return <LoadingIndicator />;
+  return <LoadingIndicator />
 }
 
 // Otherwise we render a scrollable div.
@@ -174,7 +170,7 @@ return (
   <div className="scrollableContainer" ref={ref}>
     {itemsFromServer}
   </div>
-);
+)
 ```
 
 and in the implementation of `usePagination` we have:
@@ -182,13 +178,13 @@ and in the implementation of `usePagination` we have:
 ```js
 // Inside usePagination.js
 useEffect(() => {
-  const div = ref.current;
+  const div = ref.current
   if (div) {
-    div.addEventListener('scroll', handleScroll);
+    div.addEventListener("scroll", handleScroll)
   }
   // We are in a generic reusable hook.
   // How do we know what the dependencies should be?
-}, [handleScroll]);
+}, [handleScroll])
 ```
 
 ### Cannot we just depend on ref.current?
@@ -197,14 +193,14 @@ You might want to do the following:
 
 ```js
 useEffect(() => {
-  const div = ref.current;
+  const div = ref.current
   if (div) {
-    div.addEventListener('scroll', handleScroll);
+    div.addEventListener("scroll", handleScroll)
   }
   // Now we should attach the listener
   // any time we render a new div, right?
   // Unfortunately this does not work.
-}, [handleScroll, ref.current]);
+}, [handleScroll, ref.current])
 ```
 
 Unfortunately, this does not work. The linter gives us a really good explanation:
@@ -230,29 +226,26 @@ return (
       {itemsFromServer}
     </div>
   </>
-);
+)
 ```
 
 The div `scrollableContainer` is always rendered. Our hook only needs the dependencies recommended by the linter:
 
 ```js
 useEffect(() => {
-  const div = ref.current;
+  const div = ref.current
   if (div) {
     // The hook only runs once but it's OK - we get here.
-    div.addEventListener("scroll", handleScroll);
+    div.addEventListener("scroll", handleScroll)
   }
   // No extra dependencies needed here.
-}, [handleScroll]);
+}, [handleScroll])
 ```
 
 And if we use a custom hook like `usePagination`, it will also work:
 
 ```js
-const itemsFromServer = usePagination(
-  fetchItemsFromServer,
-  ref
-);
+const itemsFromServer = usePagination(fetchItemsFromServer, ref)
 ```
 
 Here is [a sandbox showing this approach to render the div unconditionally](https://codesandbox.io/s/happy-murdock-e36ql?file=/src/App.js).
@@ -289,30 +282,26 @@ Notice the div is rendered unconditionally inside this simple component.
 
 And here is how to use the component:
 
-
 ```jsx
 export default function App() {
-  const [itemsFromServer, setItemsFromServer] = useState(null);
+  const [itemsFromServer, setItemsFromServer] = useState(null)
 
   const handleScroll = useCallback(() => {
-    console.log("scrolling");
-  }, []);
+    console.log("scrolling")
+  }, [])
 
   useEffect(() => {
-    fetchItemsFromServer().then(items => setItemsFromServer(items));
-  }, []);
+    fetchItemsFromServer().then(items => setItemsFromServer(items))
+  }, [])
 
   if (!itemsFromServer) {
-    return <LoadingIndicator />;
+    return <LoadingIndicator />
   }
 
   // We can render the ScrollableList conditionally.
   return (
-    <ScrollableList
-      itemsFromServer={itemsFromServer}
-      onScroll={handleScroll}
-    />
-  );
+    <ScrollableList itemsFromServer={itemsFromServer} onScroll={handleScroll} />
+  )
 }
 ```
 
