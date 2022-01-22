@@ -24,7 +24,7 @@ You should add inline comments to your pull requests. This will make it easy to 
 
 ![Inline comment - using this class in the test](./comment-1a.png)
 
-![Inline comment - description is now part of the node](./comment-rm.png)
+![Inline comment - description is now part of the node](./comment-rm-1.png)
 
 Without comments like that, the reviewer has to spend time scrolling up and down to figure out the reason for the change. If the change is more complex, the reviewer will write a comment asking for an explanation which adds delays both for you and them.
 
