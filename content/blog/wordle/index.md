@@ -10,7 +10,7 @@ slug: /mutability
 
 The game [Wordle](https://www.powerlanguage.co.uk/wordle/) became very popular at the beginning of 2022. After playing the game a few times it became clear the hard part was coming up with words which satisfy the constraints. This is something trivial for a program to do. I was curious how well a program would do in the game.
 
-Here is an example game solved by the program described below:
+Here is an example game solved by the program:
 
 ![Wordle solution from January 22, 2022](./0122.png)
 
