@@ -1,5 +1,5 @@
 ---
-title: Solving Wordle in Python
+title: Solving Wordle with Python
 description: >-
   Let's see how good our simpler solver can get.
 date: "2022-01-23T12:57:16.474Z"
@@ -8,13 +8,13 @@ keywords: []
 slug: /mutability
 ---
 
-[Wordle](https://www.powerlanguage.co.uk/wordle/) is a fun game which became very popular at the beginning of 2022. After playing the game a few times it became clear the hard part was coming up with words which satisfy the constraints which would be trivial for a program to do.
+The game [Wordle](https://www.powerlanguage.co.uk/wordle/) became very popular at the beginning of 2022. After playing the game a few times it became clear the hard part was coming up with words which satisfy the constraints. This is something trivial for a program to do. I was curious how well a program would do in the game.
 
 Here is an example Wordle solved by the program described in this blog post:
 
 ![Wordle solution from January 22, 2022](./0122.png)
 
-Here is how the program described below does solving 2k different games of Wordle:
+Here are the stats on how well the program can solve Wordle:
 
 ```txt
 Played 2315 games of Wordle
@@ -27,29 +27,22 @@ Played 2315 games of Wordle
 Average attempts: 3.769
 Unsolved Wordles: 0
 Solved: 100%
-Time taken: 57s
+Time spent (all 2k games): 54s
 ```
 
-The games we use for evaluation are the real 2135 words the Wordle game uses, copied from the website's source code.
+Here is a quick overview of the algorithms described below. Each was tested on 2315 games of Wordle. These are the 2315 words used in the real game, as found in the website's source code.
 
-The program uses "learn" and "sight" as the two starting words in any game and then tries to converge on the solution as quickly as possible.
+| Algorithm                    | Unsolved | Average attemps | Time (2k) |
+| ---------------------------- | -------- | --------------- | --------- |
+| Try to do a poorly as we can | 50       | 4.227           | 3s        |
+| "raise", pick first          | 49       | 3.909           | 3s        |
+| "raise", heuristic           | 26       | 3.735           | 3s        |
+| "earth" + "lions", heuristic | 18       | 3.865           | 3s        |
+| "raise", combo               | 7        | 3.634           | 15m       |
+| "learn" + "sight", combo     | 0        | 3.769           | 54s       |
+| "raise", optimal \*          | 0        | 3.705           | hours     |
 
-Other starting words which work in a very similar way, only slightly worse are "lions", "earth" with 7 Wordles unsolved, and "coast", "liner" with 6 Wordles unsolved. What these word combinations have in common is they cover 10 very common letters.
-
-We also describe an algorithm which uses a single fixed starting word "raise", does only slightly better but runs much slower:
-
-```txt
-Statistics:
-1 attemps: 1
-2 attemps: 79
-3 attemps: 909
-4 attemps: 1117
-5 attemps: 178
-6 attemps: 24
-Unsolved Wordles: 7
-Solved 99.70%
-Average attempts: 3.634
-```
+(\*) optimal algorithm only simulated on 200 randomly chosen hidden words.
 
 ### The basics - find possible words
 
@@ -297,7 +290,7 @@ Played 2315 games of Wordle
 Average attempts: 3.825
 Unsolved Wordles: 32
 Solved: 98.60%
-Time taken: 9s
+Time spent: 9s
 ```
 
 Now let's try a small tweak. Instead of choosing a suggestion from all the words in the dictionary, let's always suggest a word which is one of the remaining possible words. We might get lucky:
@@ -320,7 +313,7 @@ Played 2315 games of Wordle
 Average attempts: 3.735
 Unsolved Wordles: 26
 Solved: 98.86%
-Time taken: 3.19s
+Time spent: 3.19s
 ```
 
 ### Different starting word
@@ -382,7 +375,7 @@ Played 2315 games of Wordle
 Average attempts: 3.909
 Unsolved Wordles: 49
 Solved: 97.84%
-Time taken: 2.73s
+Time spent: 2.73s
 ```
 
 OK, it's good to know our heuristic `guess = suggestions(possible, possible, allowed, freq)[0]` does improve the performance, although not by a huge amount.
@@ -409,7 +402,7 @@ Played 2315 games of Wordle
 Average attempts: 3.735
 Unsolved Wordles: 26
 Solved: 98.86%
-Time taken: 3.19s
+Time spent: 3.19s
 ```
 
 Let's try something different - we always start with "earth" as the first word and "lions" as the next word. From third attempt onwards our program continues suggesting words as usual:
@@ -440,16 +433,16 @@ How did we come up with "earth", "lions" and "learn", "sight"? Wrote a separate 
 
 ### Optimal algorithm
 
-At this point I knew I reached the limits of my program. Solving 99.22% Wordles in 3.865 attempts on average is good but can we do better?
+At this point I knew I was close to hitting the limit of the current approach. Solving 99.22% Wordles in 3.865 attempts on average is good but can we do better?
 
-At this point I had a look at Reddit and quickly saw someone explain the optimal algorithm:
+I had a look at Reddit and saw someone explain the optimal algorithm:
 
-- Use a fixed starting word. I stuck with "raise" which was recommended in a different Redit thread.
-- Choose one word `w` from the dictionary. Imagine this is our next guess. Simulate one round of Wordle. We don't know what the hidden word is but we look at all the possibilities of the hidden word - we have our list `possible`. For each possible hidden word, we simulate one round and see how many words would be left after this round.
-- This gives us a list of "scores" for `w`, lower numbers are better. The list will look something like this: `[5, 8, 1, 25]`. The list will contain one item per each possible hidden word. The value of the item is the number of possible remaining words after the next round - once we guess `w`.
+- Use a fixed starting word. I stuck with "raise" which was recommended in a different Reddit thread.
+- Choose one word `w` from the dictionary. Imagine this is our next guess. Simulate one round of Wordle. We don't know what the hidden word is but we look at all the possibilities of the hidden word. For each possible hidden word, we simulate one round and see how many words would be left after this round.
+- This gives us a list of "scores" for `w`. Lower numbers are better. The list will look something like this: `[5, 8, 1, 25]`. The list will contain one item per each possible hidden word. The value for that hidden word is the number of possible remaining words after the next round - once we guess `w`.
 - Now we need to combine the numbers in the list to find out how good `w` was. I simply sum up the numbers: `sum([5, 8, 1, 25])`. This gives us the score for `w`. Lower is better.
 - Repeat all the above for every word `w` in the dictionary.
-- Return the `w` with the lowest score. This will be our next guess.
+- Return `w` with the lowest score. This will be our next guess.
 
 In Python:
 
@@ -500,7 +493,7 @@ def new_possible_count(possible, guess, hidden_word, allowed, must_appear):
   return len(find_possible(possible, new_allowed, new_must_appear))
 ```
 
-This performs really well but it is very slow. So slow that a _single game_ of Wordle can take up to a minute to solve. There is no hope to simulate all 2315 games.
+This performs really well but it is very slow. So slow that a _single game_ of Wordle can take more than a minute to solve. There's no hope to simulate all 2315 games on my laptop.
 
 That said, I simulated 200 randomly chosen words out of the 2315, on 5 CPUs each simulating 40 games. The results are promising:
 
@@ -515,7 +508,7 @@ Statistics:
 Average attempts: 3.705 (Best so far)
 Unsolved Wordles: 0
 Solved 100.00% (Great!)
-Time taken: Hours!
+Time spent: Hours of single CPU time.
 ```
 
 Why is this so slow? The majority of time is spent on the second guess. After we guess "raise" we are left with, say, 100 words. Here's what we do:
@@ -550,15 +543,54 @@ narrowed_list = suggestions(possible, possible, allowed, freq)
 guess = suggestion_optimal(narrowed_list, possible, allowed, must_appear)
 ```
 
-That's it. Instead of 100 x 2315 we are now doing 10 x 50, so everything runs about 46x faster. It is still painfully slow with only about 2 games per second. After waiting for 20 minutes, how are the results?
+That's it. Instead of 100 x 2315 we are now doing 10 x 50, so everything runs about 46x faster. It is still painfully slow with only about 2 games per second. After waiting for 15 minutes, how are the results?
 
 ```txt
 Starting word: "raise"
 Played 2315 games of Wordle
-Statistics:
-
-Average attempts:
-Unsolved Wordles: 0
-Solved 100.00% (Great!)
-Time taken:
+1 attemps: 1
+2 attemps: 79
+3 attemps: 909
+4 attemps: 1117
+5 attemps: 178
+6 attemps: 24
+Average attempts: 3.634 (Best before this was 3.735)
+Unsolved Wordles: 7 (Best before this was 18)
+Solved 99.70%
+Time spent: 15 minutes
 ```
+
+This is the best result I was able to fully evaluate so far. The totally optimal algorithm is way too slow. This one runs about 2 games per second and if we discount the slow optimal algorithm, this one is the best. It beats the heuristic-only approach both in average attempts and in number of solved Wordles.
+
+Let's try one more thing: a combo approach but using two harcoded starting words: "learn" and "sight":
+
+```txt
+1 attemps: 1
+2 attemps: 1
+3 attemps: 762
+4 attemps: 1335
+5 attemps: 200
+6 attemps: 16
+Average attempts: 3.769
+Unsolved Wordles: 0
+Solved 100%
+Time spent: 54s
+```
+
+The word choice "learn" and "sight" matches the Wordle data set. If we chose "earth" and "lions" we'd end up with 7 unsolved Wordles.
+
+### Summary
+
+Here are the stats for all the algorithms described, for 2315 games of Wordle each:
+
+| Algorithm                    | Unsolved | Average attemps | Time (2k) |
+| ---------------------------- | -------- | --------------- | --------- |
+| Try to do a poorly as we can | 50       | 4.227           | 3s        |
+| "raise", pick first          | 49       | 3.909           | 3s        |
+| "raise", heuristic           | 26       | 3.735           | 3s        |
+| "earth" + "lions", heuristic | 18       | 3.865           | 3s        |
+| "raise", combo               | 7        | 3.634           | 15m       |
+| "learn" + "sight", combo     | 0        | 3.769           | 54s       |
+| "raise", optimal \*          | 0        | 3.705           | hours     |
+
+(\*) optimal algorithm only simulated on 200 randomly chosen hidden words.
