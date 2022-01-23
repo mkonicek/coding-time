@@ -14,7 +14,7 @@ Here is an example Wordle solved by the program described in this blog post:
 
 ![Wordle solution from January 22, 2022](./0122.png)
 
-Here are the stats on how well the program can solve Wordle:
+Overall stats:
 
 ```txt
 Played 2315 games of Wordle
@@ -30,7 +30,7 @@ Solved: 100%
 Time spent (all 2k games): 54s
 ```
 
-Here is a quick overview of the algorithms described below. Each was tested on 2315 games of Wordle. These are the 2315 words used in the real game, as found in the website's source code.
+Before we begin, here is a quick overview of the algorithms described below. Each was tested on 2315 games of Wordle. These are the 2315 words used in the real game, as found in the website's source code.
 
 | Algorithm                    | Unsolved | Average attemps | Time (2k) |
 | ---------------------------- | -------- | --------------- | --------- |
@@ -46,7 +46,9 @@ Here is a quick overview of the algorithms described below. Each was tested on 2
 
 ### The basics - find possible words
 
-I started by downloading a list of about 4000 words of length 5 and saved them to a file called `words.txt`. Then I set off to build the basic outline of the program. Here is an example run of the program:
+I started by downloading a list of about 4000 words of length 5 and saved them to a file called `words.txt`. Only later on I realized I could get the list of words from the website's source code.
+
+I set off to build the basic outline of the program. Here is an example run of the program:
 
 ```sh
 $ python3 wordle.py
@@ -59,7 +61,7 @@ What was the color of character a? b
 OK, there are now 30 possible words: finer, wince, mince, hinge, pinto, cinch, piney, minty, singe, diner, winch, since, minor, dingo, vinyl, finch, lingo, bingo, windy, liner, miner, minim, minus, dingy, binge, pinky, sinew, kinky, rinse, pinch
 ```
 
-The code looked like this:
+The code looks like this:
 
 ```python
 words = load_words("words.txt")
@@ -121,16 +123,16 @@ def find_possible(words, allowed, must_appear):
     return [word for word in words if is_possible(word, allowed, must_appear)]
 ```
 
-This was fun and works well. However, when the program presents a list of 30 words we still have to think in order to narrow down the list. Can we make the program choose a good next word?
+This was fun to code and works well. However, when the program presents a list of 30 words we still have to think in order to narrow down the list. Can we make the program choose a good next word?
 
 ### Choosing the next word
 
 After a bit of experimentation I settled on the following heuristic: Choose a word which:
 
-- Has characters which don't appear too often in the remaining words. This might help disambiguate.
-- Has characters which are frequently used.
+- Has characters which don't appear too often in the remaining words. In the ideal scenario we can imagine a word where each character is unique to just a few of the remaining words.
+- Has characters which are frequently used. This is the same strategy when choosing the first word.
 
-I haven't put much thought into this heuristic. I tested it by playing a few games on an [app with unlimited games of Wordle](https://apps.apple.com/us/app/puzzword-5-letter-word-puzzle/id1602799021). It worked reasonably well. It would solve almost all Wordles I tried.
+I haven't put much thought into this heuristic. I tested it by playing a few games on an [app with unlimited games of Wordle](https://apps.apple.com/us/app/puzzword-5-letter-word-puzzle/id1602799021). It worked reasonably well - it would solve almost all Wordles I tried.
 
 In Python:
 
@@ -211,23 +213,23 @@ The number of options goes down: 25 -> 10 -> 2. At this point it's a 50-50 guess
 
 Now you might be wondering: OK, so the program solved the Wordle above in 5 attemps. How good is it really?
 
-It's time to implement our own game of Wordle. We choose a hidden word. Then we let the program guess until it is left with exactly 1 remaining word or fails. We count the number of attempts the program needed.
+It's time to implement our own game of Wordle. We choose a hidden word. Then we let the program guess until it is left with exactly one remaining word or fails. We count the number of attempts the program needed.
 
 ```python
 stats = {}
 
 for hidden_word in words:
-  attempts = play_wordle(hidden_word)
+  attempts = simulate_wordle(hidden_word)
   if attempts not in stats:
     stats[attempts] = 1
   else:
     stats[attempts] = stats[attempts] + 1
 ```
 
-The function `play_wordle` is almost the same as our main loop above. The only difference is instead of asking the user for the colors of the letters from the website, we return the colors because we know what the hidden word is:
+The function `simulate_wordle` is almost the same as our main loop above. The only difference is instead of asking the user for the colors of the letters from the website, we return the colors because we know what the hidden word is:
 
 ```python
-# Returns the colors, the same way the website would.
+# Returns the colors, same way the website would.
 def try_guess(guess, hidden_word):
   if len(guess) != len(hidden_word):
     raise "Guess and hidden word must have the same length"
@@ -242,9 +244,11 @@ def try_guess(guess, hidden_word):
   return res
 ```
 
-And our simulation loop looks almost the same as our main loop:
+And our simulation loop looks almost the same as our interactive loop:
 
 ```python
+# simulate.py
+
 def simulate_wordle(hidden_word, words):
   # Reset our game state
   allowed = [set(), set(), set(), set(), set()]
@@ -262,13 +266,13 @@ def simulate_wordle(hidden_word, words):
       # All green. Solved in this many attempts.
       return attempt + 1
 
-    ...
+    # ... handle colors the usual way by updating our state
 
     possible = find_possible(possible, allowed, must_appear)
     if len(possible) == 1:
       guess = possible[0]
     else:
-      # Performance only depends on how good this function is
+      # The better this function, the better our program will do.
       guess = suggestions(words, possible, allowed, freq)[0]
 ```
 
@@ -310,8 +314,8 @@ Played 2315 games of Wordle
 4 attemps: 875
 5 attemps: 331
 6 attemps: 93
-Average attempts: 3.735
-Unsolved Wordles: 26
+Average attempts: 3.735 (was 3.825)
+Unsolved Wordles: 26 (was 32)
 Solved: 98.86%
 Time spent: 3.19s
 ```
@@ -330,7 +334,7 @@ Played 2315 games of Wordle
 4 attemps: 1000
 5 attemps: 384
 6 attemps: 103
-Average attempts: 3.878 ("raise was 3.735)
+Average attempts: 3.878 ("raise" was 3.735)
 Unsolved Wordles: 40 ("raise" was 26)
 Solved: 98.24%
 ```
@@ -355,13 +359,13 @@ Solved 97.79%
 
 ### Does our heuristic actually do much?
 
-Now we've looked at the effect of the starting word let's look at how large of an effect our heuristic has. Let's simplify by throwing away our heuristic and simply suggest the first possible word:
+Now we've looked at the effect of the starting word let's look at how much the heuristic helps. Let's simplify by throwing away our heuristic and suggest the first possible word instead:
 
 ```python
 guess = possible[0]
 ```
 
-The stats still don't look too bad given there is almost no code - just implementing the rules of Wordle and choosing the first word that's available.
+The stats still don't look too bad given there is almost no code - just implementing the rules of the game and choosing the first word that's available! I didn't expect simply picking any word from the remaining ones would work quite well. This would be a really fun exercise for a programming intro class!
 
 ```txt
 (Starting word: "raise")
@@ -372,8 +376,8 @@ Played 2315 games of Wordle
 4 attemps: 865
 5 attemps: 445
 6 attemps: 146
-Average attempts: 3.909
-Unsolved Wordles: 49
+Average attempts: 3.909 (with heuristic was 3.735)
+Unsolved Wordles: 49 (with heuristic was 26)
 Solved: 97.84%
 Time spent: 2.73s
 ```
@@ -392,13 +396,6 @@ As a reminder, here is our best result so far, using "raise" (found on Reddit) p
 
 ```txt
 (Starting word: "raise")
-Played 2315 games of Wordle
-1 attemps: 1
-2 attemps: 131
-3 attemps: 858
-4 attemps: 875
-5 attemps: 331
-6 attemps: 93
 Average attempts: 3.735
 Unsolved Wordles: 26
 Solved: 98.86%
@@ -409,18 +406,12 @@ Let's try something different - we always start with "earth" as the first word a
 
 ```txt
 (Starting words: "earth", "lions")
-Played 2315 games of Wordle
-1 attemps: 1
-3 attemps: 837
-4 attemps: 1012
-5 attemps: 365
-6 attemps: 82
-Average attempts: 3.865 (A bit worse, skewed towards 4 attempts.)
+Average attempts: 3.865 (A bit worse.)
 Unsolved Wordles: 18 (Best so far!)
 Solved 99.22% (Best so far!)
 ```
 
-There's a tradeoff here but I would call this an improvement. If we go with "learn" and "sight" as the first two words we get a very similar result.
+There's a tradeoff here but I would call this an improvement. If we go with "learn" and "sight" we get a very similar result.
 
 How did we come up with "earth", "lions" and "learn", "sight"? Wrote a separate script which uses brute force to look at all pairs of words in the dictionary and chooses those pairs which cover 10 common characters. Here are some examples you can use as two starting words:
 
@@ -439,8 +430,8 @@ I had a look at Reddit and saw someone explain the optimal algorithm:
 
 - Use a fixed starting word. I stuck with "raise" which was recommended in a different Reddit thread.
 - Choose one word `w` from the dictionary. Imagine this is our next guess. Simulate one round of Wordle. We don't know what the hidden word is but we look at all the possibilities of the hidden word. For each possible hidden word, we simulate one round and see how many words would be left after this round.
-- This gives us a list of "scores" for `w`. Lower numbers are better. The list will look something like this: `[5, 8, 1, 25]`. The list will contain one item per each possible hidden word. The value for that hidden word is the number of possible remaining words after the next round - once we guess `w`.
-- Now we need to combine the numbers in the list to find out how good `w` was. I simply sum up the numbers: `sum([5, 8, 1, 25])`. This gives us the score for `w`. Lower is better.
+- This gives us a list of "scores" for `w`. Lower numbers are better. The list will look something like this: `[5, 8, 1, 25]`. The list will contain one item per each possible hidden word. The value for that hidden word is the number of remaining words after the next round - once we guess `w`.
+- Now we need to combine the numbers in the list to find out how good `w` was. I went with simply adding the numbers: `sum([5, 8, 1, 25])`. This gives us the score for `w`. Lower is better.
 - Repeat all the above for every word `w` in the dictionary.
 - Return `w` with the lowest score. This will be our next guess.
 
@@ -473,7 +464,7 @@ def new_possible_count(possible, guess, hidden_word, allowed, must_appear):
   new_must_appear = copy.deepcopy(must_appear)
 
   # Once again we simulate one round of Wordle.
-  # Should really extract and reuse this.
+  # Should really extract and reuse this lol
   for i in range(len(guess)):
     g_char = guess[i]
     if g_char == hidden_word[i]:
@@ -495,7 +486,7 @@ def new_possible_count(possible, guess, hidden_word, allowed, must_appear):
 
 This performs really well but it is very slow. So slow that a _single game_ of Wordle can take more than a minute to solve. There's no hope to simulate all 2315 games on my laptop.
 
-That said, I simulated 200 randomly chosen words out of the 2315, on 5 CPUs each simulating 40 games. The results are promising:
+That said, I simulated 200 randomly chosen words out of the 2315, on 5 CPUs simulating 40 games each. The result looks great - we get a perfect 100% score!
 
 ```txt
 Starting word: "raise"
@@ -511,26 +502,26 @@ Solved 100.00% (Great!)
 Time spent: Hours of single CPU time.
 ```
 
-Why is this so slow? The majority of time is spent on the second guess. After we guess "raise" we are left with, say, 100 words. Here's what we do:
+Why is this so slow? The majority of time is spent on the second guess. After we guess "raise" we are left with, say, 20-100 words. Here's what we do:
 
 ```txt
 For each of the 100 possible words:
   For each 2315 words w:
     Copy game state. That is 5 sets of allowed characters, up to 26 characters each.
     Compare w to possible word, update game state
-    Find possible words in the next round:
-      For each of the 100 words, see if it works given game state:
+    Find possible words for the next round:
+      For each of the 100 words, see if it matches game state:
         1-5 set lookups
         0-5 lookups for yellow letters
 ```
 
-As we see we copy the game state 231k times, and we call `is_possible` 23 million times. I also chose Python for the job not knowing the computation would get intense :) I'm happy with choosing Python though because it's fun and quick to prototype in, I don't use it daily and wanted to refresh my memory.
+We copy the game state 231k times, and we call `is_possible` 23 million times. I also chose Python for the job not knowing the computation would get intense :) I'm happy with choosing Python though because writing the code is fun and quick. I also wanted to practice Python as I don't use it daily.
 
 ### Time to combine the approaches
 
-The optimal algorithm works well. It is very slow but actually usable for a single game of Wordle. You just have to wait for a minute to get the second guess :) However, we cannot properly evaluate it on all 2315 games.
+The optimal algorithm works well. It is very slow but actually usable for a single game of Wordle. You just have to wait for a minute for a second guess 😃 However, we cannot evaluate this algorithm on all 2315 games in a reasonable amount of time.
 
-What we are going to do it use our heuristic described earlier to choose a smaller list of 50 possible guesses:
+What we are going to do is use our heuristic described earlier to choose a smaller list of 50 possible guesses:
 
 ```python
 narrowed_list = suggestions(possible, possible, allowed, freq)
@@ -543,7 +534,7 @@ narrowed_list = suggestions(possible, possible, allowed, freq)
 guess = suggestion_optimal(narrowed_list, possible, allowed, must_appear)
 ```
 
-That's it. Instead of 100 x 2315 we are now doing 10 x 50, so everything runs about 46x faster. It is still painfully slow with only about 2 games per second. After waiting for 15 minutes, how are the results?
+That's it. Instead of 100 x 2315 we are now doing 10 x 50, so everything runs about 46x faster. It is still painfully slow with only about 2 games per second. After waiting for 15 minutes, let's see the results:
 
 ```txt
 Starting word: "raise"
@@ -554,8 +545,8 @@ Played 2315 games of Wordle
 4 attemps: 1117
 5 attemps: 178
 6 attemps: 24
-Average attempts: 3.634 (Best before this was 3.735)
-Unsolved Wordles: 7 (Best before this was 18)
+Average attempts: 3.634
+Unsolved Wordles: 7
 Solved 99.70%
 Time spent: 15 minutes
 ```
@@ -577,7 +568,9 @@ Solved 100%
 Time spent: 54s
 ```
 
-The word choice "learn" and "sight" matches the Wordle data set. If we chose "earth" and "lions" we'd end up with 7 unsolved Wordles.
+Turns out using "learn" and "sight" as the first two words works well for the Wordle data set. If we chose "earth" and "lions" we'd end up with 7 unsolved Wordles.
+
+This is the best solution I was able to fully evaluate on all 2315 games. It solves all Wordles in 54s. The number of attempts is 3.769 on average.
 
 ### Summary
 
@@ -594,3 +587,5 @@ Here are the stats for all the algorithms described, for 2315 games of Wordle ea
 | "raise", optimal \*          | 0        | 3.705           | hours     |
 
 (\*) optimal algorithm only simulated on 200 randomly chosen hidden words.
+
+Which algorithm from the table above would you want to use?
