@@ -32,15 +32,15 @@ Time spent (all 2k games): 54s
 
 Before we begin, here is a quick overview of the algorithms described below. Each was tested on 2315 games of Wordle. These are the 2315 words used in the real game, as found in the website's source code.
 
-| Algorithm                    | Unsolved | Average attemps | Time (2k) |
-| ---------------------------- | -------- | --------------- | --------- |
-| Try to do a poorly as we can | 50       | 4.227           | 3s        |
-| "raise", pick first          | 49       | 3.909           | 3s        |
-| "raise", heuristic           | 26       | 3.735           | 3s        |
-| "earth" + "lions", heuristic | 18       | 3.865           | 3s        |
-| "raise", combo               | 7        | 3.634           | 15m       |
-| "learn" + "sight", combo     | 0        | 3.769           | 54s       |
-| "raise", optimal \*          | 0        | 3.705           | hours     |
+| Algorithm                    | Solved | Average attemps | Time (2k) |
+| ---------------------------- | ------ | --------------- | --------- |
+| Try to do a poorly as we can | 97.8%  | 4.227           | 3s        |
+| "raise", pick first          | 97.8%  | 3.909           | 3s        |
+| "raise", heuristic           | 98.9%  | 3.735           | 3s        |
+| "earth" + "lions", heuristic | 99.2%  | 3.865           | 3s        |
+| "raise", combo               | 99.7%  | 3.634           | 15m       |
+| "learn" + "sight", combo     | 100%   | 3.769           | 54s       |
+| "raise", optimal \*          | 100%   | 3.705           | hours     |
 
 (\*) optimal algorithm only simulated on 200 randomly chosen hidden words.
 
