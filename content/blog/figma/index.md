@@ -61,7 +61,7 @@ Figma’s business model is SaaS which is my favorite business model. People dec
 
 ## 6. Experience after joining
 
-What else did I find out since I joined Figma in September 2021?
+What else did I find out since joining Figma in September 2021?
 
 Every single person I met at Figma I would want to work with again.
 
