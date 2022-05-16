@@ -1,7 +1,7 @@
 ---
 title: Why I joined Figma
 description: >-
-  I decided to join Figma. Why? And do I find the company?
+  I decided to join Figma. Why? And how do I find the company?
 date: "2022-05-16T00:00:00.000Z"
 categories: [carreer]
 keywords: []
