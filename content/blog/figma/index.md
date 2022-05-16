@@ -53,9 +53,9 @@ A few relevant articles:
 - [Investing in Figma: The Decade of Design](https://a16z.com/2020/04/30/figma/) - by Peter Levine who led the Series D investment at a16z
 - [2021 UX tools survey](https://uxtools.co/survey-2021/)
 
-![Survey - tools used for UI design](./design-tools.png)
+![Survey - tools used for UI design](./design-tools-2.png)
 
-![Survey - tools used over the years](./design-tools-2.png)
+![Survey - tools used over the years](./design-tools-years.png)
 
 Figma’s business model is SaaS which is my favorite business model. People decide to pay for Figma and FigJam because the tools bring them value. Very straightforward and fair.
 
@@ -75,7 +75,7 @@ There’s a regular hackathon called [Maker Week](https://www.figma.com/blog/the
 
 Another thing I like a lot is people take initiative. When you spot a problem or a possible project, just go for it. I’ve seen this happen multiple times.
 
-All of the behaviours mentioned above are part of the culture and company values.
+All of the behaviours mentioned above are part of the culture and [company values](https://www.figma.com/careers/).
 
 What I also really like is that my manager is more like a coach, actively helping me with career growth. Engineering levels and responsibilities are well defined.
 
