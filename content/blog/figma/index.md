@@ -77,7 +77,7 @@ Another thing I like a lot is people take initiative. When you spot a problem or
 
 All of the behaviours mentioned above are part of the culture and [company values](https://www.figma.com/careers/).
 
-What I also really like is that my manager is more like a coach, actively helping me with career growth. Engineering levels and responsibilities are well defined.
+What I also really like is that my manager is more like a coach, actively helping me with career growth. Engineering levels and responsibilities are clearly defined.
 
 ## Join me!
 
