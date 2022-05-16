@@ -39,6 +39,7 @@ Before we begin, here is a quick overview of the algorithms described below. Eac
 | "raise", heuristic           | 98.9%  | 3.735           | 3s        |
 | "earth" + "lions", heuristic | 99.2%  | 3.865           | 3s        |
 | "raise", combo               | 99.7%  | 3.634           | 15m       |
+| "salet", combo               | 99.52% | 3.556           | 18m       |
 | "learn" + "sight", combo     | 100%   | 3.769           | 54s       |
 | "raise", optimal \*          | 100%   | 3.705           | hours     |
 
@@ -551,6 +552,20 @@ Solved 99.70%
 Time spent: 15 minutes
 ```
 
+And with "salet" as the starting word:
+
+```txt
+2 attemps: 148
+3 attemps: 975
+4 attemps: 967
+5 attemps: 179
+6 attemps: 35
+Average attempts: 3.556
+Unsolved Wordles: 11
+Solved 99.52%
+
+```
+
 This is the best result I was able to fully evaluate so far. The totally optimal algorithm is way too slow. This one runs about 2 games per second and if we discount the slow optimal algorithm, this one is the best. It beats the heuristic-only approach both in average attempts and in number of solved Wordles.
 
 Let's try one more thing: a combo approach but using two harcoded starting words: "learn" and "sight":
@@ -583,9 +598,10 @@ Here are the stats for all the algorithms described, for 2315 games of Wordle ea
 | "raise", heuristic           | 26       | 3.735           | 3s        |
 | "earth" + "lions", heuristic | 18       | 3.865           | 3s        |
 | "raise", combo               | 7        | 3.634           | 15m       |
+| "salet", combo               | 11       | 3.556           | 18m       |
 | "learn" + "sight", combo     | 0        | 3.769           | 54s       |
 | "raise", optimal \*          | 0        | 3.705           | hours     |
 
 (\*) optimal algorithm only simulated on 200 randomly chosen hidden words.
 
-Which algorithm from the table above would you want to use?
+Which option from the table above would you want to use?
