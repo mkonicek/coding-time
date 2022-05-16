@@ -22,13 +22,13 @@ My recruiter sent me links to LinkedIn profiles of all my interviewers. I did a 
 
 [Noga Mann](https://www.timesofisrael.com/queenb-and-wework-creating-opportunities-for-girls-in-hi-tech/) started a non-profit tech education company in Israel, had an offer to be come an engineering manager at Google and decided to join Figma instead. [Emil Sjölander](https://www.crunchbase.com/person/emil-sj%C3%B6lander) worked on the layout engine for React Native, later went to YCombinator, raised money and built a team. Later the whole team decided to join Figma. [Evan Martin](http://neugierig.org/software/) worked on Chrome before it first launched in 2008 (!), [Ben Smith](https://www.youtube.com/watch?v=5N4b-rU-OAA) worked on WebAssembly and [Karl Jiang](https://www.linkedin.com/in/karl-jiang-4a07424) helped build Twitch. Check out also the awesome updates on the Twitter profile of [Lauren Budorick](https://twitter.com/lbudorick).
 
-Note: The people mentioned above have a lot of experience. Figma also hires interns and new grads.
+Note: The people mentioned above have a lot of experience. Figma also hires interns and people starting their careers.
 
 ## 3. Exciting technical challenges
 
-There a lot of interesting technical challenges at Figma. I haven’t done any work so far which was pure CRUD. Figma is a large React app with a WebGL canvas powered by C++ compiled to WebAssembly. It’s a [rendering engine](https://www.figma.com/blog/building-a-professional-design-tool-on-the-web/) where everything has to be built from scratch: How do you lay out individual font glyphs to render text? How do you draw rounded corners, shadows, or use shaders to do various blending effects? You can also find Rust here, both in the Figma desktop app and in the [backend](https://www.figma.com/blog/rust-in-production-at-figma/). My team specifically works on Developer tools which is close to my heart, having worked on React Native in the past. Developers are great customers to work with.
+There a lot of interesting technical challenges at Figma. I haven’t done any work so far which was pure CRUD. Figma is a large React app with a WebGL canvas powered by C++ compiled to WebAssembly. It’s a [rendering engine](https://www.figma.com/blog/building-a-professional-design-tool-on-the-web/) where everything has to be built from scratch: How do you lay out individual font glyphs to render text? How do you draw rounded corners, shadows, or use shaders to do various blending effects? You can also find [Rust](https://www.figma.com/blog/rust-in-production-at-figma/) at Figma. My team specifically works on Developer tools which is close to my heart, having worked on React Native in the past. Developers are great customers to work with.
 
-Here are few blog posts written by engineers at Figma:
+Here are a few blog posts written by engineers at Figma:
 
 - [Building a sandboxing system to safely run 3rd-party plugins](https://www.figma.com/blog/how-we-built-the-figma-plugin-system/)
 - [LiveGraph: a real-time data system at scale](https://www.figma.com/blog/livegraph-real-time-data-fetching-at-figma/)
@@ -37,11 +37,11 @@ Here are few blog posts written by engineers at Figma:
 
 ## 4. Still a relatively small company - big opportunity for impact
 
-Even though Figma is now [valued at over $10 billion](https://www.bloomberg.com/news/articles/2021-06-24/software-design-startup-figma-is-now-worth-10-billion), there are only around 200 engineers. At smaller companies a single person has more opportunity to do something big and affect the bottom line.
+Even though Figma is now [valued at over $10 billion](https://www.bloomberg.com/news/articles/2021-06-24/software-design-startup-figma-is-now-worth-10-billion), there are only around 200 engineers. At smaller companies each person has more opportunity to do something big and affect the bottom line.
 
 And indeed, just a few months after I joined I’ve been in meetings with our CEO and VP of Product. They are very familiar with the feature we're building in our small team. Our project is one of the company-wide priorities.
 
-At smaller companies it’s also easier to know people. After just six months I recognise lots of names in commit messages. When people post on Slack we often already know each other.
+At smaller companies it’s also easier to know people. After just a few months I recognised lots of names in commit messages. When people post on Slack we often already know each other.
 
 ## 5. Business Opportunity
 
@@ -69,7 +69,7 @@ Figma has a very open open and collaborative culture. I have sent pull requests 
 
 There are weekly tech talks by engineers who share knowledge about various areas of the codebase. At the start of every larger project, you make a short presentation about your proposed architecture and get feedback from engineers across the company.
 
-The weekly company-wide update called FigNation has lots of inspiring content and the chat is always really fun. People are friendly, funny. They are themselves. People ask tough questions which get answered by our CEO Dylan Field and others from the leadership team.
+The weekly company-wide update called FigNation has lots of inspiring content and the chat is always really funny. People also ask tough questions which get answered by our CEO Dylan Field and others from the leadership team.
 
 There’s a regular hackathon called [Maker Week](https://www.figma.com/blog/the-making-of-maker-week/) when anyone can work on anything they want. Being a maker is a part of the culture and the first question you answer in the company-wide meeting is “What makes you a maker?” (I answered I like to edit short travel videos.)
 
