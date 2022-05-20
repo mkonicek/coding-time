@@ -75,7 +75,7 @@ What else did I find out since joining Figma in September 2021?
 
 The bottom line is every single person I met at Figma I would want to work with again.
 
-Figma has a very open open and collaborative culture. I have sent pull requests to people on different teams and they always got reviewed quickly. When I made improvements, people on different teams appreciated them.
+Figma has a very open and collaborative culture. I have sent pull requests to people on different teams and they always got reviewed quickly. When I made improvements, people on different teams appreciated them.
 
 There are weekly tech talks by engineers who share knowledge about various areas of the codebase. At the start of every larger project, you make a short presentation about your proposed architecture and get feedback from engineers across the company.
 
