@@ -12,7 +12,9 @@ I had offers from Stripe and Spotify and was talking to a recruiter at Google. W
 
 ## 1. I saw Figma being adopted everywhere
 
-Within a relatively short period of time I observed the whole industry switch from Sketch to Figma. My previous company adopted Figma. I had no expectations but quickly found the product impressive. How did they make the rendering so smooth? Spoiler alert: It’s WebGL. I checked the Figma website and saw it was used at Google, Microsoft, AirBnb, Slack, Twitter, Dropbox, Stripe, Square and more.
+Within a relatively short period of time I observed the whole industry switch from Sketch to Figma. My previous company adopted Figma. I had no expectations but quickly found the product impressive. How did they make the rendering so smooth? Spoiler alert: It’s WebGL.
+
+I checked the Figma website and saw it was used at Google, Microsoft, AirBnb, Slack, Twitter, Dropbox, Stripe, Square and more.
 
 Designers seem to love the product.
 
