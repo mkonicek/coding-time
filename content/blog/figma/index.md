@@ -67,7 +67,7 @@ A few relevant articles:
 
 ![Survey - tools used over the years](./design-tools-years.png)
 
-Figma’s business model is SaaS which is my favorite business model. People decide to pay for Figma and FigJam because the tools bring them value. Very straightforward and fair.
+Figma’s business model is SaaS which is my favourite business model. People decide to pay for Figma and FigJam because the tools bring them value. Very straightforward and fair.
 
 ## 6. Experience after joining
 
