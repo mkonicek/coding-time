@@ -24,7 +24,7 @@ Designers seem to love the product.
 
 ## 2. There are a lot of people to learn from
 
-I liked what I saw on the engineering blog and was impressed during the interview process. I liked the questions were realistic - simplified versions of problems you need to solve when building an app like Figma. I could tell my interviewers were great engineers. Right after the interview I already felt like I would want to work with them.
+I liked what I saw on the engineering blog and was impressed during the interview process. The questions were realistic - simplified versions of problems you need to solve when building an app like Figma. I could tell my interviewers were great engineers. Right after the interview I already felt like I would want to work with them.
 
 My recruiter sent me links to LinkedIn profiles of all my interviewers. I did a bit more research to see who else worked at Figma. To name just a few people:
 
