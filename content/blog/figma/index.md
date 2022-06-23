@@ -26,7 +26,7 @@ Designers seem to love the product.
 
 I liked what I saw on the engineering blog and was impressed during the interview process. The questions were realistic - simplified versions of problems you need to solve when building an app like Figma. I could tell my interviewers were great engineers. Right after the interview I already felt like I would want to work with them.
 
-My recruiter sent me links to LinkedIn profiles of all my interviewers. I did a bit more research to see who else worked at Figma. To name just a few people:
+My recruiter sent me LinkedIn profiles of all my interviewers. I did a bit more research to see who else worked at Figma. To name just a few people:
 
 [Noga Mann](https://www.timesofisrael.com/queenb-and-wework-creating-opportunities-for-girls-in-hi-tech/) started a non-profit tech education company in Israel, had an offer to be come an engineering manager at Google and decided to join Figma instead. [Emil Sjölander](https://www.crunchbase.com/person/emil-sj%C3%B6lander) worked on the layout engine for React Native, later went to YCombinator, raised money and built a team. Later the whole team decided to join Figma. [Evan Martin](http://neugierig.org/software/) worked on Chrome before it first launched in 2008 (!), [Ben Smith](https://www.youtube.com/watch?v=5N4b-rU-OAA) worked on WebAssembly, [Lauren Budorick](https://twitter.com/lbudorick) worked at Mapbox, [Karl Jiang](https://www.linkedin.com/in/karl-jiang-4a07424) helped build Twitch.
 
