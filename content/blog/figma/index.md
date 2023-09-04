@@ -93,4 +93,4 @@ What I also really like is that my manager is more like a coach, actively helpin
 
 If you’re even slightly considering something new, I recommend you look no further and interview with Figma. I’ve done a lot of research and talked to a lot of people who referred me to companies. Figma is the best company I could find. I'm happy I joined.
 
-Message me on [Twitter](https://twitter.com/martinkonicek) or martin@figma.com.
+Apply via the [Figma careers page](https://www.figma.com/careers/#job-openings).
